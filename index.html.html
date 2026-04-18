@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>天草市立 牛深市民病院</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300;400;600&family=Noto+Sans+JP:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+:root{
+  --navy:#0a2342;
+  --ocean:#1a5f7a;
+  --sky:#4a9ebe;
+  --foam:#e8f4f8;
+  --sand:#f5f0e8;
+  --text:#1a1a2e;
+  --muted:#5a6a7a;
+  --white:#ffffff;
+  --accent:#c8832a;
+}
+body{font-family:'Noto Sans JP',sans-serif;color:var(--text);background:var(--white);overflow-x:hidden;}
+
+/* NAV */
+nav{
+  position:sticky;top:0;z-index:100;
+  background:rgba(10,35,66,0.96);
+  backdrop-filter:blur(8px);
+  display:flex;align-items:center;justify-content:space-between;
+  padding:0 40px;height:60px;
+}
+.nav-logo{font-family:'Noto Serif JP',serif;font-size:16px;font-weight:600;color:var(--white);letter-spacing:0.08em;}
+.nav-logo span{font-size:11px;font-weight:300;display:block;letter-spacing:0.12em;color:rgba(255,255,255,0.65);margin-top:1px;}
+.nav-links{display:flex;gap:32px;}
+.nav-links a{color:rgba(255,255,255,0.8);text-decoration:none;font-size:13px;letter-spacing:0.05em;transition:color 0.2s;}
+.nav-links a:hover{color:var(--white);}
+.nav-tel{color:var(--white);font-size:14px;font-weight:500;letter-spacing:0.05em;}
+.nav-tel span{font-size:10px;display:block;color:rgba(255,255,255,0.55);text-align:right;}
+
+/* HERO */
+.hero{
+  position:relative;height:520px;overflow:hidden;
+  background:linear-gradient(160deg,#0a2342 0%,#1a5f7a 45%,#4a9ebe 80%,#a8d8ea 100%);
+  display:flex;align-items:center;
+}
+.hero-waves{position:absolute;bottom:0;left:0;width:100%;height:120px;}
+.wave{position:absolute;bottom:0;left:0;width:200%;height:100%;}
+.wave1{
+  background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 120'%3E%3Cpath fill='%23ffffff' fill-opacity='0.08' d='M0,60 C240,100 480,20 720,60 C960,100 1200,20 1440,60 L1440,120 L0,120 Z'/%3E%3C/svg%3E") repeat-x;
+  background-size:720px 120px;
+  animation:wave1 8s linear infinite;
+}
+.wave2{
+  background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 120'%3E%3Cpath fill='%23ffffff' fill-opacity='0.06' d='M0,40 C360,90 720,10 1080,60 C1260,80 1380,30 1440,50 L1440,120 L0,120 Z'/%3E%3C/svg%3E") repeat-x;
+  background-size:900px 120px;
+  animation:wave2 12s linear infinite;
+}
+.wave3{
+  background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 80'%3E%3Cpath fill='%23ffffff' fill-opacity='1' d='M0,40 C180,70 360,10 540,40 C720,70 900,10 1080,40 C1260,70 1380,20 1440,40 L1440,80 L0,80 Z'/%3E%3C/svg%3E") repeat-x;
+  background-size:720px 80px;bottom:0;
+  animation:wave1 6s linear infinite;
+}
+@keyframes wave1{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+@keyframes wave2{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+.hero-content{position:relative;z-index:2;padding:0 80px;}
+.hero-badge{
+  display:inline-block;background:rgba(255,255,255,0.12);
+  border:1px solid rgba(255,255,255,0.25);color:rgba(255,255,255,0.9);
+  font-size:11px;letter-spacing:0.15em;padding:5px 14px;border-radius:20px;margin-bottom:20px;
+}
+.hero-title{
+  font-family:'Noto Serif JP',serif;font-size:36px;font-weight:600;
+  color:var(--white);line-height:1.6;letter-spacing:0.04em;margin-bottom:14px;
+}
+.hero-sub{
+  font-size:14px;color:rgba(255,255,255,0.75);
+  line-height:1.9;letter-spacing:0.06em;margin-bottom:32px;max-width:420px;
+}
+.hero-btns{display:flex;gap:12px;}
+.btn-primary-hero{
+  background:var(--white);color:var(--navy);border:none;
+  padding:12px 28px;border-radius:4px;font-size:13px;font-weight:500;
+  letter-spacing:0.06em;cursor:pointer;transition:all 0.2s;
+}
+.btn-primary-hero:hover{background:var(--foam);transform:translateY(-1px);}
+.btn-outline-hero{
+  background:transparent;color:var(--white);
+  border:1px solid rgba(255,255,255,0.5);padding:12px 28px;border-radius:4px;
+  font-size:13px;letter-spacing:0.06em;cursor:pointer;transition:all 0.2s;
+}
+.btn-outline-hero:hover{border-color:var(--white);background:rgba(255,255,255,0.08);}
+
+.hero-info{
+  position:absolute;right:80px;bottom:100px;
+  background:rgba(255,255,255,0.1);backdrop-filter:blur(10px);
+  border:1px solid rgba(255,255,255,0.2);border-radius:8px;
+  padding:20px 24px;min-width:200px;
+}
+.hero-info-item{margin-bottom:12px;}
+.hero-info-item:last-child{margin-bottom:0;}
+.hero-info-label{font-size:10px;color:rgba(255,255,255,0.6);letter-spacing:0.1em;margin-bottom:2px;}
+.hero-info-val{font-size:14px;color:var(--white);font-weight:500;}
+
+/* TICKER */
+.ticker{
+  background:var(--navy);padding:10px 40px;
+  display:flex;align-items:center;gap:16px;overflow:hidden;
+}
+.ticker-label{
+  background:var(--accent);color:var(--white);font-size:10px;
+  letter-spacing:0.1em;padding:3px 10px;border-radius:2px;
+  white-space:nowrap;flex-shrink:0;
+}
+.ticker-track{overflow:hidden;flex:1;}
+.ticker-inner{
+  display:flex;gap:60px;white-space:nowrap;
+  animation:ticker 22s linear infinite;
+}
+.ticker-inner span{font-size:12px;color:rgba(255,255,255,0.8);letter-spacing:0.04em;}
+@keyframes ticker{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+/* QUICK ACCESS */
+.quick{background:var(--foam);padding:32px 60px;}
+.quick-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:12px;}
+.quick-card{
+  background:var(--white);border:0.5px solid rgba(26,95,122,0.15);
+  border-radius:8px;padding:18px 12px;text-align:center;
+  cursor:pointer;transition:all 0.2s;
+}
+.quick-card:hover{border-color:var(--sky);transform:translateY(-2px);box-shadow:0 4px 16px rgba(26,95,122,0.1);}
+.quick-icon{
+  width:40px;height:40px;border-radius:50%;background:var(--foam);
+  margin:0 auto 10px;display:flex;align-items:center;justify-content:center;
+}
+.quick-icon svg{width:20px;height:20px;}
+.quick-label{font-size:12px;color:var(--navy);letter-spacing:0.04em;font-weight:500;}
+.quick-sub{font-size:10px;color:var(--muted);margin-top:3px;}
+
+/* SECTIONS */
+section{padding:56px 60px;}
+.sec-header{margin-bottom:36px;}
+.sec-label{font-size:10px;letter-spacing:0.2em;color:var(--sky);text-transform:uppercase;margin-bottom:8px;}
+.sec-title{font-family:'Noto Serif JP',serif;font-size:26px;font-weight:600;color:var(--navy);line-height:1.4;}
+.sec-line{width:36px;height:2px;background:var(--sky);margin-top:12px;}
+
+/* DEPARTMENTS */
+.dept-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;}
+.dept-card{
+  border:0.5px solid rgba(26,95,122,0.15);border-radius:8px;
+  padding:20px;cursor:pointer;transition:all 0.2s;
+  position:relative;overflow:hidden;
+}
+.dept-card::before{
+  content:'';position:absolute;top:0;left:0;right:0;height:3px;
+  background:linear-gradient(90deg,var(--ocean),var(--sky));
+  transform:scaleX(0);transform-origin:left;transition:transform 0.3s;
+}
+.dept-card:hover::before{transform:scaleX(1);}
+.dept-card:hover{border-color:var(--sky);transform:translateY(-2px);}
+.dept-name{font-size:15px;font-weight:500;color:var(--navy);margin-bottom:6px;}
+.dept-desc{font-size:11px;color:var(--muted);line-height:1.6;}
+.dept-tag{
+  display:inline-block;margin-top:10px;font-size:10px;
+  padding:2px 8px;border-radius:20px;background:var(--foam);color:var(--ocean);
+}
+
+/* NEWS */
+.news-section{background:var(--sand);}
+.news-list{display:flex;flex-direction:column;}
+.news-item{
+  display:flex;align-items:baseline;gap:20px;
+  padding:16px 0;border-bottom:0.5px solid rgba(26,95,122,0.1);
+  cursor:pointer;transition:all 0.2s;
+}
+.news-item:hover .news-title{color:var(--ocean);}
+.news-date{font-size:12px;color:var(--muted);min-width:90px;letter-spacing:0.04em;}
+.news-cat{
+  font-size:10px;padding:2px 8px;border-radius:20px;
+  min-width:60px;text-align:center;flex-shrink:0;
+}
+.cat-info{background:#e8f0fb;color:#1a3a7a;}
+.cat-notice{background:#fef3e8;color:#7a4a1a;}
+.cat-event{background:#e8f8ee;color:#1a6a3a;}
+.news-title{font-size:13px;color:var(--text);letter-spacing:0.03em;line-height:1.5;}
+
+/* ACCESS */
+.access-section{background:var(--navy);}
+.access-section .sec-label{color:var(--sky);}
+.access-section .sec-title{color:var(--white);}
+.access-section .sec-line{background:var(--sky);}
+.access-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start;}
+.access-info-group{margin-bottom:24px;}
+.access-info-label{font-size:10px;letter-spacing:0.15em;color:var(--sky);margin-bottom:8px;}
+.access-info-val{font-size:14px;color:rgba(255,255,255,0.85);line-height:1.9;}
+.map-link{
+  display:block;background:rgba(255,255,255,0.06);
+  border:0.5px solid rgba(255,255,255,0.15);border-radius:8px;
+  height:260px;display:flex;flex-direction:column;
+  align-items:center;justify-content:center;gap:12px;
+  text-decoration:none;transition:background 0.2s;
+}
+.map-link:hover{background:rgba(255,255,255,0.1);}
+.map-link svg{opacity:0.5;}
+.map-link p{font-size:13px;color:rgba(255,255,255,0.5);letter-spacing:0.06em;}
+
+/* FOOTER */
+footer{
+  background:#06182e;padding:32px 60px;
+  display:flex;align-items:center;justify-content:space-between;
+}
+.footer-logo{font-family:'Noto Serif JP',serif;font-size:15px;color:rgba(255,255,255,0.8);letter-spacing:0.08em;}
+.footer-logo span{font-size:10px;display:block;color:rgba(255,255,255,0.4);margin-top:3px;}
+.footer-copy{font-size:11px;color:rgba(255,255,255,0.3);letter-spacing:0.06em;}
+
+/* RESPONSIVE */
+@media(max-width:768px){
+  nav{padding:0 16px;}
+  .nav-links{display:none;}
+  .hero-content{padding:0 24px;}
+  .hero-title{font-size:24px;}
+  .hero-info{display:none;}
+  .quick{padding:24px 16px;}
+  .quick-grid{grid-template-columns:repeat(3,1fr);}
+  section{padding:40px 16px;}
+  .dept-grid{grid-template-columns:repeat(2,1fr);}
+  .access-grid{grid-template-columns:1fr;}
+  footer{padding:24px 16px;flex-direction:column;gap:12px;text-align:center;}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-logo">
+    牛深市民病院
+    <span>USHIBUKA CITY HOSPITAL</span>
+  </div>
+  <div class="nav-links">
+    <a href="#">診療案内</a>
+    <a href="#">外来受付</a>
+    <a href="#">入院案内</a>
+    <a href="#">医師紹介</a>
+    <a href="#">病院案内</a>
+  </div>
+  <div class="nav-tel">
+    0969-73-4171
+    <span>代表電話</span>
+  </div>
+</nav>
+
+<div class="hero">
+  <div class="hero-waves">
+    <div class="wave wave1"></div>
+    <div class="wave wave2"></div>
+    <div class="wave wave3"></div>
+  </div>
+  <div class="hero-content">
+    <div class="hero-badge">天草南部の中核病院</div>
+    <h1 class="hero-title">天草南部の中核病院として、<br>地域の皆様の健康を守ります。</h1>
+    <p class="hero-sub">牛深市民病院は緊急医療から慢性期まで、<br>地域の皆さまの暮らしに寄り添う医療を提供します。</p>
+    <div class="hero-btns">
+      <button class="btn-primary-hero">外来受付のご案内</button>
+      <button class="btn-outline-hero">診療時間を確認する</button>
+    </div>
+  </div>
+  <div class="hero-info">
+    <div class="hero-info-item">
+      <div class="hero-info-label">平日診療受付</div>
+      <div class="hero-info-val">8:30 〜 11:30</div>
+    </div>
+    <div class="hero-info-item">
+      <div class="hero-info-label">休診日</div>
+      <div class="hero-info-val">土・日・祝日</div>
+    </div>
+    <div class="hero-info-item">
+      <div class="hero-info-label">救急・時間外</div>
+      <div class="hero-info-val">0969-73-4171</div>
+    </div>
+  </div>
+</div>
+
+<div class="ticker">
+  <span class="ticker-label">お知らせ</span>
+  <div class="ticker-track">
+    <div class="ticker-inner">
+      <span>【重要】年末年始の診療体制について（12/28〜1/3）</span>
+      <span>内科・外来 毎週木曜午後は休診となります</span>
+      <span>インフルエンザ予防接種の受付を開始しました（要予約）</span>
+      <span>駐車場工事に伴う一部通行規制のお知らせ</span>
+      <span>【重要】年末年始の診療体制について（12/28〜1/3）</span>
+      <span>内科・外来 毎週木曜午後は休診となります</span>
+      <span>インフルエンザ予防接種の受付を開始しました（要予約）</span>
+      <span>駐車場工事に伴う一部通行規制のお知らせ</span>
+    </div>
+  </div>
+</div>
+
+<div class="quick">
+  <div class="quick-grid">
+    <div class="quick-card">
+      <div class="quick-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#1a5f7a" stroke-width="1.5"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
+      </div>
+      <div class="quick-label">外来受付</div>
+      <div class="quick-sub">受付時間・科目</div>
+    </div>
+    <div class="quick-card">
+      <div class="quick-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#1a5f7a" stroke-width="1.5"><path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"/></svg>
+      </div>
+      <div class="quick-label">診療科一覧</div>
+      <div class="quick-sub">担当医・専門外来</div>
+    </div>
+    <div class="quick-card">
+      <div class="quick-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#1a5f7a" stroke-width="1.5"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+      </div>
+      <div class="quick-label">入院案内</div>
+      <div class="quick-sub">病棟・面会・手続き</div>
+    </div>
+    <div class="quick-card">
+      <div class="quick-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#1a5f7a" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
+      </div>
+      <div class="quick-label">休診情報</div>
+      <div class="quick-sub">臨時・定期休診</div>
+    </div>
+    <div class="quick-card">
+      <div class="quick-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#1a5f7a" stroke-width="1.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+      </div>
+      <div class="quick-label">アクセス</div>
+      <div class="quick-sub">地図・駐車場</div>
+    </div>
+  </div>
+</div>
+
+<section>
+  <div class="sec-header">
+    <div class="sec-label">Departments</div>
+    <div class="sec-title">診療科のご案内</div>
+    <div class="sec-line"></div>
+  </div>
+  <div class="dept-grid">
+    <div class="dept-card">
+      <div class="dept-name">内科</div>
+      <div class="dept-desc">生活習慣病・慢性疾患の管理から急性期まで幅広く対応します。</div>
+      <span class="dept-tag">月〜金</span>
+    </div>
+    <div class="dept-card">
+      <div class="dept-name">外科</div>
+      <div class="dept-desc">消化器疾患・一般外科手術・術後管理を行います。</div>
+      <span class="dept-tag">月〜金</span>
+    </div>
+    <div class="dept-card">
+      <div class="dept-name">整形外科</div>
+      <div class="dept-desc">骨折・関節疾患・リハビリテーションを専門的に診療します。</div>
+      <span class="dept-tag">月・水・金</span>
+    </div>
+    <div class="dept-card">
+      <div class="dept-name">小児科</div>
+      <div class="dept-desc">乳幼児から学童期のお子さまの診療・予防接種を行います。</div>
+      <span class="dept-tag">月・木</span>
+    </div>
+    <div class="dept-card">
+      <div class="dept-name">産婦人科</div>
+      <div class="dept-desc">婦人科疾患の診察・検診・相談に対応しています。</div>
+      <span class="dept-tag">火・木</span>
+    </div>
+    <div class="dept-card">
+      <div class="dept-name">眼科</div>
+      <div class="dept-desc">白内障・緑内障・糖尿病性網膜症などを診察します。</div>
+      <span class="dept-tag">月・水</span>
+    </div>
+    <div class="dept-card">
+      <div class="dept-name">耳鼻咽喉科</div>
+      <div class="dept-desc">耳・鼻・のどの疾患全般の診察・処置を行います。</div>
+      <span class="dept-tag">火・金</span>
+    </div>
+    <div class="dept-card">
+      <div class="dept-name">リハビリテーション科</div>
+      <div class="dept-desc">理学・作業・言語療法による機能回復を支援します。</div>
+      <span class="dept-tag">月〜金</span>
+    </div>
+  </div>
+</section>
+
+<section class="news-section">
+  <div class="sec-header">
+    <div class="sec-label">News</div>
+    <div class="sec-title">お知らせ・新着情報</div>
+    <div class="sec-line"></div>
+  </div>
+  <div class="news-list">
+    <div class="news-item">
+      <span class="news-date">2025.04.15</span>
+      <span class="news-cat cat-notice">重要</span>
+      <span class="news-title">年末年始（12月28日〜1月3日）の診療体制についてのご案内</span>
+    </div>
+    <div class="news-item">
+      <span class="news-date">2025.04.10</span>
+      <span class="news-cat cat-info">お知らせ</span>
+      <span class="news-title">インフルエンザ予防接種の受付を開始いたしました（要事前予約）</span>
+    </div>
+    <div class="news-item">
+      <span class="news-date">2025.04.01</span>
+      <span class="news-cat cat-info">お知らせ</span>
+      <span class="news-title">令和7年度 診療担当医師表を更新しました</span>
+    </div>
+    <div class="news-item">
+      <span class="news-date">2025.03.20</span>
+      <span class="news-cat cat-event">イベント</span>
+      <span class="news-title">健康教室「生活習慣病を知ろう」開催のご案内（4月12日）</span>
+    </div>
+    <div class="news-item">
+      <span class="news-date">2025.03.05</span>
+      <span class="news-cat cat-info">お知らせ</span>
+      <span class="news-title">駐車場工事に伴う一部通行規制について（3月1日〜4月30日）</span>
+    </div>
+  </div>
+</section>
+
+<section class="access-section">
+  <div class="sec-header">
+    <div class="sec-label">Access</div>
+    <div class="sec-title">アクセス・所在地</div>
+    <div class="sec-line"></div>
+  </div>
+  <div class="access-grid">
+    <div>
+      <div class="access-info-group">
+        <div class="access-info-label">所在地</div>
+        <div class="access-info-val">〒863-1901<br>熊本県天草市牛深町3050</div>
+      </div>
+      <div class="access-info-group">
+        <div class="access-info-label">電話番号</div>
+        <div class="access-info-val">0969-73-4171（代表）<br>FAX：0969-73-4174</div>
+      </div>
+      <div class="access-info-group">
+        <div class="access-info-label">診療受付時間</div>
+        <div class="access-info-val">平日 8:30〜11:30<br>土・日・祝日 休診</div>
+      </div>
+      <div class="access-info-group">
+        <div class="access-info-label">バスでお越しの場合</div>
+        <div class="access-info-val">産交バス「牛深市民病院」停留所 下車すぐ</div>
+      </div>
+    </div>
+    <a class="map-link" href="https://maps.google.com/?q=熊本県天草市牛深町3050" target="_blank" rel="noopener">
+      <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.2">
+        <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/>
+      </svg>
+      <p>Googleマップで開く</p>
+    </a>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-logo">
+    天草市立 牛深市民病院
+    <span>© 2025 Ushibuka City Hospital. All rights reserved.</span>
+  </div>
+  <div class="footer-copy">〒863-1901 熊本県天草市牛深町3050　TEL: 0969-73-4171</div>
+</footer>
+
+</body>
+</html>
