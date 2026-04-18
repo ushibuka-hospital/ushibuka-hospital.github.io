@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>アクセス | 天草市立 牛深市民病院</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300;400;600&family=Noto+Sans+JP:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+:root{--navy:#0a2342;--ocean:#1a5f7a;--sky:#4a9ebe;--foam:#e8f4f8;--sand:#f5f0e8;--text:#1a1a2e;--muted:#5a6a7a;--white:#ffffff;}
+body{font-family:'Noto Sans JP',sans-serif;color:var(--text);background:var(--white);overflow-x:hidden;}
+nav{position:sticky;top:0;z-index:100;background:rgba(10,35,66,0.97);backdrop-filter:blur(8px);display:flex;align-items:center;justify-content:space-between;padding:0 40px;height:64px;}
+.nav-logo{font-family:'Noto Serif JP',serif;font-size:15px;font-weight:600;color:var(--white);letter-spacing:0.08em;text-decoration:none;}
+.nav-logo span{font-size:10px;font-weight:300;display:block;letter-spacing:0.12em;color:rgba(255,255,255,0.55);margin-top:2px;}
+.nav-links{display:flex;}
+.nav-links a{color:rgba(255,255,255,0.8);text-decoration:none;font-size:12px;padding:0 14px;height:64px;display:flex;align-items:center;transition:all 0.2s;border-bottom:2px solid transparent;}
+.nav-links a:hover{color:var(--white);border-bottom-color:var(--sky);}
+.nav-tel a{color:var(--white);font-size:16px;font-weight:500;text-decoration:none;}
+.nav-tel span{font-size:10px;display:block;color:rgba(255,255,255,0.5);margin-top:2px;text-align:right;}
+.page-hero{background:linear-gradient(135deg,var(--navy) 0%,var(--ocean) 100%);padding:52px 60px 44px;position:relative;overflow:hidden;}
+.page-hero::after{content:'';position:absolute;bottom:0;left:0;right:0;height:4px;background:linear-gradient(90deg,var(--sky),var(--foam));}
+.breadcrumb{display:flex;gap:8px;margin-bottom:16px;}
+.breadcrumb a,.breadcrumb span{font-size:12px;color:rgba(255,255,255,0.55);text-decoration:none;}
+.breadcrumb a:hover{color:rgba(255,255,255,0.8);}
+.breadcrumb .sep{color:rgba(255,255,255,0.3);}
+.page-title{font-family:'Noto Serif JP',serif;font-size:32px;font-weight:600;color:var(--white);letter-spacing:0.04em;margin-bottom:8px;}
+.page-sub{font-size:13px;color:rgba(255,255,255,0.6);letter-spacing:0.08em;}
+.container{max-width:1000px;margin:0 auto;padding:52px 60px;}
+.sec-label{font-size:10px;letter-spacing:0.2em;color:var(--sky);text-transform:uppercase;margin-bottom:8px;}
+.sec-title{font-family:'Noto Serif JP',serif;font-size:22px;font-weight:600;color:var(--navy);margin-bottom:16px;}
+.sec-line{width:36px;height:2px;background:var(--sky);margin-bottom:32px;}
+.access-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;margin-bottom:48px;align-items:start;}
+.info-group{margin-bottom:24px;}
+.info-label{font-size:10px;letter-spacing:0.15em;color:var(--sky);margin-bottom:6px;text-transform:uppercase;}
+.info-val{font-size:14px;color:var(--text);line-height:1.9;}
+.info-val a{color:var(--ocean);text-decoration:none;}
+.info-val a:hover{text-decoration:underline;}
+.map-embed{border-radius:8px;overflow:hidden;border:0.5px solid rgba(26,95,122,0.15);}
+.map-embed iframe{width:100%;height:320px;border:none;display:block;}
+.map-btn{display:block;background:var(--ocean);color:var(--white);text-align:center;padding:12px;font-size:13px;text-decoration:none;transition:background 0.2s;letter-spacing:0.04em;}
+.map-btn:hover{background:var(--navy);}
+.route-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-bottom:48px;}
+.route-card{border:0.5px solid rgba(26,95,122,0.15);border-radius:8px;padding:24px;}
+.route-type{font-size:12px;font-weight:500;color:var(--ocean);letter-spacing:0.08em;margin-bottom:10px;}
+.route-desc{font-size:13px;color:var(--text);line-height:1.9;}
+.route-desc a{color:var(--ocean);text-decoration:none;}
+.route-desc a:hover{text-decoration:underline;}
+footer{background:#06182e;padding:36px 60px;display:flex;align-items:flex-start;justify-content:space-between;gap:40px;}
+.footer-logo{font-family:'Noto Serif JP',serif;font-size:15px;color:rgba(255,255,255,0.85);letter-spacing:0.08em;}
+.footer-logo span{font-size:10px;display:block;color:rgba(255,255,255,0.4);margin-top:4px;line-height:1.8;}
+.footer-links{display:flex;gap:24px;flex-wrap:wrap;}
+.footer-links a{font-size:12px;color:rgba(255,255,255,0.5);text-decoration:none;transition:color 0.2s;}
+.footer-links a:hover{color:rgba(255,255,255,0.8);}
+@media(max-width:768px){nav{padding:0 16px;}.nav-links{display:none;}.page-hero{padding:36px 20px 28px;}.page-title{font-size:22px;}.container{padding:36px 20px;}.access-grid{grid-template-columns:1fr;}.route-grid{grid-template-columns:1fr;}footer{padding:24px 16px;flex-direction:column;gap:16px;}}
+</style>
+</head>
+<body>
+<nav>
+  <a href="/index.html" class="nav-logo">天草市立 牛深市民病院<span>USHIBUKA CITY HOSPITAL</span></a>
+  <div class="nav-links">
+    <a href="/about.html">病院のご案内</a><a href="/diagnosis.html">外来のご案内</a><a href="/hospitalization.html">入院・面会</a><a href="/divisions.html">部門紹介</a><a href="/info.html">お知らせ</a><a href="/recruit.html">採用情報</a>
+  </div>
+  <div class="nav-tel"><a href="tel:0969734171">0969-73-4171</a><span>代表電話（24時間救急対応）</span></div>
+</nav>
+<div class="page-hero">
+  <div class="breadcrumb"><a href="/index.html">ホーム</a><span class="sep">›</span><span>アクセス</span></div>
+  <div class="page-title">アクセス・所在地</div>
+  <div class="page-sub">Access &amp; Location</div>
+</div>
+<div class="container">
+  <div class="sec-label">Location</div>
+  <div class="sec-title">所在地・連絡先</div>
+  <div class="sec-line"></div>
+  <div class="access-grid">
+    <div>
+      <div class="info-group"><div class="info-label">所在地</div><div class="info-val">〒863-1901<br>熊本県天草市牛深町3050</div></div>
+      <div class="info-group"><div class="info-label">電話・FAX</div><div class="info-val">TEL：<a href="tel:0969734171">0969-73-4171</a>（代表・24時間救急対応）<br>FAX：0969-73-4174</div></div>
+      <div class="info-group"><div class="info-label">外来受付時間</div><div class="info-val">平日 8:00〜11:30<br>土曜 8:30〜12:00<br>日曜・祝日 休診<br>※内科は平日14:00〜17:00も受付</div></div>
+      <div class="info-group"><div class="info-label">面会時間</div><div class="info-val">14:00〜19:00（全日）</div></div>
+      <div class="info-group"><div class="info-label">駐車場</div><div class="info-val">無料駐車場あり</div></div>
+    </div>
+    <div>
+      <div class="map-embed">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3335.5!2d130.0367!3d32.1942!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2z5aSn6Imv5biC56uL54Sw5biC5rCj55S6!5e0!3m2!1sja!2sjp!4v1234567890"
+          allowfullscreen="" loading="lazy">
+        </iframe>
+      </div>
+      <a class="map-btn" href="https://maps.google.com/?q=熊本県天草市牛深町3050+天草市立牛深市民病院" target="_blank" rel="noopener">Googleマップで開く</a>
+    </div>
+  </div>
+
+  <div class="sec-label">Access</div>
+  <div class="sec-title">交通アクセス</div>
+  <div class="sec-line"></div>
+  <div class="route-grid">
+    <div class="route-card">
+      <div class="route-type">市内バス</div>
+      <div class="route-desc">産交バス「牛深市民病院」停留所 下車すぐ。<br>出発バス停と到着バス停に「牛深市民病院」と入力して検索してください。<br><br><a href="http://www.kyusanko.co.jp/sankobus/rosen/bt62t233.php?Tei_Cd=000736" target="_blank" rel="noopener">産交バス時刻表はこちら</a></div>
+    </div>
+    <div class="route-card">
+      <div class="route-type">天草空港から</div>
+      <div class="route-desc">天草空港より車で約1時間。<br><br><a href="https://amx.co.jp/" target="_blank" rel="noopener">天草エアラインホームページ</a></div>
+    </div>
+    <div class="route-card">
+      <div class="route-type">熊本空港から</div>
+      <div class="route-desc">熊本空港より車で約3時間。<br>熊本市内から国道266号を経由してお越しください。</div>
+    </div>
+    <div class="route-card">
+      <div class="route-type">新幹線・フェリー利用</div>
+      <div class="route-desc">新幹線出水駅よりシャトルバス＆フェリーの行路もございます。<br>鹿児島空港からバスで出水駅へのルートも利用可能です。<br><br><a href="https://ezax.co.jp/" target="_blank" rel="noopener">三和フェリーホームページ</a></div>
+    </div>
+  </div>
+</div>
+<footer>
+  <div class="footer-logo">天草市立 牛深市民病院<span>〒863-1901 熊本県天草市牛深町3050<br>TEL: 0969-73-4171　FAX: 0969-73-4174<br>© 2025 Ushibuka City Hospital. All rights reserved.</span></div>
+  <div class="footer-links"><a href="/about.html">病院のご案内</a><a href="/diagnosis.html">外来のご案内</a><a href="/hospitalization.html">入院・面会</a><a href="/divisions.html">部門紹介</a><a href="/info.html">お知らせ</a><a href="/recruit.html">採用情報</a><a href="/contact.html">お問い合わせ</a></div>
+</footer>
+</body>
+</html>

@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>部門のご紹介 | 天草市立 牛深市民病院</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300;400;600&family=Noto+Sans+JP:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+:root{--navy:#0a2342;--ocean:#1a5f7a;--sky:#4a9ebe;--foam:#e8f4f8;--sand:#f5f0e8;--text:#1a1a2e;--muted:#5a6a7a;--white:#ffffff;}
+body{font-family:'Noto Sans JP',sans-serif;color:var(--text);background:var(--white);overflow-x:hidden;}
+nav{position:sticky;top:0;z-index:100;background:rgba(10,35,66,0.97);backdrop-filter:blur(8px);display:flex;align-items:center;justify-content:space-between;padding:0 40px;height:64px;}
+.nav-logo{font-family:'Noto Serif JP',serif;font-size:15px;font-weight:600;color:var(--white);letter-spacing:0.08em;text-decoration:none;}
+.nav-logo span{font-size:10px;font-weight:300;display:block;letter-spacing:0.12em;color:rgba(255,255,255,0.55);margin-top:2px;}
+.nav-links{display:flex;}
+.nav-links a{color:rgba(255,255,255,0.8);text-decoration:none;font-size:12px;padding:0 14px;height:64px;display:flex;align-items:center;transition:all 0.2s;border-bottom:2px solid transparent;}
+.nav-links a:hover,.nav-links a.active{color:var(--white);border-bottom-color:var(--sky);}
+.nav-tel a{color:var(--white);font-size:16px;font-weight:500;text-decoration:none;}
+.nav-tel span{font-size:10px;display:block;color:rgba(255,255,255,0.5);margin-top:2px;text-align:right;}
+.page-hero{background:linear-gradient(135deg,var(--navy) 0%,var(--ocean) 100%);padding:52px 60px 44px;position:relative;overflow:hidden;}
+.page-hero::after{content:'';position:absolute;bottom:0;left:0;right:0;height:4px;background:linear-gradient(90deg,var(--sky),var(--foam));}
+.breadcrumb{display:flex;gap:8px;margin-bottom:16px;}
+.breadcrumb a,.breadcrumb span{font-size:12px;color:rgba(255,255,255,0.55);text-decoration:none;}
+.breadcrumb a:hover{color:rgba(255,255,255,0.8);}
+.breadcrumb .sep{color:rgba(255,255,255,0.3);}
+.page-title{font-family:'Noto Serif JP',serif;font-size:32px;font-weight:600;color:var(--white);letter-spacing:0.04em;margin-bottom:8px;}
+.page-sub{font-size:13px;color:rgba(255,255,255,0.6);letter-spacing:0.08em;}
+.container{max-width:1000px;margin:0 auto;padding:52px 60px;}
+.sec-label{font-size:10px;letter-spacing:0.2em;color:var(--sky);text-transform:uppercase;margin-bottom:8px;}
+.sec-title{font-family:'Noto Serif JP',serif;font-size:22px;font-weight:600;color:var(--navy);margin-bottom:16px;}
+.sec-line{width:36px;height:2px;background:var(--sky);margin-bottom:32px;}
+.division-list{display:flex;flex-direction:column;gap:20px;}
+.division-card{border:0.5px solid rgba(26,95,122,0.15);border-radius:12px;overflow:hidden;transition:all 0.2s;}
+.division-card:hover{border-color:var(--sky);transform:translateY(-2px);}
+.division-header{background:var(--foam);padding:18px 24px;display:flex;align-items:center;gap:14px;border-bottom:0.5px solid rgba(26,95,122,0.1);}
+.division-icon{width:40px;height:40px;border-radius:50%;background:var(--white);border:0.5px solid rgba(26,95,122,0.15);display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.division-icon svg{width:20px;height:20px;}
+.division-name{font-size:15px;font-weight:500;color:var(--navy);}
+.division-body{padding:18px 24px;font-size:13px;color:var(--muted);line-height:1.9;}
+.division-body ul{list-style:none;display:grid;grid-template-columns:repeat(2,1fr);gap:6px;margin-top:10px;}
+.division-body li{display:flex;gap:8px;align-items:flex-start;font-size:12px;}
+.division-body li::before{content:'';width:4px;height:4px;border-radius:50%;background:var(--sky);flex-shrink:0;margin-top:6px;}
+footer{background:#06182e;padding:36px 60px;display:flex;align-items:flex-start;justify-content:space-between;gap:40px;}
+.footer-logo{font-family:'Noto Serif JP',serif;font-size:15px;color:rgba(255,255,255,0.85);letter-spacing:0.08em;}
+.footer-logo span{font-size:10px;display:block;color:rgba(255,255,255,0.4);margin-top:4px;line-height:1.8;}
+.footer-links{display:flex;gap:24px;flex-wrap:wrap;}
+.footer-links a{font-size:12px;color:rgba(255,255,255,0.5);text-decoration:none;transition:color 0.2s;}
+.footer-links a:hover{color:rgba(255,255,255,0.8);}
+@media(max-width:768px){nav{padding:0 16px;}.nav-links{display:none;}.page-hero{padding:36px 20px 28px;}.page-title{font-size:22px;}.container{padding:36px 20px;}.division-body ul{grid-template-columns:1fr;}footer{padding:24px 16px;flex-direction:column;gap:16px;}}
+</style>
+</head>
+<body>
+<nav>
+  <a href="/index.html" class="nav-logo">天草市立 牛深市民病院<span>USHIBUKA CITY HOSPITAL</span></a>
+  <div class="nav-links">
+    <a href="/about.html">病院のご案内</a>
+    <a href="/diagnosis.html">外来のご案内</a>
+    <a href="/hospitalization.html">入院・面会</a>
+    <a href="/divisions.html" class="active">部門紹介</a>
+    <a href="/info.html">お知らせ</a>
+    <a href="/recruit.html">採用情報</a>
+  </div>
+  <div class="nav-tel"><a href="tel:0969734171">0969-73-4171</a><span>代表電話（24時間救急対応）</span></div>
+</nav>
+<div class="page-hero">
+  <div class="breadcrumb"><a href="/index.html">ホーム</a><span class="sep">›</span><span>部門のご紹介</span></div>
+  <div class="page-title">部門のご紹介</div>
+  <div class="page-sub">Departments &amp; Services</div>
+</div>
+<div class="container">
+  <div class="sec-label">Departments</div>
+  <div class="sec-title">各部門のご案内</div>
+  <div class="sec-line"></div>
+  <div class="division-list">
+    <div class="division-card">
+      <div class="division-header">
+        <div class="division-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#1a5f7a" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg></div>
+        <div class="division-name">放射線室</div>
+      </div>
+      <div class="division-body">レントゲン・CT・MRIなどの画像診断装置を用いて、疾患の診断・治療支援を行います。専門の診療放射線技師が安全・迅速に対応します。<ul><li>一般X線撮影（レントゲン）</li><li>CT検査</li><li>MRI検査</li><li>骨密度測定</li></ul></div>
+    </div>
+    <div class="division-card">
+      <div class="division-header">
+        <div class="division-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#1a5f7a" stroke-width="1.5"><path d="M18 8h1a4 4 0 010 8h-1"/><path d="M2 8h16v9a4 4 0 01-4 4H6a4 4 0 01-4-4V8z"/><line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/></svg></div>
+        <div class="division-name">リハビリテーション室</div>
+      </div>
+      <div class="division-body">理学療法士・作業療法士・言語聴覚士が連携し、患者様の機能回復と生活の質向上を目指したリハビリテーションを提供します。令和5年4月より言語聴覚士を配置しました。<ul><li>理学療法（PT）</li><li>作業療法（OT）</li><li>言語聴覚療法（ST）</li><li>物理療法</li></ul></div>
+    </div>
+    <div class="division-card">
+      <div class="division-header">
+        <div class="division-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#1a5f7a" stroke-width="1.5"><path d="M9 3H5a2 2 0 00-2 2v4m6-6h10a2 2 0 012 2v4M9 3v18m0 0h10a2 2 0 002-2V9M9 21H5a2 2 0 01-2-2V9m0 0h18"/></svg></div>
+        <div class="division-name">検査室</div>
+      </div>
+      <div class="division-body">臨床検査技師が各種検査を実施し、診断・治療の支援を行います。迅速かつ精度の高い検査結果を提供します。<ul><li>血液・生化学検査</li><li>尿・便検査</li><li>細菌・微生物検査</li><li>心電図・生理機能検査</li></ul></div>
+    </div>
+    <div class="division-card">
+      <div class="division-header">
+        <div class="division-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#1a5f7a" stroke-width="1.5"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></div>
+        <div class="division-name">内視鏡室</div>
+      </div>
+      <div class="division-body">上部消化管（胃・食道・十二指腸）および下部消化管（大腸）の内視鏡検査・治療を行います。苦痛の少ない検査を心がけています。<ul><li>胃カメラ（上部消化管内視鏡）</li><li>大腸カメラ（下部消化管内視鏡）</li><li>内視鏡的ポリープ切除術</li><li>組織生検</li></ul></div>
+    </div>
+    <div class="division-card">
+      <div class="division-header">
+        <div class="division-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#1a5f7a" stroke-width="1.5"><path d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"/></svg></div>
+        <div class="division-name">薬局</div>
+      </div>
+      <div class="division-body">医師の処方に基づき調剤を行い、患者様に安全・適切にお薬をお届けします。服薬指導・薬の説明も丁寧に行います。<ul><li>入院患者への調剤・与薬管理</li><li>服薬指導・薬剤情報提供</li><li>副作用モニタリング</li><li>持参薬確認</li></ul></div>
+    </div>
+    <div class="division-card">
+      <div class="division-header">
+        <div class="division-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#1a5f7a" stroke-width="1.5"><path d="M12 2a10 10 0 100 20A10 10 0 0012 2z"/><path d="M12 6v6l4 2"/></svg></div>
+        <div class="division-name">栄養管理室</div>
+      </div>
+      <div class="division-body">管理栄養士が患者様の病態・栄養状態に合わせた食事を提供し、栄養指導を通じて回復をサポートします。<ul><li>入院患者への治療食提供</li><li>栄養アセスメント</li><li>個別栄養指導</li><li>糖尿病・腎臓病食の対応</li></ul></div>
+    </div>
+    <div class="division-card">
+      <div class="division-header">
+        <div class="division-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#1a5f7a" stroke-width="1.5"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg></div>
+        <div class="division-name">透析室</div>
+      </div>
+      <div class="division-body">慢性腎不全患者様の人工透析療法を実施します。快適で安全な透析環境を整え、長期的な透析治療を支援します。<ul><li>血液透析（HD）</li><li>透析患者の日常管理</li><li>シャント管理</li><li>月〜土曜対応</li></ul></div>
+    </div>
+    <div class="division-card">
+      <div class="division-header">
+        <div class="division-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#1a5f7a" stroke-width="1.5"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg></div>
+        <div class="division-name">看護課</div>
+      </div>
+      <div class="division-body">患者様の療養生活を24時間体制でサポートします。チーム医療の中核として、安全で質の高い看護を提供します。<ul><li>入院・外来看護</li><li>夜間・救急看護</li><li>退院支援・在宅調整</li><li>感染管理・褥瘡対策</li></ul></div>
+    </div>
+  </div>
+</div>
+<footer>
+  <div class="footer-logo">天草市立 牛深市民病院<span>〒863-1901 熊本県天草市牛深町3050<br>TEL: 0969-73-4171　FAX: 0969-73-4174<br>© 2025 Ushibuka City Hospital. All rights reserved.</span></div>
+  <div class="footer-links"><a href="/about.html">病院のご案内</a><a href="/diagnosis.html">外来のご案内</a><a href="/hospitalization.html">入院・面会</a><a href="/divisions.html">部門紹介</a><a href="/info.html">お知らせ</a><a href="/recruit.html">採用情報</a><a href="/contact.html">お問い合わせ</a></div>
+</footer>
+</body>
+</html>

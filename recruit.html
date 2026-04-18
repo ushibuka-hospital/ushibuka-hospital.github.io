@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>採用情報 | 天草市立 牛深市民病院</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300;400;600&family=Noto+Sans+JP:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+:root{--navy:#0a2342;--ocean:#1a5f7a;--sky:#4a9ebe;--foam:#e8f4f8;--sand:#f5f0e8;--text:#1a1a2e;--muted:#5a6a7a;--white:#ffffff;--accent:#c8832a;}
+body{font-family:'Noto Sans JP',sans-serif;color:var(--text);background:var(--white);overflow-x:hidden;}
+nav{position:sticky;top:0;z-index:100;background:rgba(10,35,66,0.97);backdrop-filter:blur(8px);display:flex;align-items:center;justify-content:space-between;padding:0 40px;height:64px;}
+.nav-logo{font-family:'Noto Serif JP',serif;font-size:15px;font-weight:600;color:var(--white);letter-spacing:0.08em;text-decoration:none;}
+.nav-logo span{font-size:10px;font-weight:300;display:block;letter-spacing:0.12em;color:rgba(255,255,255,0.55);margin-top:2px;}
+.nav-links{display:flex;}
+.nav-links a{color:rgba(255,255,255,0.8);text-decoration:none;font-size:12px;padding:0 14px;height:64px;display:flex;align-items:center;transition:all 0.2s;border-bottom:2px solid transparent;}
+.nav-links a:hover,.nav-links a.active{color:var(--white);border-bottom-color:var(--sky);}
+.nav-tel a{color:var(--white);font-size:16px;font-weight:500;text-decoration:none;}
+.nav-tel span{font-size:10px;display:block;color:rgba(255,255,255,0.5);margin-top:2px;text-align:right;}
+.page-hero{background:linear-gradient(135deg,var(--navy) 0%,var(--ocean) 100%);padding:52px 60px 44px;position:relative;overflow:hidden;}
+.page-hero::after{content:'';position:absolute;bottom:0;left:0;right:0;height:4px;background:linear-gradient(90deg,var(--sky),var(--foam));}
+.breadcrumb{display:flex;gap:8px;margin-bottom:16px;}
+.breadcrumb a,.breadcrumb span{font-size:12px;color:rgba(255,255,255,0.55);text-decoration:none;}
+.breadcrumb a:hover{color:rgba(255,255,255,0.8);}
+.breadcrumb .sep{color:rgba(255,255,255,0.3);}
+.page-title{font-family:'Noto Serif JP',serif;font-size:32px;font-weight:600;color:var(--white);letter-spacing:0.04em;margin-bottom:8px;}
+.page-sub{font-size:13px;color:rgba(255,255,255,0.6);letter-spacing:0.08em;}
+.container{max-width:1000px;margin:0 auto;padding:52px 60px;}
+.sec-label{font-size:10px;letter-spacing:0.2em;color:var(--sky);text-transform:uppercase;margin-bottom:8px;}
+.sec-title{font-family:'Noto Serif JP',serif;font-size:22px;font-weight:600;color:var(--navy);margin-bottom:16px;}
+.sec-line{width:36px;height:2px;background:var(--sky);margin-bottom:32px;}
+.appeal-box{background:var(--navy);border-radius:12px;padding:40px;margin-bottom:48px;text-align:center;}
+.appeal-title{font-family:'Noto Serif JP',serif;font-size:20px;font-weight:600;color:var(--white);margin-bottom:16px;line-height:1.7;}
+.appeal-desc{font-size:13px;color:rgba(255,255,255,0.7);line-height:2.0;max-width:560px;margin:0 auto;}
+.point-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-bottom:48px;}
+.point-card{background:var(--foam);border-radius:8px;padding:24px;text-align:center;}
+.point-num{font-family:'Noto Serif JP',serif;font-size:28px;font-weight:600;color:var(--sky);margin-bottom:8px;}
+.point-title{font-size:13px;font-weight:500;color:var(--navy);margin-bottom:6px;}
+.point-desc{font-size:11px;color:var(--muted);line-height:1.7;}
+.job-list{display:flex;flex-direction:column;gap:16px;margin-bottom:48px;}
+.job-card{border:0.5px solid rgba(26,95,122,0.15);border-radius:10px;overflow:hidden;}
+.job-header{background:var(--foam);padding:16px 24px;display:flex;justify-content:space-between;align-items:center;border-bottom:0.5px solid rgba(26,95,122,0.1);}
+.job-title{font-size:15px;font-weight:500;color:var(--navy);}
+.job-status{font-size:11px;padding:3px 10px;border-radius:20px;flex-shrink:0;}
+.status-open{background:#e8f8ee;color:#1a6a3a;}
+.status-check{background:#fef3e8;color:#7a4a1a;}
+.job-body{padding:16px 24px;}
+.job-table{width:100%;border-collapse:collapse;}
+.job-table tr{border-bottom:0.5px solid rgba(26,95,122,0.08);}
+.job-table tr:last-child{border-bottom:none;}
+.job-table th{width:110px;padding:10px 0;font-size:11px;font-weight:500;color:var(--ocean);letter-spacing:0.05em;vertical-align:top;text-align:left;}
+.job-table td{padding:10px 0 10px 12px;font-size:12px;color:var(--text);line-height:1.7;}
+.contact-box{background:var(--sand);border-radius:12px;padding:32px;text-align:center;}
+.contact-title{font-size:16px;font-weight:500;color:var(--navy);margin-bottom:12px;}
+.contact-desc{font-size:13px;color:var(--muted);line-height:1.9;margin-bottom:20px;}
+.contact-tel{font-family:'Noto Serif JP',serif;font-size:24px;font-weight:600;color:var(--navy);}
+.contact-tel a{color:var(--navy);text-decoration:none;}
+.contact-note{font-size:11px;color:var(--muted);margin-top:6px;}
+footer{background:#06182e;padding:36px 60px;display:flex;align-items:flex-start;justify-content:space-between;gap:40px;}
+.footer-logo{font-family:'Noto Serif JP',serif;font-size:15px;color:rgba(255,255,255,0.85);letter-spacing:0.08em;}
+.footer-logo span{font-size:10px;display:block;color:rgba(255,255,255,0.4);margin-top:4px;line-height:1.8;}
+.footer-links{display:flex;gap:24px;flex-wrap:wrap;}
+.footer-links a{font-size:12px;color:rgba(255,255,255,0.5);text-decoration:none;transition:color 0.2s;}
+.footer-links a:hover{color:rgba(255,255,255,0.8);}
+@media(max-width:768px){nav{padding:0 16px;}.nav-links{display:none;}.page-hero{padding:36px 20px 28px;}.page-title{font-size:22px;}.container{padding:36px 20px;}.point-grid{grid-template-columns:1fr;}.job-header{flex-direction:column;align-items:flex-start;gap:8px;}footer{padding:24px 16px;flex-direction:column;gap:16px;}}
+</style>
+</head>
+<body>
+<nav>
+  <a href="/index.html" class="nav-logo">天草市立 牛深市民病院<span>USHIBUKA CITY HOSPITAL</span></a>
+  <div class="nav-links">
+    <a href="/about.html">病院のご案内</a><a href="/diagnosis.html">外来のご案内</a><a href="/hospitalization.html">入院・面会</a><a href="/divisions.html">部門紹介</a><a href="/info.html">お知らせ</a><a href="/recruit.html" class="active">採用情報</a>
+  </div>
+  <div class="nav-tel"><a href="tel:0969734171">0969-73-4171</a><span>代表電話（24時間救急対応）</span></div>
+</nav>
+<div class="page-hero">
+  <div class="breadcrumb"><a href="/index.html">ホーム</a><span class="sep">›</span><span>採用情報</span></div>
+  <div class="page-title">採用情報</div>
+  <div class="page-sub">Recruitment</div>
+</div>
+<div class="container">
+  <div class="appeal-box">
+    <div class="appeal-title">天草の海に囲まれた環境で、<br>地域医療の最前線で働きませんか。</div>
+    <p class="appeal-desc">牛深市民病院は天草南部の中核病院として、地域の皆様の健康を24時間365日支えています。多職種が連携し、やりがいのある医療現場で一緒に働く仲間を募集しています。</p>
+  </div>
+  <div class="sec-label">Why Us</div>
+  <div class="sec-title">当院で働く魅力</div>
+  <div class="sec-line"></div>
+  <div class="point-grid">
+    <div class="point-card"><div class="point-num">01</div><div class="point-title">幅広い症例経験</div><div class="point-desc">急性期から慢性期まで幅広い症例を経験でき、地域密着型の医療を実践できます。</div></div>
+    <div class="point-card"><div class="point-num">02</div><div class="point-title">チーム医療</div><div class="point-desc">医師・看護師・コメディカルが連携し、風通しのよい職場環境で多職種協働を実践しています。</div></div>
+    <div class="point-card"><div class="point-num">03</div><div class="point-title">豊かな生活環境</div><div class="point-desc">天草の豊かな自然に囲まれ、ゆとりある生活が送れます。住宅補助についてはお問い合わせください。</div></div>
+  </div>
+  <div class="sec-label">Positions</div>
+  <div class="sec-title">募集職種</div>
+  <div class="sec-line"></div>
+  <div class="job-list">
+    <div class="job-card">
+      <div class="job-header"><div class="job-title">医師（常勤・非常勤）</div><span class="job-status status-check">お問い合わせください</span></div>
+      <div class="job-body"><table class="job-table">
+        <tr><th>募集科目</th><td>内科・外科・その他（詳細はお問い合わせください）</td></tr>
+        <tr><th>勤務形態</th><td>常勤・非常勤（週1日〜相談可）</td></tr>
+        <tr><th>勤務時間</th><td>常勤：8:00〜17:00（時間外あり）</td></tr>
+        <tr><th>待遇</th><td>天草市の給与規程に基づく。詳細はお問い合わせください。</td></tr>
+      </table></div>
+    </div>
+    <div class="job-card">
+      <div class="job-header"><div class="job-title">看護師・准看護師</div><span class="job-status status-open">随時募集中</span></div>
+      <div class="job-body"><table class="job-table">
+        <tr><th>業務内容</th><td>入院・外来・救急看護業務全般</td></tr>
+        <tr><th>勤務形態</th><td>常勤（3交代制）・非常勤</td></tr>
+        <tr><th>必要資格</th><td>看護師免許または准看護師免許</td></tr>
+        <tr><th>待遇</th><td>天草市の給与規程に基づく。各種手当あり。</td></tr>
+      </table></div>
+    </div>
+    <div class="job-card">
+      <div class="job-header"><div class="job-title">コメディカル（理学療法士・作業療法士・言語聴覚士 他）</div><span class="job-status status-check">お問い合わせください</span></div>
+      <div class="job-body"><table class="job-table">
+        <tr><th>募集職種</th><td>理学療法士・作業療法士・言語聴覚士・臨床検査技師・診療放射線技師・薬剤師・管理栄養士など</td></tr>
+        <tr><th>勤務形態</th><td>常勤・非常勤</td></tr>
+        <tr><th>必要資格</th><td>各職種の国家資格</td></tr>
+        <tr><th>待遇</th><td>天草市の給与規程に基づく。詳細はお問い合わせください。</td></tr>
+      </table></div>
+    </div>
+    <div class="job-card">
+      <div class="job-header"><div class="job-title">事務職員・給食調理員</div><span class="job-status status-check">お問い合わせください</span></div>
+      <div class="job-body"><table class="job-table">
+        <tr><th>業務内容</th><td>受付・医事業務・給食調理など</td></tr>
+        <tr><th>勤務形態</th><td>常勤・会計年度任用職員</td></tr>
+        <tr><th>必要資格</th><td>不問（職種による）</td></tr>
+        <tr><th>待遇</th><td>天草市の給与規程に基づく。</td></tr>
+      </table></div>
+    </div>
+  </div>
+  <div class="contact-box">
+    <div class="contact-title">採用に関するお問い合わせ</div>
+    <p class="contact-desc">採用に関するご質問・応募書類の送付先など、まずはお気軽にお電話ください。<br>担当者よりご案内いたします。</p>
+    <div class="contact-tel"><a href="tel:0969734171">0969-73-4171</a></div>
+    <div class="contact-note">天草市立 牛深市民病院 事務局（平日 8:30〜17:00）</div>
+  </div>
+</div>
+<footer>
+  <div class="footer-logo">天草市立 牛深市民病院<span>〒863-1901 熊本県天草市牛深町3050<br>TEL: 0969-73-4171　FAX: 0969-73-4174<br>© 2025 Ushibuka City Hospital. All rights reserved.</span></div>
+  <div class="footer-links"><a href="/about.html">病院のご案内</a><a href="/diagnosis.html">外来のご案内</a><a href="/hospitalization.html">入院・面会</a><a href="/divisions.html">部門紹介</a><a href="/info.html">お知らせ</a><a href="/recruit.html">採用情報</a><a href="/contact.html">お問い合わせ</a></div>
+</footer>
+</body>
+</html>
