@@ -50,24 +50,55 @@ nav {
 .page-title { font-family: 'Noto Serif JP', serif; font-size: 32px; font-weight: 600; color: #fff; margin-bottom: 8px; }
 .page-sub { font-size: 13px; color: rgba(255,255,255,0.6); letter-spacing: 0.08em; }
 
+/* ページ内ナビ */
+.page-nav {
+  background: var(--foam); border-bottom: 0.5px solid rgba(26,95,122,0.15);
+  padding: 0 60px; display: flex; gap: 0;
+}
+.page-nav a {
+  font-size: 13px; color: var(--muted); text-decoration: none;
+  padding: 14px 20px; border-bottom: 2px solid transparent; transition: all 0.2s;
+  white-space: nowrap;
+}
+.page-nav a:hover { color: var(--ocean); border-bottom-color: var(--sky); }
+
 .container { max-width: 1000px; margin: 0 auto; padding: 52px 60px; }
 
 .sec-label { font-size: 10px; letter-spacing: 0.2em; color: var(--sky); text-transform: uppercase; margin-bottom: 8px; }
 .sec-title { font-family: 'Noto Serif JP', serif; font-size: 22px; font-weight: 600; color: var(--navy); margin-bottom: 16px; }
 .sec-line { width: 36px; height: 2px; background: var(--sky); margin-bottom: 32px; }
 
+/* 病院理念 */
 .phil-box {
   background: var(--navy); border-radius: 12px; padding: 44px;
-  margin-bottom: 52px; text-align: center;
+  margin-bottom: 56px; text-align: center;
 }
 .phil-label { font-size: 10px; letter-spacing: 0.2em; color: var(--sky); text-transform: uppercase; margin-bottom: 14px; }
 .phil-main {
   font-family: 'Noto Serif JP', serif; font-size: 20px; font-weight: 600;
-  color: #fff; line-height: 1.9; margin-bottom: 24px;
+  color: #fff; line-height: 2.0; margin-bottom: 24px;
 }
-.phil-body { font-size: 13px; color: rgba(255,255,255,0.65); line-height: 2.0; max-width: 560px; margin: 0 auto; }
+.phil-body { font-size: 13px; color: rgba(255,255,255,0.65); line-height: 2.1; max-width: 580px; margin: 0 auto; }
 
-.overview-section { margin-bottom: 52px; }
+/* 院長あいさつ */
+.greeting-section { margin-bottom: 56px; }
+.greeting-box { background: var(--foam); border-radius: 12px; padding: 40px; }
+.greeting-name {
+  font-size: 16px; font-weight: 500; color: var(--navy);
+  margin-bottom: 24px; padding-bottom: 16px;
+  border-bottom: 0.5px solid rgba(26,95,122,0.15);
+}
+.greeting-body { font-size: 13px; color: var(--text); line-height: 2.1; }
+.greeting-body p { margin-bottom: 18px; }
+.greeting-body p:last-child { margin-bottom: 0; }
+.greeting-sign {
+  margin-top: 28px; padding-top: 20px;
+  border-top: 0.5px solid rgba(26,95,122,0.15);
+  text-align: right; font-size: 14px; color: var(--navy); font-weight: 500;
+}
+
+/* 病院概要テーブル */
+.overview-section { margin-bottom: 56px; }
 .overview-table { width: 100%; border-collapse: collapse; }
 .overview-table tr { border-bottom: 0.5px solid rgba(26,95,122,0.12); }
 .overview-table tr:last-child { border-bottom: none; }
@@ -79,14 +110,33 @@ nav {
 .overview-table td a { color: var(--ocean); text-decoration: none; }
 .overview-table td a:hover { text-decoration: underline; }
 
-.greeting-section { margin-bottom: 52px; }
-.greeting-box { background: var(--foam); border-radius: 12px; padding: 36px; }
-.greeting-name { font-size: 16px; font-weight: 500; color: var(--navy); margin-bottom: 20px; padding-bottom: 14px; border-bottom: 0.5px solid rgba(26,95,122,0.15); }
-.greeting-body { font-size: 13px; color: var(--text); line-height: 2.1; }
-.greeting-body p { margin-bottom: 16px; }
-.greeting-body p:last-child { margin-bottom: 0; }
+/* 病院沿革 */
+.history-section { margin-bottom: 56px; }
+.history-timeline { position: relative; }
+.history-timeline::before {
+  content: ''; position: absolute; left: 100px; top: 0; bottom: 0;
+  width: 1px; background: rgba(26,95,122,0.2);
+}
+.history-item {
+  display: flex; gap: 0; margin-bottom: 0;
+  padding: 14px 0; border-bottom: 0.5px solid rgba(26,95,122,0.08);
+  position: relative;
+}
+.history-item:last-child { border-bottom: none; }
+.history-year {
+  width: 100px; flex-shrink: 0; font-size: 12px; font-weight: 500;
+  color: var(--ocean); letter-spacing: 0.04em; line-height: 1.6; padding-right: 20px;
+  padding-top: 2px;
+}
+.history-dot {
+  width: 8px; height: 8px; border-radius: 50%; background: var(--sky);
+  flex-shrink: 0; margin-top: 5px; margin-right: 20px; position: relative; z-index: 1;
+}
+.history-content { font-size: 13px; color: var(--text); line-height: 1.8; flex: 1; }
+.history-content span { display: block; margin-top: 4px; font-size: 12px; color: var(--muted); }
 
-.divisions-section { margin-bottom: 52px; }
+/* 部門紹介 */
+.divisions-section { margin-bottom: 0; }
 .division-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
 .division-card {
   border: 0.5px solid rgba(26,95,122,0.15); border-radius: 8px; padding: 22px;
@@ -106,6 +156,7 @@ nav {
 footer {
   background: #06182e; padding: 36px 60px;
   display: flex; align-items: flex-start; justify-content: space-between; gap: 40px;
+  margin-top: 0;
 }
 .footer-logo { font-family: 'Noto Serif JP', serif; font-size: 15px; color: rgba(255,255,255,0.85); }
 .footer-logo span { font-size: 10px; display: block; color: rgba(255,255,255,0.4); margin-top: 4px; line-height: 1.8; }
@@ -118,7 +169,10 @@ footer {
   .nav-links { display: none; }
   .page-hero { padding: 36px 20px 28px; }
   .page-title { font-size: 24px; }
+  .page-nav { padding: 0 16px; overflow-x: auto; }
   .container { padding: 36px 20px; }
+  .history-timeline::before { left: 80px; }
+  .history-year { width: 80px; font-size: 11px; }
   .division-grid { grid-template-columns: 1fr 1fr; }
   footer { padding: 24px 16px; flex-direction: column; gap: 16px; }
 }
@@ -155,47 +209,114 @@ footer {
   <div class="page-sub">About Our Hospital</div>
 </div>
 
+<div class="page-nav">
+  <a href="#philosophy">病院理念</a>
+  <a href="#greeting">院長あいさつ</a>
+  <a href="#overview">病院概要</a>
+  <a href="#history">病院沿革</a>
+  <a href="#divisions">院内部門</a>
+</div>
+
 <div class="container">
 
   <!-- 病院理念 -->
-  <div class="phil-box">
-    <div class="phil-label">Philosophy</div>
-    <div class="phil-main">
-      公平・公正な医療を提供し、<br>
-      地域住民の健康の維持・増進を図り、<br>
-      地域の発展に貢献する。
+  <div id="philosophy" style="padding-top: 8px;">
+    <div class="phil-box">
+      <div class="phil-label">Philosophy</div>
+      <div class="phil-main">
+        公平・公正な医療を提供し、<br>
+        地域住民の健康の維持・増進を図り、<br>
+        地域の発展に貢献する。
+      </div>
+      <p class="phil-body">
+        本院は熊本県天草市南部の中核病院として緊急医療をはじめ地域医療を担っており、
+        市民の皆様がこの地域で安心して暮らせるよう、より質の高い医療サービスを提供したいと考えております。
+      </p>
     </div>
-    <p class="phil-body">
-      本院は熊本県天草市南部の中核病院として緊急医療をはじめ地域医療を担っており、
-      市民の皆様がこの地域で安心して暮らせるよう、より質の高い医療サービスを提供したいと考えております。
-    </p>
+  </div>
+
+  <!-- 院長あいさつ -->
+  <div id="greeting" class="greeting-section">
+    <div class="sec-label">Director's Message</div>
+    <div class="sec-title">院長あいさつ</div>
+    <div class="sec-line"></div>
+    <div class="greeting-box">
+      <div class="greeting-name">院長　松﨑 法成（まつざき ほうせい）</div>
+      <div class="greeting-body">
+        <p>
+          牛深地域は天草下島の最南端に位置し、人口約1.1万人、海は美しく自然豊かな町です。
+          「牛深ハイヤ節」で知られているとおり昔から漁業を基幹産業とした全国に名を馳せた港町であります。
+          海鮮類は言うまでもなく一級品で、全国的に見てもひけを取らないと実感しています。
+          当院は炭鉱関係診療所として開設され、その後変遷を経て平成14年3月に現在の場所に新築移転されております。
+          平成18年の市町合併により天草市となり、現在は天草市立牛深市民病院となっています。
+        </p>
+        <p>
+          南天草地域（旧牛深市域）の中核病院として93床（一般60床、療養33床）を有し、
+          救急医療から高齢者の療養介護・訪問診療・地域の保健行政まで地域に密接した医療を提供しています。
+        </p>
+        <p>
+          診療科は内科・外科・整形外科・小児科・産婦人科・耳鼻咽喉科・眼科・リハビリテーション科・
+          人工透析内科・救急科・麻酔科・循環器内科の12科を標榜し、付属施設としてリハビリセンター・
+          透析室（18ベッド）を有しています。
+          眼科、耳鼻科、人工透析は熊本大学から非常勤医師派遣によって週1〜2日の診療で維持しております。
+          産婦人科は、天草市内の開業医の先生に協力いただき、月に2日間診療を行なっています。
+        </p>
+        <p>
+          当院も全国の僻地医療機関の例にもれず人手不足解消が最大の課題となっています。
+          最先端の医療も重要ですが、地域に根を下ろし住民に直接接する地域医療も重要であると考えます。
+          当院から近くの基幹病院まで車で1時間程かかりますので、当院が南天草地域の救急を含めた医療を
+          担っていかなければなりません。住民の皆様にご支援いただきながら、行政・病院職員が協力・自覚して
+          運営に当たっています。
+        </p>
+        <p>
+          市民の皆様へ安全でより質の高い医療サービスを提供するという、市民病院としての使命を果たすために
+          当面の重要課題は十分な医師確保と考えています。確かに僻地で都会の華やかさはありませんが、
+          仕事場として面白くやりがいのあるところだと思っています。
+          自然豊かで、海は綺麗、魚はうまい、釣りやスキューバダイビングもできます。
+          このホームページを通して牛深市民病院を知って頂き、ご協力を頂ければ幸いです。
+        </p>
+      </div>
+      <div class="greeting-sign">院長　松﨑 法成</div>
+    </div>
   </div>
 
   <!-- 病院概要 -->
-  <div class="overview-section">
+  <div id="overview" class="overview-section">
     <div class="sec-label">Overview</div>
     <div class="sec-title">病院概要</div>
     <div class="sec-line"></div>
     <table class="overview-table">
       <tr>
-        <th>病院名</th>
+        <th>病院名称</th>
         <td>天草市立 牛深市民病院</td>
       </tr>
       <tr>
-        <th>所在地</th>
-        <td>〒863-1901　熊本県天草市牛深町3050</td>
+        <th>院長</th>
+        <td>松﨑 法成（まつざき ほうせい）</td>
       </tr>
       <tr>
-        <th>電話番号</th>
+        <th>住所</th>
+        <td>〒863-1901　熊本県天草市牛深町3050番地</td>
+      </tr>
+      <tr>
+        <th>電話</th>
         <td><a href="tel:0969734171">0969-73-4171</a>（代表・24時間救急対応）</td>
       </tr>
       <tr>
-        <th>FAX番号</th>
+        <th>FAX</th>
         <td>0969-73-4174</td>
       </tr>
       <tr>
-        <th>診療科目</th>
-        <td>内科・外科・整形外科・小児科・産婦人科・眼科・耳鼻咽喉科・リハビリテーション科・人工透析内科・救急科・麻酔科・循環器内科</td>
+        <th>診療科</th>
+        <td>内科・外科・整形外科・小児科・産婦人科・耳鼻咽喉科・眼科・リハビリテーション科・人工透析内科・救急科・麻酔科・循環器内科（12科）</td>
+      </tr>
+      <tr>
+        <th>病床数</th>
+        <td>93床（一般病床60床・療養病床33床）</td>
+      </tr>
+      <tr>
+        <th>入院基本料</th>
+        <td>10対1　入院基本料</td>
       </tr>
       <tr>
         <th>外来受付時間</th>
@@ -212,41 +333,116 @@ footer {
         <th>開設者</th>
         <td>天草市</td>
       </tr>
-      <tr>
-        <th>公式サイト</th>
-        <td><a href="https://ushp.jp" target="_blank" rel="noopener">https://ushp.jp</a></td>
-      </tr>
     </table>
   </div>
 
-  <!-- 院長あいさつ -->
-  <div class="greeting-section">
-    <div class="sec-label">Director</div>
-    <div class="sec-title">院長あいさつ</div>
+  <!-- 病院沿革 -->
+  <div id="history" class="history-section">
+    <div class="sec-label">History</div>
+    <div class="sec-title">病院沿革</div>
     <div class="sec-line"></div>
-    <div class="greeting-box">
-      <div class="greeting-name">院長　松﨑 法成（まつざき ほうせい）</div>
-      <div class="greeting-body">
-        <p>
-          牛深地域は天草下島の最南端に位置し、人口約1.1万人、海は美しく自然豊かな町です。
-          「牛深ハイヤ節」で知られているとおり昔から漁業を基幹産業とした全国に名を馳せた港町であります。
-          海鮮類は言うまでもなく一級品で、全国的に見てもひけを取らないと実感しています。
-        </p>
-        <p>
-          当院は地域の皆様の健康を守る中核病院として、救急医療から慢性期まで幅広い医療を提供しております。
-          内科・外科・整形外科をはじめ12診療科を標榜し、常勤医師6名・多数の非常勤医師・看護師・コメディカルスタッフが一丸となって
-          地域医療を支えています。
-        </p>
-        <p>
-          これからも公平・公正な医療を提供し、地域の皆様が安心して暮らせるよう、
-          スタッフ一同取り組んでまいります。どうぞよろしくお願いいたします。
-        </p>
+    <div class="history-timeline">
+      <div class="history-item">
+        <div class="history-year">設立年度不詳</div>
+        <div class="history-dot"></div>
+        <div class="history-content">採炭企業の産業復興公団診療所として設立</div>
+      </div>
+      <div class="history-item">
+        <div class="history-year">昭和25年10月</div>
+        <div class="history-dot"></div>
+        <div class="history-content">魚貫村立診療所と改称（内科・外科を標榜）</div>
+      </div>
+      <div class="history-item">
+        <div class="history-year">昭和26年4月</div>
+        <div class="history-dot"></div>
+        <div class="history-content">魚貫村立病院として開設（病床20床）</div>
+      </div>
+      <div class="history-item">
+        <div class="history-year">昭和29年7月</div>
+        <div class="history-dot"></div>
+        <div class="history-content">5ヶ町村合併により牛深市民病院と改称（産婦人科増設）</div>
+      </div>
+      <div class="history-item">
+        <div class="history-year">昭和33年4月</div>
+        <div class="history-dot"></div>
+        <div class="history-content">増築により53床に増床認可</div>
+      </div>
+      <div class="history-item">
+        <div class="history-year">昭和38年4月</div>
+        <div class="history-dot"></div>
+        <div class="history-content">整形外科増設</div>
+      </div>
+      <div class="history-item">
+        <div class="history-year">昭和44年4月</div>
+        <div class="history-dot"></div>
+        <div class="history-content">
+          牛深市牛深町1128-1に移転開院・牛深市民病院と改称
+          <span>内科・外科・整形外科・産婦人科・小児科・循環器科・眼科・耳鼻咽喉科の8科を標榜。109床に増床認可</span>
+        </div>
+      </div>
+      <div class="history-item">
+        <div class="history-year">昭和44年10月</div>
+        <div class="history-dot"></div>
+        <div class="history-content">150床に増床認可</div>
+      </div>
+      <div class="history-item">
+        <div class="history-year">昭和46年10月</div>
+        <div class="history-dot"></div>
+        <div class="history-content">牛深市民病院隣接地に伝染病隔離病舎新設（15床認可）</div>
+      </div>
+      <div class="history-item">
+        <div class="history-year">昭和58年4月</div>
+        <div class="history-dot"></div>
+        <div class="history-content">伝染病床15床を8床に変更</div>
+      </div>
+      <div class="history-item">
+        <div class="history-year">平成9年5月</div>
+        <div class="history-dot"></div>
+        <div class="history-content">牛深市老人訪問看護ステーション設置</div>
+      </div>
+      <div class="history-item">
+        <div class="history-year">平成14年3月</div>
+        <div class="history-dot"></div>
+        <div class="history-content">
+          牛深市牛深町3050番地に移転開院（現在地）
+          <span>内科・外科・整形外科・産婦人科・小児科・眼科・耳鼻咽喉科の7科を標榜（一般病床100床・療養病床50床）</span>
+        </div>
+      </div>
+      <div class="history-item">
+        <div class="history-year">平成17年10月</div>
+        <div class="history-dot"></div>
+        <div class="history-content">一般病床105床・療養病床45床に変更</div>
+      </div>
+      <div class="history-item">
+        <div class="history-year">平成18年3月</div>
+        <div class="history-dot"></div>
+        <div class="history-content">天草市誕生により天草市立牛深市民病院に改称</div>
+      </div>
+      <div class="history-item">
+        <div class="history-year">平成22年4月</div>
+        <div class="history-dot"></div>
+        <div class="history-content">診療科にリハビリテーション科・人工透析内科を追加</div>
+      </div>
+      <div class="history-item">
+        <div class="history-year">平成29年4月</div>
+        <div class="history-dot"></div>
+        <div class="history-content">148床（一般病床105床・療養病床43床）に変更</div>
+      </div>
+      <div class="history-item">
+        <div class="history-year">令和3年4月</div>
+        <div class="history-dot"></div>
+        <div class="history-content">118床（一般病床85床・療養病床33床）に変更</div>
+      </div>
+      <div class="history-item">
+        <div class="history-year">令和7年4月</div>
+        <div class="history-dot"></div>
+        <div class="history-content">93床（一般病床60床・療養病床33床）に変更</div>
       </div>
     </div>
   </div>
 
-  <!-- 部門紹介 -->
-  <div class="divisions-section">
+  <!-- 院内部門 -->
+  <div id="divisions" class="divisions-section">
     <div class="sec-label">Departments</div>
     <div class="sec-title">院内部門のご紹介</div>
     <div class="sec-line"></div>
