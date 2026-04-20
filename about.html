@@ -6,62 +6,131 @@
 <title>病院のご案内 | 天草市立 牛深市民病院</title>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300;400;600&family=Noto+Sans+JP:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
-*{margin:0;padding:0;box-sizing:border-box;}
-:root{--navy:#0a2342;--ocean:#1a5f7a;--sky:#4a9ebe;--foam:#e8f4f8;--sand:#f5f0e8;--text:#1a1a2e;--muted:#5a6a7a;--white:#ffffff;}
-body{font-family:'Noto Sans JP',sans-serif;color:var(--text);background:var(--white);overflow-x:hidden;}
-nav{position:sticky;top:0;z-index:100;background:rgba(10,35,66,0.97);backdrop-filter:blur(8px);display:flex;align-items:center;justify-content:space-between;padding:0 40px;height:64px;}
-.nav-logo{font-family:'Noto Serif JP',serif;font-size:15px;font-weight:600;color:var(--white);letter-spacing:0.08em;text-decoration:none;}
-.nav-logo span{font-size:10px;font-weight:300;display:block;letter-spacing:0.12em;color:rgba(255,255,255,0.55);margin-top:2px;}
-.nav-links{display:flex;}
-.nav-links a{color:rgba(255,255,255,0.8);text-decoration:none;font-size:12px;padding:0 14px;height:64px;display:flex;align-items:center;transition:all 0.2s;border-bottom:2px solid transparent;}
-.nav-links a:hover,.nav-links a.active{color:var(--white);border-bottom-color:var(--sky);}
-.nav-tel a{color:var(--white);font-size:16px;font-weight:500;text-decoration:none;}
-.nav-tel span{font-size:10px;display:block;color:rgba(255,255,255,0.5);margin-top:2px;text-align:right;}
-.page-hero{background:linear-gradient(135deg,var(--navy) 0%,var(--ocean) 100%);padding:52px 60px 44px;position:relative;overflow:hidden;}
-.page-hero::after{content:'';position:absolute;bottom:0;left:0;right:0;height:4px;background:linear-gradient(90deg,var(--sky),var(--foam));}
-.breadcrumb{display:flex;gap:8px;margin-bottom:16px;}
-.breadcrumb a,.breadcrumb span{font-size:12px;color:rgba(255,255,255,0.55);text-decoration:none;}
-.breadcrumb a:hover{color:rgba(255,255,255,0.8);}
-.breadcrumb .sep{color:rgba(255,255,255,0.3);}
-.page-title{font-family:'Noto Serif JP',serif;font-size:32px;font-weight:600;color:var(--white);letter-spacing:0.04em;margin-bottom:8px;}
-.page-sub{font-size:13px;color:rgba(255,255,255,0.6);letter-spacing:0.08em;}
-.container{max-width:1000px;margin:0 auto;padding:52px 60px;}
-.sec-label{font-size:10px;letter-spacing:0.2em;color:var(--sky);text-transform:uppercase;margin-bottom:8px;}
-.sec-title{font-family:'Noto Serif JP',serif;font-size:22px;font-weight:600;color:var(--navy);margin-bottom:16px;}
-.sec-line{width:36px;height:2px;background:var(--sky);margin-bottom:32px;}
-.phil-box{background:var(--navy);border-radius:12px;padding:40px;margin-bottom:48px;text-align:center;}
-.phil-label{font-size:10px;letter-spacing:0.2em;color:var(--sky);text-transform:uppercase;margin-bottom:12px;}
-.phil-main{font-family:'Noto Serif JP',serif;font-size:20px;font-weight:600;color:var(--white);line-height:1.8;margin-bottom:20px;}
-.phil-body{font-size:13px;color:rgba(255,255,255,0.65);line-height:2.0;max-width:560px;margin:0 auto;}
-.info-table{width:100%;border-collapse:collapse;margin-bottom:48px;}
-.info-table tr{border-bottom:0.5px solid rgba(26,95,122,0.1);}
-.info-table tr:last-child{border-bottom:none;}
-.info-table th{width:160px;padding:16px 0;font-size:12px;font-weight:500;color:var(--ocean);letter-spacing:0.06em;vertical-align:top;text-align:left;}
-.info-table td{padding:16px 0 16px 20px;font-size:13px;color:var(--text);line-height:1.9;}
-.info-table td a{color:var(--ocean);text-decoration:none;}
-.info-table td a:hover{text-decoration:underline;}
-.greeting-box{background:var(--foam);border-radius:12px;padding:32px;margin-bottom:48px;}
-.greeting-title{font-size:16px;font-weight:500;color:var(--navy);margin-bottom:16px;padding-bottom:12px;border-bottom:0.5px solid rgba(26,95,122,0.15);}
-.greeting-body{font-size:13px;color:var(--text);line-height:2.0;}
-.division-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-bottom:48px;}
-.division-card{border:0.5px solid rgba(26,95,122,0.15);border-radius:8px;padding:20px;text-decoration:none;display:block;transition:all 0.2s;position:relative;overflow:hidden;}
-.division-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--ocean),var(--sky));transform:scaleX(0);transform-origin:left;transition:transform 0.3s;}
-.division-card:hover::before{transform:scaleX(1);}
-.division-card:hover{border-color:var(--sky);transform:translateY(-2px);}
-.dc-name{font-size:14px;font-weight:500;color:var(--navy);margin-bottom:6px;}
-.dc-desc{font-size:11px;color:var(--muted);line-height:1.6;}
-footer{background:#06182e;padding:36px 60px;display:flex;align-items:flex-start;justify-content:space-between;gap:40px;}
-.footer-logo{font-family:'Noto Serif JP',serif;font-size:15px;color:rgba(255,255,255,0.85);letter-spacing:0.08em;}
-.footer-logo span{font-size:10px;display:block;color:rgba(255,255,255,0.4);margin-top:4px;line-height:1.8;}
-.footer-links{display:flex;gap:24px;flex-wrap:wrap;}
-.footer-links a{font-size:12px;color:rgba(255,255,255,0.5);text-decoration:none;transition:color 0.2s;}
-.footer-links a:hover{color:rgba(255,255,255,0.8);}
-@media(max-width:768px){nav{padding:0 16px;}.nav-links{display:none;}.page-hero{padding:36px 20px 28px;}.page-title{font-size:22px;}.container{padding:36px 20px;}.division-grid{grid-template-columns:1fr 1fr;}footer{padding:24px 16px;flex-direction:column;gap:16px;}}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+:root {
+  --navy: #0a2342; --ocean: #1a5f7a; --sky: #4a9ebe;
+  --foam: #e8f4f8; --sand: #f5f0e8; --text: #1a1a2e;
+  --muted: #5a6a7a; --white: #ffffff;
+}
+body { font-family: 'Noto Sans JP', sans-serif; color: var(--text); background: var(--white); }
+
+nav {
+  position: sticky; top: 0; z-index: 100;
+  background: rgba(10,35,66,0.97); backdrop-filter: blur(8px);
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 0 40px; height: 64px;
+}
+.nav-logo {
+  font-family: 'Noto Serif JP', serif; font-size: 15px; font-weight: 600;
+  color: #fff; letter-spacing: 0.08em; text-decoration: none;
+}
+.nav-logo span { font-size: 10px; display: block; color: rgba(255,255,255,0.55); margin-top: 2px; }
+.nav-links { display: flex; }
+.nav-links a {
+  color: rgba(255,255,255,0.8); text-decoration: none; font-size: 12px;
+  padding: 0 14px; height: 64px; display: flex; align-items: center;
+  border-bottom: 2px solid transparent; transition: all 0.2s;
+}
+.nav-links a:hover, .nav-links a.active { color: #fff; border-bottom-color: var(--sky); }
+.nav-tel a { color: #fff; font-size: 16px; font-weight: 500; text-decoration: none; }
+.nav-tel span { font-size: 10px; display: block; color: rgba(255,255,255,0.5); margin-top: 2px; text-align: right; }
+
+.page-hero {
+  background: linear-gradient(135deg, var(--navy) 0%, var(--ocean) 100%);
+  padding: 52px 60px 44px; position: relative; overflow: hidden;
+}
+.page-hero::after {
+  content: ''; position: absolute; bottom: 0; left: 0; right: 0;
+  height: 4px; background: linear-gradient(90deg, var(--sky), var(--foam));
+}
+.breadcrumb { display: flex; gap: 8px; margin-bottom: 16px; }
+.breadcrumb a, .breadcrumb span { font-size: 12px; color: rgba(255,255,255,0.55); text-decoration: none; }
+.breadcrumb a:hover { color: rgba(255,255,255,0.85); }
+.breadcrumb .sep { color: rgba(255,255,255,0.3); }
+.page-title { font-family: 'Noto Serif JP', serif; font-size: 32px; font-weight: 600; color: #fff; margin-bottom: 8px; }
+.page-sub { font-size: 13px; color: rgba(255,255,255,0.6); letter-spacing: 0.08em; }
+
+.container { max-width: 1000px; margin: 0 auto; padding: 52px 60px; }
+
+.sec-label { font-size: 10px; letter-spacing: 0.2em; color: var(--sky); text-transform: uppercase; margin-bottom: 8px; }
+.sec-title { font-family: 'Noto Serif JP', serif; font-size: 22px; font-weight: 600; color: var(--navy); margin-bottom: 16px; }
+.sec-line { width: 36px; height: 2px; background: var(--sky); margin-bottom: 32px; }
+
+.phil-box {
+  background: var(--navy); border-radius: 12px; padding: 44px;
+  margin-bottom: 52px; text-align: center;
+}
+.phil-label { font-size: 10px; letter-spacing: 0.2em; color: var(--sky); text-transform: uppercase; margin-bottom: 14px; }
+.phil-main {
+  font-family: 'Noto Serif JP', serif; font-size: 20px; font-weight: 600;
+  color: #fff; line-height: 1.9; margin-bottom: 24px;
+}
+.phil-body { font-size: 13px; color: rgba(255,255,255,0.65); line-height: 2.0; max-width: 560px; margin: 0 auto; }
+
+.overview-section { margin-bottom: 52px; }
+.overview-table { width: 100%; border-collapse: collapse; }
+.overview-table tr { border-bottom: 0.5px solid rgba(26,95,122,0.12); }
+.overview-table tr:last-child { border-bottom: none; }
+.overview-table th {
+  width: 160px; padding: 16px 0; font-size: 12px; font-weight: 500;
+  color: var(--ocean); letter-spacing: 0.06em; vertical-align: top; text-align: left;
+}
+.overview-table td { padding: 16px 0 16px 20px; font-size: 13px; color: var(--text); line-height: 1.9; }
+.overview-table td a { color: var(--ocean); text-decoration: none; }
+.overview-table td a:hover { text-decoration: underline; }
+
+.greeting-section { margin-bottom: 52px; }
+.greeting-box { background: var(--foam); border-radius: 12px; padding: 36px; }
+.greeting-name { font-size: 16px; font-weight: 500; color: var(--navy); margin-bottom: 20px; padding-bottom: 14px; border-bottom: 0.5px solid rgba(26,95,122,0.15); }
+.greeting-body { font-size: 13px; color: var(--text); line-height: 2.1; }
+.greeting-body p { margin-bottom: 16px; }
+.greeting-body p:last-child { margin-bottom: 0; }
+
+.divisions-section { margin-bottom: 52px; }
+.division-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+.division-card {
+  border: 0.5px solid rgba(26,95,122,0.15); border-radius: 8px; padding: 22px;
+  text-decoration: none; display: block; transition: all 0.2s;
+  position: relative; overflow: hidden;
+}
+.division-card::before {
+  content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px;
+  background: linear-gradient(90deg, var(--ocean), var(--sky));
+  transform: scaleX(0); transform-origin: left; transition: transform 0.3s;
+}
+.division-card:hover::before { transform: scaleX(1); }
+.division-card:hover { border-color: var(--sky); transform: translateY(-2px); }
+.dc-name { font-size: 14px; font-weight: 500; color: var(--navy); margin-bottom: 7px; }
+.dc-desc { font-size: 11px; color: var(--muted); line-height: 1.7; }
+
+footer {
+  background: #06182e; padding: 36px 60px;
+  display: flex; align-items: flex-start; justify-content: space-between; gap: 40px;
+}
+.footer-logo { font-family: 'Noto Serif JP', serif; font-size: 15px; color: rgba(255,255,255,0.85); }
+.footer-logo span { font-size: 10px; display: block; color: rgba(255,255,255,0.4); margin-top: 4px; line-height: 1.8; }
+.footer-links { display: flex; gap: 24px; flex-wrap: wrap; }
+.footer-links a { font-size: 12px; color: rgba(255,255,255,0.5); text-decoration: none; transition: color 0.2s; }
+.footer-links a:hover { color: rgba(255,255,255,0.85); }
+
+@media (max-width: 768px) {
+  nav { padding: 0 16px; }
+  .nav-links { display: none; }
+  .page-hero { padding: 36px 20px 28px; }
+  .page-title { font-size: 24px; }
+  .container { padding: 36px 20px; }
+  .division-grid { grid-template-columns: 1fr 1fr; }
+  footer { padding: 24px 16px; flex-direction: column; gap: 16px; }
+}
 </style>
 </head>
 <body>
+
 <nav>
-  <a href="index.html" class="nav-logo">天草市立 牛深市民病院<span>USHIBUKA CITY HOSPITAL</span></a>
+  <a href="index.html" class="nav-logo">
+    天草市立 牛深市民病院
+    <span>USHIBUKA CITY HOSPITAL</span>
+  </a>
   <div class="nav-links">
     <a href="about.html" class="active">病院のご案内</a>
     <a href="diagnosis.html">外来のご案内</a>
@@ -70,17 +139,25 @@ footer{background:#06182e;padding:36px 60px;display:flex;align-items:flex-start;
     <a href="info.html">お知らせ</a>
     <a href="recruit.html">採用情報</a>
   </div>
-  <div class="nav-tel"><a href="tel:0969734171">0969-73-4171</a><span>代表電話（24時間救急対応）</span></div>
+  <div class="nav-tel">
+    <a href="tel:0969734171">0969-73-4171</a>
+    <span>代表電話（24時間救急対応）</span>
+  </div>
 </nav>
 
 <div class="page-hero">
-  <div class="breadcrumb"><a href="index.html">ホーム</a><span class="sep">›</span><span>病院のご案内</span></div>
+  <div class="breadcrumb">
+    <a href="index.html">ホーム</a>
+    <span class="sep">›</span>
+    <span>病院のご案内</span>
+  </div>
   <div class="page-title">病院のご案内</div>
   <div class="page-sub">About Our Hospital</div>
 </div>
 
 <div class="container">
 
+  <!-- 病院理念 -->
   <div class="phil-box">
     <div class="phil-label">Philosophy</div>
     <div class="phil-main">
@@ -88,81 +165,138 @@ footer{background:#06182e;padding:36px 60px;display:flex;align-items:flex-start;
       地域住民の健康の維持・増進を図り、<br>
       地域の発展に貢献する。
     </div>
-    <p class="phil-body">本院は熊本県天草市南部の中核病院として緊急医療をはじめ地域医療を担っており、市民の皆様がこの地域で安心して暮らせるよう、より質の高い医療サービスを提供したいと考えております。</p>
+    <p class="phil-body">
+      本院は熊本県天草市南部の中核病院として緊急医療をはじめ地域医療を担っており、
+      市民の皆様がこの地域で安心して暮らせるよう、より質の高い医療サービスを提供したいと考えております。
+    </p>
   </div>
 
-  <div class="sec-label">Overview</div>
-  <div class="sec-title">病院概要</div>
-  <div class="sec-line"></div>
-  <table class="info-table">
-    <tr><th>病院名</th><td>天草市立 牛深市民病院</td></tr>
-    <tr><th>所在地</th><td>〒863-1901　熊本県天草市牛深町3050</td></tr>
-    <tr><th>電話番号</th><td><a href="tel:0969734171">0969-73-4171</a>（代表・24時間救急対応）</td></tr>
-    <tr><th>FAX番号</th><td>0969-73-4174</td></tr>
-    <tr><th>診療科目</th><td>内科・外科・整形外科・小児科・産婦人科・眼科・耳鼻咽喉科・リハビリテーション科・人工透析内科・救急科・麻酔科・循環器内科</td></tr>
-    <tr><th>外来受付時間</th><td>平日 8:00〜11:30（内科は14:00〜17:00も受付）<br>土曜 8:30〜12:00　／　日曜・祝日 休診</td></tr>
-    <tr><th>面会時間</th><td>14:00〜19:00（全日）</td></tr>
-    <tr><th>開設者</th><td>天草市</td></tr>
-    <tr><th>公式ウェブサイト</th><td><a href="https://ushp.jp" target="_blank" rel="noopener">https://ushp.jp</a></td></tr>
-  </table>
+  <!-- 病院概要 -->
+  <div class="overview-section">
+    <div class="sec-label">Overview</div>
+    <div class="sec-title">病院概要</div>
+    <div class="sec-line"></div>
+    <table class="overview-table">
+      <tr>
+        <th>病院名</th>
+        <td>天草市立 牛深市民病院</td>
+      </tr>
+      <tr>
+        <th>所在地</th>
+        <td>〒863-1901　熊本県天草市牛深町3050</td>
+      </tr>
+      <tr>
+        <th>電話番号</th>
+        <td><a href="tel:0969734171">0969-73-4171</a>（代表・24時間救急対応）</td>
+      </tr>
+      <tr>
+        <th>FAX番号</th>
+        <td>0969-73-4174</td>
+      </tr>
+      <tr>
+        <th>診療科目</th>
+        <td>内科・外科・整形外科・小児科・産婦人科・眼科・耳鼻咽喉科・リハビリテーション科・人工透析内科・救急科・麻酔科・循環器内科</td>
+      </tr>
+      <tr>
+        <th>外来受付時間</th>
+        <td>
+          平日 8:00〜11:30（内科は14:00〜17:00も受付）<br>
+          土曜 8:30〜12:00　／　日曜・祝日 休診
+        </td>
+      </tr>
+      <tr>
+        <th>面会時間</th>
+        <td>14:00〜19:00（全日）</td>
+      </tr>
+      <tr>
+        <th>開設者</th>
+        <td>天草市</td>
+      </tr>
+      <tr>
+        <th>公式サイト</th>
+        <td><a href="https://ushp.jp" target="_blank" rel="noopener">https://ushp.jp</a></td>
+      </tr>
+    </table>
+  </div>
 
-  <div class="sec-label">Director</div>
-  <div class="sec-title">院長あいさつ</div>
-  <div class="sec-line"></div>
-  <div class="greeting-box">
-    <div class="greeting-title">院長　松﨑 法成</div>
-    <div class="greeting-body">
-      牛深地域は天草下島の最南端に位置し、人口約1.1万人、海は美しく自然豊かな町です。「牛深ハイヤ節」で知られているとおり昔から漁業を基幹産業とした全国に名を馳せた港町であります。海鮮類は言うまでもなく一級品で、全国的に見てもひけを取らないと実感しています。<br><br>
-      当院は地域の皆様の健康を守る中核病院として、救急医療から慢性期まで幅広い医療を提供しております。これからも公平・公正な医療を提供し、地域の皆様が安心して暮らせるよう、スタッフ一同取り組んでまいります。
+  <!-- 院長あいさつ -->
+  <div class="greeting-section">
+    <div class="sec-label">Director</div>
+    <div class="sec-title">院長あいさつ</div>
+    <div class="sec-line"></div>
+    <div class="greeting-box">
+      <div class="greeting-name">院長　松﨑 法成（まつざき ほうせい）</div>
+      <div class="greeting-body">
+        <p>
+          牛深地域は天草下島の最南端に位置し、人口約1.1万人、海は美しく自然豊かな町です。
+          「牛深ハイヤ節」で知られているとおり昔から漁業を基幹産業とした全国に名を馳せた港町であります。
+          海鮮類は言うまでもなく一級品で、全国的に見てもひけを取らないと実感しています。
+        </p>
+        <p>
+          当院は地域の皆様の健康を守る中核病院として、救急医療から慢性期まで幅広い医療を提供しております。
+          内科・外科・整形外科をはじめ12診療科を標榜し、常勤医師6名・多数の非常勤医師・看護師・コメディカルスタッフが一丸となって
+          地域医療を支えています。
+        </p>
+        <p>
+          これからも公平・公正な医療を提供し、地域の皆様が安心して暮らせるよう、
+          スタッフ一同取り組んでまいります。どうぞよろしくお願いいたします。
+        </p>
+      </div>
     </div>
   </div>
 
-  <div class="sec-label">Departments</div>
-  <div class="sec-title">院内部門のご紹介</div>
-  <div class="sec-line"></div>
-  <div class="division-grid">
-    <a href="divisions.html" class="division-card">
-      <div class="dc-name">放射線室</div>
-      <div class="dc-desc">レントゲン・CT・MRI等の画像診断を行います。</div>
-    </a>
-    <a href="divisions.html" class="division-card">
-      <div class="dc-name">リハビリテーション室</div>
-      <div class="dc-desc">理学療法士・作業療法士・言語聴覚士が機能回復を支援します。</div>
-    </a>
-    <a href="divisions.html" class="division-card">
-      <div class="dc-name">検査室</div>
-      <div class="dc-desc">血液・尿・細菌など各種臨床検査を実施します。</div>
-    </a>
-    <a href="divisions.html" class="division-card">
-      <div class="dc-name">内視鏡室</div>
-      <div class="dc-desc">上部・下部消化管内視鏡検査を行います。</div>
-    </a>
-    <a href="divisions.html" class="division-card">
-      <div class="dc-name">薬局</div>
-      <div class="dc-desc">処方薬の調剤・服薬指導を行います。</div>
-    </a>
-    <a href="divisions.html" class="division-card">
-      <div class="dc-name">栄養管理室</div>
-      <div class="dc-desc">患者様の状態に合わせた食事療法・栄養指導を行います。</div>
-    </a>
-    <a href="divisions.html" class="division-card">
-      <div class="dc-name">透析室</div>
-      <div class="dc-desc">慢性腎不全患者様の人工透析療法を実施します。</div>
-    </a>
-    <a href="divisions.html" class="division-card">
-      <div class="dc-name">看護課</div>
-      <div class="dc-desc">患者様の療養生活を24時間体制でサポートします。</div>
-    </a>
-    <a href="about.html" class="division-card">
-      <div class="dc-name">院内施設のご案内</div>
-      <div class="dc-desc">駐車場・各フロアの案内など。</div>
-    </a>
+  <!-- 部門紹介 -->
+  <div class="divisions-section">
+    <div class="sec-label">Departments</div>
+    <div class="sec-title">院内部門のご紹介</div>
+    <div class="sec-line"></div>
+    <div class="division-grid">
+      <a href="divisions.html" class="division-card">
+        <div class="dc-name">放射線室</div>
+        <div class="dc-desc">レントゲン・CT・MRI等の画像診断を行います。</div>
+      </a>
+      <a href="divisions.html" class="division-card">
+        <div class="dc-name">リハビリテーション室</div>
+        <div class="dc-desc">理学療法士・作業療法士・言語聴覚士が機能回復を支援します。</div>
+      </a>
+      <a href="divisions.html" class="division-card">
+        <div class="dc-name">検査室</div>
+        <div class="dc-desc">血液・尿・細菌など各種臨床検査を実施します。</div>
+      </a>
+      <a href="divisions.html" class="division-card">
+        <div class="dc-name">内視鏡室</div>
+        <div class="dc-desc">上部・下部消化管内視鏡検査を行います。</div>
+      </a>
+      <a href="divisions.html" class="division-card">
+        <div class="dc-name">薬局</div>
+        <div class="dc-desc">処方薬の調剤・服薬指導を行います。</div>
+      </a>
+      <a href="divisions.html" class="division-card">
+        <div class="dc-name">栄養管理室</div>
+        <div class="dc-desc">患者様の病態に合わせた食事療法・栄養指導を行います。</div>
+      </a>
+      <a href="divisions.html" class="division-card">
+        <div class="dc-name">透析室</div>
+        <div class="dc-desc">慢性腎不全患者様の人工透析療法を月〜土曜対応で実施します。</div>
+      </a>
+      <a href="divisions.html" class="division-card">
+        <div class="dc-name">看護課</div>
+        <div class="dc-desc">患者様の療養生活を24時間体制でサポートします。</div>
+      </a>
+      <a href="doctors.html" class="division-card">
+        <div class="dc-name">医師紹介</div>
+        <div class="dc-desc">常勤医師6名の専門分野・資格をご紹介します。</div>
+      </a>
+    </div>
   </div>
 
 </div>
 
 <footer>
-  <div class="footer-logo">天草市立 牛深市民病院<span>〒863-1901 熊本県天草市牛深町3050<br>TEL: 0969-73-4171　FAX: 0969-73-4174<br>© 2025 Ushibuka City Hospital. All rights reserved.</span></div>
+  <div class="footer-logo">
+    天草市立 牛深市民病院
+    <span>〒863-1901 熊本県天草市牛深町3050<br>TEL: 0969-73-4171　FAX: 0969-73-4174<br>© 2025 Ushibuka City Hospital. All rights reserved.</span>
+  </div>
   <div class="footer-links">
     <a href="about.html">病院のご案内</a>
     <a href="diagnosis.html">外来のご案内</a>
@@ -173,5 +307,6 @@ footer{background:#06182e;padding:36px 60px;display:flex;align-items:flex-start;
     <a href="contact.html">お問い合わせ</a>
   </div>
 </footer>
+
 </body>
 </html>
