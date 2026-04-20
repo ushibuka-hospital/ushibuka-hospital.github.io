@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>医師紹介 | 天草市立 牛深市民病院</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300;400;600&family=Noto+Sans+JP:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+:root{--navy:#0a2342;--ocean:#1a5f7a;--sky:#4a9ebe;--foam:#e8f4f8;--sand:#f5f0e8;--text:#1a1a2e;--muted:#5a6a7a;--white:#ffffff;}
+body{font-family:'Noto Sans JP',sans-serif;color:var(--text);background:var(--white);overflow-x:hidden;}
+nav{position:sticky;top:0;z-index:100;background:rgba(10,35,66,0.97);backdrop-filter:blur(8px);display:flex;align-items:center;justify-content:space-between;padding:0 40px;height:64px;}
+.nav-logo{font-family:'Noto Serif JP',serif;font-size:15px;font-weight:600;color:var(--white);letter-spacing:0.08em;text-decoration:none;}
+.nav-logo span{font-size:10px;font-weight:300;display:block;letter-spacing:0.12em;color:rgba(255,255,255,0.55);margin-top:2px;}
+.nav-links{display:flex;}
+.nav-links a{color:rgba(255,255,255,0.8);text-decoration:none;font-size:12px;padding:0 14px;height:64px;display:flex;align-items:center;transition:all 0.2s;border-bottom:2px solid transparent;}
+.nav-links a:hover,.nav-links a.active{color:var(--white);border-bottom-color:var(--sky);}
+.nav-tel a{color:var(--white);font-size:16px;font-weight:500;text-decoration:none;}
+.nav-tel span{font-size:10px;display:block;color:rgba(255,255,255,0.5);margin-top:2px;text-align:right;}
+.page-hero{background:linear-gradient(135deg,var(--navy) 0%,var(--ocean) 100%);padding:52px 60px 44px;position:relative;overflow:hidden;}
+.page-hero::after{content:'';position:absolute;bottom:0;left:0;right:0;height:4px;background:linear-gradient(90deg,var(--sky),var(--foam));}
+.breadcrumb{display:flex;gap:8px;margin-bottom:16px;}
+.breadcrumb a,.breadcrumb span{font-size:12px;color:rgba(255,255,255,0.55);text-decoration:none;}
+.breadcrumb a:hover{color:rgba(255,255,255,0.8);}
+.breadcrumb .sep{color:rgba(255,255,255,0.3);}
+.page-title{font-family:'Noto Serif JP',serif;font-size:32px;font-weight:600;color:var(--white);letter-spacing:0.04em;margin-bottom:8px;}
+.page-sub{font-size:13px;color:rgba(255,255,255,0.6);letter-spacing:0.08em;}
+.container{max-width:900px;margin:0 auto;padding:52px 60px;}
+.sec-label{font-size:10px;letter-spacing:0.2em;color:var(--sky);text-transform:uppercase;margin-bottom:8px;}
+.sec-title{font-family:'Noto Serif JP',serif;font-size:22px;font-weight:600;color:var(--navy);margin-bottom:16px;}
+.sec-line{width:36px;height:2px;background:var(--sky);margin-bottom:32px;}
+.notice-box{background:var(--foam);border-radius:8px;padding:18px 24px;margin-bottom:40px;font-size:13px;color:var(--muted);line-height:1.8;border-left:3px solid var(--sky);}
+.notice-box a{color:var(--ocean);}
+.doctor-list{display:flex;flex-direction:column;gap:20px;}
+.doctor-card{border:0.5px solid rgba(26,95,122,0.15);border-radius:12px;overflow:hidden;transition:all 0.2s;}
+.doctor-card:hover{border-color:var(--sky);}
+.doctor-header{background:var(--foam);padding:20px 28px;display:flex;align-items:center;gap:20px;border-bottom:0.5px solid rgba(26,95,122,0.1);}
+.doctor-avatar{width:60px;height:60px;border-radius:50%;background:var(--white);border:1.5px solid rgba(26,95,122,0.15);display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.doctor-avatar svg{width:28px;height:28px;opacity:0.35;}
+.doctor-role{font-size:11px;font-weight:500;color:var(--sky);letter-spacing:0.1em;margin-bottom:4px;}
+.doctor-name{font-family:'Noto Serif JP',serif;font-size:20px;font-weight:600;color:var(--navy);letter-spacing:0.04em;}
+.doctor-kana{font-size:12px;color:var(--muted);margin-top:2px;letter-spacing:0.08em;}
+.grad-year{font-size:11px;color:var(--muted);margin-left:8px;font-weight:400;}
+.doctor-body{padding:24px 28px;display:grid;grid-template-columns:1fr 1fr;gap:24px;}
+.doctor-section-title{font-size:11px;font-weight:500;color:var(--ocean);letter-spacing:0.1em;margin-bottom:10px;text-transform:uppercase;}
+.doctor-spec{font-size:13px;color:var(--text);line-height:1.8;}
+.doctor-quals{list-style:none;display:flex;flex-direction:column;gap:6px;}
+.doctor-quals li{font-size:12px;color:var(--text);line-height:1.6;display:flex;gap:8px;align-items:flex-start;}
+.doctor-quals li::before{content:'';width:4px;height:4px;border-radius:50%;background:var(--sky);flex-shrink:0;margin-top:6px;}
+footer{background:#06182e;padding:36px 60px;display:flex;align-items:flex-start;justify-content:space-between;gap:40px;}
+.footer-logo{font-family:'Noto Serif JP',serif;font-size:15px;color:rgba(255,255,255,0.85);letter-spacing:0.08em;}
+.footer-logo span{font-size:10px;display:block;color:rgba(255,255,255,0.4);margin-top:4px;line-height:1.8;}
+.footer-links{display:flex;gap:24px;flex-wrap:wrap;}
+.footer-links a{font-size:12px;color:rgba(255,255,255,0.5);text-decoration:none;transition:color 0.2s;}
+.footer-links a:hover{color:rgba(255,255,255,0.8);}
+@media(max-width:768px){nav{padding:0 16px;}.nav-links{display:none;}.page-hero{padding:36px 20px 28px;}.page-title{font-size:22px;}.container{padding:36px 20px;}.doctor-body{grid-template-columns:1fr;}footer{padding:24px 16px;flex-direction:column;gap:16px;}}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="/index.html" class="nav-logo">天草市立 牛深市民病院<span>USHIBUKA CITY HOSPITAL</span></a>
+  <div class="nav-links">
+    <a href="/about.html">病院のご案内</a>
+    <a href="/diagnosis.html" class="active">外来のご案内</a>
+    <a href="/hospitalization.html">入院・面会</a>
+    <a href="/divisions.html">部門紹介</a>
+    <a href="/info.html">お知らせ</a>
+    <a href="/recruit.html">採用情報</a>
+  </div>
+  <div class="nav-tel"><a href="tel:0969734171">0969-73-4171</a><span>代表電話（24時間救急対応）</span></div>
+</nav>
+
+<div class="page-hero">
+  <div class="breadcrumb">
+    <a href="/index.html">ホーム</a><span class="sep">›</span>
+    <a href="/diagnosis.html">外来のご案内</a><span class="sep">›</span>
+    <span>医師紹介</span>
+  </div>
+  <div class="page-title">医師紹介</div>
+  <div class="page-sub">Our Doctors</div>
+</div>
+
+<div class="container">
+  <div class="notice-box">
+    各月の外来担当医については<a href="/diagnosis.html">外来医師担当表ページ</a>をご確認ください。担当医は変更になる場合があります。
+  </div>
+
+  <div class="sec-label">Doctors</div>
+  <div class="sec-title">常勤医師</div>
+  <div class="sec-line"></div>
+
+  <div class="doctor-list">
+
+    <div class="doctor-card">
+      <div class="doctor-header">
+        <div class="doctor-avatar"><svg viewBox="0 0 24 24" fill="none" stroke="#1a5f7a" stroke-width="1.2"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></div>
+        <div>
+          <div class="doctor-role">院長</div>
+          <div class="doctor-name">松﨑　法成<span class="grad-year">平成元年卒</span></div>
+          <div class="doctor-kana">まつざき　ほうせい</div>
+        </div>
+      </div>
+      <div class="doctor-body">
+        <div>
+          <div class="doctor-section-title">専門分野</div>
+          <div class="doctor-spec">外科・消化器外科</div>
+        </div>
+        <div>
+          <div class="doctor-section-title">資格・認定</div>
+          <ul class="doctor-quals">
+            <li>医学博士</li>
+            <li>日本外科学会認定医・専門医</li>
+            <li>難病指定医</li>
+            <li>医師臨床研修指導医講習会修了</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="doctor-card">
+      <div class="doctor-header">
+        <div class="doctor-avatar"><svg viewBox="0 0 24 24" fill="none" stroke="#1a5f7a" stroke-width="1.2"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></div>
+        <div>
+          <div class="doctor-role">副院長</div>
+          <div class="doctor-name">蓮田　正太<span class="grad-year">平成6年卒</span></div>
+          <div class="doctor-kana">はすだ　しょうた</div>
+        </div>
+      </div>
+      <div class="doctor-body">
+        <div>
+          <div class="doctor-section-title">専門分野</div>
+          <div class="doctor-spec">外科・消化器外科</div>
+        </div>
+        <div>
+          <div class="doctor-section-title">資格・認定</div>
+          <ul class="doctor-quals">
+            <li>日本外科学会専門医・指導医</li>
+            <li>日本消化器外科専門医</li>
+            <li>消化器がん治療認定医</li>
+            <li>日本乳癌学会認定医</li>
+            <li>マンモグラフィ読影認定医</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="doctor-card">
+      <div class="doctor-header">
+        <div class="doctor-avatar"><svg viewBox="0 0 24 24" fill="none" stroke="#1a5f7a" stroke-width="1.2"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></div>
+        <div>
+          <div class="doctor-role">麻酔科医師</div>
+          <div class="doctor-name">松本　真一<span class="grad-year">平成5年卒</span></div>
+          <div class="doctor-kana">まつもと　しんいち</div>
+        </div>
+      </div>
+      <div class="doctor-body">
+        <div>
+          <div class="doctor-section-title">専門分野</div>
+          <div class="doctor-spec">麻酔科</div>
+        </div>
+        <div>
+          <div class="doctor-section-title">資格・認定</div>
+          <ul class="doctor-quals">
+            <li>厚生労働省認定 麻酔科標榜医</li>
+            <li>日本専門医機構認定 麻酔科専門医</li>
+            <li>日本腎臓財団 透析療法従事職員研修修了</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="doctor-card">
+      <div class="doctor-header">
+        <div class="doctor-avatar"><svg viewBox="0 0 24 24" fill="none" stroke="#1a5f7a" stroke-width="1.2"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></div>
+        <div>
+          <div class="doctor-role">内科医師</div>
+          <div class="doctor-name">野村　眞欣<span class="grad-year">平成5年卒</span></div>
+          <div class="doctor-kana">のむら　まさのぶ</div>
+        </div>
+      </div>
+      <div class="doctor-body">
+        <div>
+          <div class="doctor-section-title">専門分野</div>
+          <div class="doctor-spec">内科一般・呼吸器内科</div>
+        </div>
+        <div>
+          <div class="doctor-section-title">資格・認定</div>
+          <ul class="doctor-quals">
+            <li>日本プライマリ・ケア連合学会会員</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="doctor-card">
+      <div class="doctor-header">
+        <div class="doctor-avatar"><svg viewBox="0 0 24 24" fill="none" stroke="#1a5f7a" stroke-width="1.2"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></div>
+        <div>
+          <div class="doctor-role">救急科診療科長</div>
+          <div class="doctor-name">平田　尊仁<span class="grad-year">平成17年卒</span></div>
+          <div class="doctor-kana">ひらた　たかひと</div>
+        </div>
+      </div>
+      <div class="doctor-body">
+        <div>
+          <div class="doctor-section-title">専門分野</div>
+          <div class="doctor-spec">救急科・内科一般</div>
+        </div>
+        <div>
+          <div class="doctor-section-title">資格・認定</div>
+          <ul class="doctor-quals">
+            <li>救急科専門医</li>
+            <li>プライマリ・ケア認定医・指導医</li>
+            <li>内科学会認定内科医</li>
+            <li>産業医</li>
+            <li>熊本県難病指定医</li>
+            <li>緩和ケア研修会修了</li>
+            <li>病院前救護体制における指導医等研修修了</li>
+            <li>医師臨床研修指導医講習会修了</li>
+            <li>天草地域メディカルコントロール協議会検討委員</li>
+            <li>医師少数区域経験認定医師</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="doctor-card">
+      <div class="doctor-header">
+        <div class="doctor-avatar"><svg viewBox="0 0 24 24" fill="none" stroke="#1a5f7a" stroke-width="1.2"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></div>
+        <div>
+          <div class="doctor-role">外科・心臓血管外科医師</div>
+          <div class="doctor-name">嶋岡　徹<span class="grad-year">平成10年卒</span></div>
+          <div class="doctor-kana">しまおか　とおる</div>
+        </div>
+      </div>
+      <div class="doctor-body">
+        <div>
+          <div class="doctor-section-title">専門分野</div>
+          <div class="doctor-spec">心臓血管外科</div>
+        </div>
+        <div>
+          <div class="doctor-section-title">資格・認定</div>
+          <ul class="doctor-quals">
+            <li>心臓血管外科専門医</li>
+            <li>外科専門医</li>
+            <li>日本脈管学会 脈管専門医・指導医</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="notice-box" style="margin-top:32px;margin-bottom:0;">
+    内科・整形外科・小児科・産婦人科・眼科・耳鼻咽喉科などは非常勤医師が担当しています。各月の担当医は<a href="/diagnosis.html">外来医師担当表</a>をご確認いただくか、お電話（0969-73-4171）でお問い合わせください。
+  </div>
+</div>
+
+<footer>
+  <div class="footer-logo">天草市立 牛深市民病院<span>〒863-1901 熊本県天草市牛深町3050<br>TEL: 0969-73-4171　FAX: 0969-73-4174<br>© 2025 Ushibuka City Hospital. All rights reserved.</span></div>
+  <div class="footer-links">
+    <a href="/about.html">病院のご案内</a>
+    <a href="/diagnosis.html">外来のご案内</a>
+    <a href="/hospitalization.html">入院・面会</a>
+    <a href="/divisions.html">部門紹介</a>
+    <a href="/info.html">お知らせ</a>
+    <a href="/recruit.html">採用情報</a>
+    <a href="/contact.html">お問い合わせ</a>
+  </div>
+</footer>
+</body>
+</html>
