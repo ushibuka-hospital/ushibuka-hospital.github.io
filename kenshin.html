@@ -6,88 +6,142 @@
 <title>健診のご案内 | 天草市立 牛深市民病院</title>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300;400;600&family=Noto+Sans+JP:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
-*{margin:0;padding:0;box-sizing:border-box;}
-:root{--navy:#0a2342;--ocean:#1a5f7a;--sky:#4a9ebe;--foam:#e8f4f8;--sand:#f5f0e8;--text:#1a1a2e;--muted:#5a6a7a;--white:#ffffff;--accent:#c8832a;}
-body{font-family:'Noto Sans JP',sans-serif;color:var(--text);background:var(--white);overflow-x:hidden;}
-nav{position:sticky;top:0;z-index:100;background:rgba(10,35,66,0.97);backdrop-filter:blur(8px);display:flex;align-items:center;justify-content:space-between;padding:0 40px;height:64px;}
-.nav-logo{font-family:'Noto Serif JP',serif;font-size:15px;font-weight:600;color:var(--white);letter-spacing:0.08em;text-decoration:none;}
-.nav-logo span{font-size:10px;font-weight:300;display:block;letter-spacing:0.12em;color:rgba(255,255,255,0.55);margin-top:2px;}
-.nav-links{display:flex;}
-.nav-links a{color:rgba(255,255,255,0.8);text-decoration:none;font-size:12px;padding:0 14px;height:64px;display:flex;align-items:center;transition:all 0.2s;border-bottom:2px solid transparent;}
-.nav-links a:hover,.nav-links a.active{color:var(--white);border-bottom-color:var(--sky);}
-.nav-tel a{color:var(--white);font-size:16px;font-weight:500;text-decoration:none;}
-.nav-tel span{font-size:10px;display:block;color:rgba(255,255,255,0.5);margin-top:2px;text-align:right;}
-.page-hero{background:linear-gradient(135deg,var(--navy) 0%,var(--ocean) 100%);padding:52px 60px 44px;position:relative;overflow:hidden;}
-.page-hero::after{content:'';position:absolute;bottom:0;left:0;right:0;height:4px;background:linear-gradient(90deg,var(--sky),var(--foam));}
-.breadcrumb{display:flex;gap:8px;margin-bottom:16px;}
-.breadcrumb a,.breadcrumb span{font-size:12px;color:rgba(255,255,255,0.55);text-decoration:none;}
-.breadcrumb a:hover{color:rgba(255,255,255,0.8);}
-.breadcrumb .sep{color:rgba(255,255,255,0.3);}
-.page-title{font-family:'Noto Serif JP',serif;font-size:32px;font-weight:600;color:var(--white);letter-spacing:0.04em;margin-bottom:8px;}
-.page-sub{font-size:13px;color:rgba(255,255,255,0.6);letter-spacing:0.08em;}
-.container{max-width:1000px;margin:0 auto;padding:52px 60px;}
-.sec-label{font-size:10px;letter-spacing:0.2em;color:var(--sky);text-transform:uppercase;margin-bottom:8px;}
-.sec-title{font-family:'Noto Serif JP',serif;font-size:22px;font-weight:600;color:var(--navy);margin-bottom:16px;}
-.sec-line{width:36px;height:2px;background:var(--sky);margin-bottom:28px;}
-.lead{font-size:14px;color:var(--text);line-height:1.9;margin-bottom:36px;padding:20px 24px;background:var(--foam);border-radius:8px;border-left:3px solid var(--sky);}
-/* 予約方法 */
-.yoyaku-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:40px;}
-.yoyaku-card{background:var(--navy);border-radius:8px;padding:20px 24px;color:var(--white);}
-.yoyaku-type{font-size:11px;letter-spacing:0.1em;color:rgba(255,255,255,0.6);margin-bottom:6px;}
-.yoyaku-info{font-size:14px;color:var(--white);line-height:1.8;}
-.yoyaku-tel{font-size:18px;font-weight:500;margin-top:6px;}
-.yoyaku-tel a{color:var(--white);text-decoration:none;}
-/* テーブル共通 */
-.data-table{width:100%;border-collapse:collapse;margin-bottom:8px;font-size:13px;}
-.data-table th{background:var(--navy);color:var(--white);padding:10px 14px;text-align:left;font-weight:500;font-size:12px;letter-spacing:0.04em;}
-.data-table td{padding:12px 14px;border-bottom:0.5px solid rgba(26,95,122,0.1);vertical-align:top;line-height:1.7;}
-.data-table tr:last-child td{border-bottom:none;}
-.data-table tr:hover td{background:rgba(232,244,248,0.4);}
-.data-table td:last-child{text-align:right;white-space:nowrap;font-weight:500;color:var(--navy);}
-.data-table-note{font-size:12px;color:var(--muted);margin-bottom:32px;padding:8px 14px;}
-/* オプション表（内容列を広く） */
-.option-table td:nth-child(2){color:var(--muted);font-size:12px;}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+:root {
+  --navy: #0a2342; --ocean: #1a5f7a; --sky: #4a9ebe;
+  --foam: #e8f4f8; --sand: #f5f0e8; --text: #1a1a2e;
+  --muted: #5a6a7a; --white: #ffffff; --accent: #c8832a;
+}
+body { font-family: 'Noto Sans JP', sans-serif; color: var(--text); background: var(--white); }
+
+nav {
+  position: sticky; top: 0; z-index: 100;
+  background: rgba(10,35,66,0.97); backdrop-filter: blur(8px);
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 0 40px; height: 64px;
+}
+.nav-logo { font-family: 'Noto Serif JP', serif; font-size: 15px; font-weight: 600; color: #fff; letter-spacing: 0.08em; text-decoration: none; }
+.nav-logo span { font-size: 10px; display: block; color: rgba(255,255,255,0.55); margin-top: 2px; }
+.nav-links { display: flex; }
+.nav-links a { color: rgba(255,255,255,0.8); text-decoration: none; font-size: 12px; padding: 0 14px; height: 64px; display: flex; align-items: center; border-bottom: 2px solid transparent; transition: all 0.2s; }
+.nav-links a:hover, .nav-links a.active { color: #fff; border-bottom-color: var(--sky); }
+.nav-tel a { color: #fff; font-size: 16px; font-weight: 500; text-decoration: none; }
+.nav-tel span { font-size: 10px; display: block; color: rgba(255,255,255,0.5); margin-top: 2px; text-align: right; }
+
+.page-hero { background: linear-gradient(135deg, var(--navy) 0%, var(--ocean) 100%); padding: 52px 60px 44px; position: relative; overflow: hidden; }
+.page-hero::after { content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 4px; background: linear-gradient(90deg, var(--sky), var(--foam)); }
+.breadcrumb { display: flex; gap: 8px; margin-bottom: 16px; }
+.breadcrumb a, .breadcrumb span { font-size: 12px; color: rgba(255,255,255,0.55); text-decoration: none; }
+.breadcrumb a:hover { color: rgba(255,255,255,0.85); }
+.breadcrumb .sep { color: rgba(255,255,255,0.3); }
+.page-title { font-family: 'Noto Serif JP', serif; font-size: 32px; font-weight: 600; color: #fff; margin-bottom: 8px; }
+.page-sub { font-size: 13px; color: rgba(255,255,255,0.6); letter-spacing: 0.08em; }
+
+.page-nav { background: var(--foam); border-bottom: 0.5px solid rgba(26,95,122,0.15); padding: 0 60px; display: flex; gap: 0; overflow-x: auto; }
+.page-nav a { font-size: 12px; color: var(--muted); text-decoration: none; padding: 13px 18px; border-bottom: 2px solid transparent; transition: all 0.2s; white-space: nowrap; }
+.page-nav a:hover { color: var(--ocean); border-bottom-color: var(--sky); }
+
+.container { max-width: 1000px; margin: 0 auto; padding: 52px 60px; }
+
+.sec-label { font-size: 10px; letter-spacing: 0.2em; color: var(--sky); text-transform: uppercase; margin-bottom: 8px; }
+.sec-title { font-family: 'Noto Serif JP', serif; font-size: 22px; font-weight: 600; color: var(--navy); margin-bottom: 16px; }
+.sec-line { width: 36px; height: 2px; background: var(--sky); margin-bottom: 28px; }
+
+/* リード */
+.lead-box { background: var(--foam); border-radius: 8px; padding: 20px 24px; margin-bottom: 40px; font-size: 13px; color: var(--text); line-height: 1.9; border-left: 3px solid var(--sky); }
+
+/* 予約 */
+.yoyaku-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 48px; }
+.yoyaku-card { background: var(--navy); border-radius: 8px; padding: 22px 24px; }
+.yc-type { font-size: 11px; letter-spacing: 0.1em; color: rgba(255,255,255,0.55); margin-bottom: 8px; }
+.yc-info { font-size: 14px; color: #fff; line-height: 1.8; }
+.yc-tel { font-family: 'Noto Serif JP', serif; font-size: 20px; font-weight: 600; margin-top: 8px; }
+.yc-tel a { color: #fff; text-decoration: none; }
+
+/* テーブル */
+.data-table { width: 100%; border-collapse: collapse; margin-bottom: 8px; font-size: 13px; }
+.data-table th { background: var(--navy); color: #fff; padding: 10px 14px; text-align: left; font-weight: 500; font-size: 12px; letter-spacing: 0.04em; }
+.data-table td { padding: 12px 14px; border-bottom: 0.5px solid rgba(26,95,122,0.1); vertical-align: top; line-height: 1.7; }
+.data-table tr:last-child td { border-bottom: none; }
+.data-table tr:hover td { background: rgba(232,244,248,0.4); }
+.data-table td:last-child { text-align: right; white-space: nowrap; font-weight: 500; color: var(--navy); }
+.data-table td.wide:last-child { white-space: normal; }
+.table-note { font-size: 12px; color: var(--muted); margin-bottom: 36px; padding: 8px 14px; }
+
+/* フローチャート枠 */
+.flow-section { margin-bottom: 48px; }
+.flow-box {
+  border: 1px solid rgba(26,95,122,0.2); border-radius: 10px;
+  overflow: hidden; margin-bottom: 12px;
+}
+.flow-header {
+  background: var(--ocean); padding: 14px 20px;
+  display: flex; align-items: center; gap: 12px;
+}
+.flow-header-icon { width: 28px; height: 28px; background: rgba(255,255,255,0.15); border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+.flow-header-icon svg { width: 16px; height: 16px; }
+.flow-header-title { font-size: 14px; font-weight: 500; color: #fff; letter-spacing: 0.04em; }
+.flow-header-src { font-size: 11px; color: rgba(255,255,255,0.6); margin-left: auto; }
+.flow-body { padding: 24px; background: #fff; }
+.flow-svg-wrap { width: 100%; overflow-x: auto; }
+
 /* FAQ */
-.faq-list{display:flex;flex-direction:column;gap:0;margin-bottom:40px;border:0.5px solid rgba(26,95,122,0.15);border-radius:10px;overflow:hidden;}
-.faq-item{}
-.faq-q{width:100%;background:none;border:none;border-bottom:0.5px solid rgba(26,95,122,0.1);padding:18px 20px;font-size:14px;font-weight:500;color:var(--navy);text-align:left;cursor:pointer;display:flex;justify-content:space-between;align-items:center;transition:background 0.2s;font-family:'Noto Sans JP',sans-serif;}
-.faq-q:hover{background:var(--foam);}
-.faq-item:last-child .faq-q{border-bottom:none;}
-.faq-q.open{background:var(--foam);border-bottom:0.5px solid rgba(26,95,122,0.1);}
-.faq-icon{font-size:18px;color:var(--sky);transition:transform 0.2s;flex-shrink:0;margin-left:12px;}
-.faq-q.open .faq-icon{transform:rotate(45deg);}
-.faq-a{display:none;padding:16px 20px;font-size:13px;color:var(--text);line-height:1.9;border-bottom:0.5px solid rgba(26,95,122,0.1);background:var(--white);}
-.faq-item:last-child .faq-a{border-bottom:none;}
-.faq-a.open{display:block;}
-.faq-a a{color:var(--ocean);}
-.faq-a ul{list-style:none;margin-top:8px;display:flex;flex-direction:column;gap:6px;}
-.faq-a ul li{display:flex;gap:8px;align-items:flex-start;}
-.faq-a ul li::before{content:'';width:4px;height:4px;border-radius:50%;background:var(--sky);flex-shrink:0;margin-top:7px;}
-/* 解説セクション */
-.explain-box{background:var(--sand);border-radius:10px;padding:28px;margin-bottom:24px;}
-.explain-title{font-size:15px;font-weight:500;color:var(--navy);margin-bottom:12px;padding-bottom:8px;border-bottom:0.5px solid rgba(26,95,122,0.15);}
-.explain-body{font-size:13px;color:var(--text);line-height:1.9;}
-.explain-body ul{list-style:none;margin-top:8px;display:flex;flex-direction:column;gap:6px;}
-.explain-body ul li{display:flex;gap:8px;align-items:flex-start;}
-.explain-body ul li::before{content:'';width:4px;height:4px;border-radius:50%;background:var(--sky);flex-shrink:0;margin-top:7px;}
-.explain-body a{color:var(--ocean);}
-.ref-links{display:flex;flex-wrap:wrap;gap:10px;margin-top:16px;}
-.ref-link{display:inline-block;font-size:12px;color:var(--ocean);border:0.5px solid rgba(26,95,122,0.3);border-radius:20px;padding:4px 14px;text-decoration:none;transition:all 0.2s;}
-.ref-link:hover{background:var(--foam);border-color:var(--sky);}
-/* 問い合わせ */
-.contact-box{background:var(--navy);border-radius:12px;padding:32px;text-align:center;margin-top:48px;}
-.contact-title{font-size:16px;font-weight:500;color:var(--white);margin-bottom:10px;}
-.contact-desc{font-size:13px;color:rgba(255,255,255,0.7);line-height:1.9;margin-bottom:20px;}
-.contact-tel{font-family:'Noto Serif JP',serif;font-size:26px;font-weight:600;}
-.contact-tel a{color:var(--white);text-decoration:none;}
-.contact-note{font-size:11px;color:rgba(255,255,255,0.5);margin-top:6px;}
-footer{background:#06182e;padding:36px 60px;display:flex;align-items:flex-start;justify-content:space-between;gap:40px;}
-.footer-logo{font-family:'Noto Serif JP',serif;font-size:15px;color:rgba(255,255,255,0.85);letter-spacing:0.08em;}
-.footer-logo span{font-size:10px;display:block;color:rgba(255,255,255,0.4);margin-top:4px;line-height:1.8;}
-.footer-links{display:flex;gap:24px;flex-wrap:wrap;}
-.footer-links a{font-size:12px;color:rgba(255,255,255,0.5);text-decoration:none;transition:color 0.2s;}
-.footer-links a:hover{color:rgba(255,255,255,0.8);}
-@media(max-width:768px){nav{padding:0 16px;}.nav-links{display:none;}.page-hero{padding:36px 20px 28px;}.page-title{font-size:22px;}.container{padding:36px 20px;}.yoyaku-grid{grid-template-columns:1fr;}.data-table{font-size:12px;}footer{padding:24px 16px;flex-direction:column;gap:16px;}}
+.faq-list { border: 0.5px solid rgba(26,95,122,0.15); border-radius: 10px; overflow: hidden; margin-bottom: 48px; }
+.faq-q {
+  width: 100%; background: none; border: none; border-bottom: 0.5px solid rgba(26,95,122,0.1);
+  padding: 18px 20px; font-size: 14px; font-weight: 500; color: var(--navy);
+  text-align: left; cursor: pointer; display: flex; justify-content: space-between; align-items: center;
+  transition: background 0.2s; font-family: 'Noto Sans JP', sans-serif;
+}
+.faq-q:hover { background: var(--foam); }
+.faq-q.open { background: var(--foam); }
+.faq-item:last-child .faq-q { border-bottom: none; }
+.faq-icon { font-size: 20px; color: var(--sky); transition: transform 0.2s; flex-shrink: 0; margin-left: 12px; }
+.faq-q.open .faq-icon { transform: rotate(45deg); }
+.faq-a { display: none; padding: 16px 20px; font-size: 13px; color: var(--text); line-height: 1.9; border-bottom: 0.5px solid rgba(26,95,122,0.1); background: #fff; }
+.faq-item:last-child .faq-a { border-bottom: none; }
+.faq-a.open { display: block; }
+.faq-a a { color: var(--ocean); }
+.faq-a ul { list-style: none; margin-top: 8px; display: flex; flex-direction: column; gap: 6px; }
+.faq-a ul li { display: flex; gap: 8px; align-items: flex-start; }
+.faq-a ul li::before { content: ''; width: 4px; height: 4px; border-radius: 50%; background: var(--sky); flex-shrink: 0; margin-top: 7px; }
+
+/* 実績テーブル */
+.results-table { width: 100%; border-collapse: collapse; font-size: 12px; margin-bottom: 8px; overflow-x: auto; display: block; }
+.results-table th { background: var(--navy); color: #fff; padding: 9px 12px; text-align: center; font-weight: 500; white-space: nowrap; }
+.results-table td { padding: 9px 12px; border-bottom: 0.5px solid rgba(26,95,122,0.1); text-align: center; }
+.results-table td:first-child { text-align: left; font-weight: 500; color: var(--navy); background: var(--foam); }
+.results-table tr:last-child td { border-bottom: none; }
+.results-table .cancer { color: #c0392b; font-weight: 500; }
+
+/* 参考リンク */
+.ref-links { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 12px; }
+.ref-link { display: inline-block; font-size: 12px; color: var(--ocean); border: 0.5px solid rgba(26,95,122,0.3); border-radius: 20px; padding: 4px 14px; text-decoration: none; transition: all 0.2s; }
+.ref-link:hover { background: var(--foam); border-color: var(--sky); }
+
+/* 連絡先 */
+.contact-box { background: var(--navy); border-radius: 12px; padding: 32px; text-align: center; margin-top: 48px; }
+.contact-title { font-size: 16px; font-weight: 500; color: #fff; margin-bottom: 10px; }
+.contact-desc { font-size: 13px; color: rgba(255,255,255,0.7); line-height: 1.9; margin-bottom: 20px; }
+.contact-tel { font-family: 'Noto Serif JP', serif; font-size: 26px; font-weight: 600; }
+.contact-tel a { color: #fff; text-decoration: none; }
+.contact-note { font-size: 11px; color: rgba(255,255,255,0.5); margin-top: 6px; }
+
+footer { background: #06182e; padding: 36px 60px; display: flex; align-items: flex-start; justify-content: space-between; gap: 40px; }
+.footer-logo { font-family: 'Noto Serif JP', serif; font-size: 15px; color: rgba(255,255,255,0.85); }
+.footer-logo span { font-size: 10px; display: block; color: rgba(255,255,255,0.4); margin-top: 4px; line-height: 1.8; }
+.footer-links { display: flex; gap: 24px; flex-wrap: wrap; }
+.footer-links a { font-size: 12px; color: rgba(255,255,255,0.5); text-decoration: none; transition: color 0.2s; }
+.footer-links a:hover { color: rgba(255,255,255,0.85); }
+
+@media (max-width: 768px) {
+  nav { padding: 0 16px; } .nav-links { display: none; }
+  .page-hero { padding: 36px 20px 28px; } .page-title { font-size: 24px; }
+  .page-nav { padding: 0 16px; }
+  .container { padding: 36px 20px; }
+  .yoyaku-grid { grid-template-columns: 1fr; }
+  footer { padding: 24px 16px; flex-direction: column; gap: 16px; }
+}
 </style>
 </head>
 <body>
@@ -112,269 +166,507 @@ footer{background:#06182e;padding:36px 60px;display:flex;align-items:flex-start;
     <span>健診のご案内</span>
   </div>
   <div class="page-title">健診のご案内</div>
-  <div class="page-sub">Health Checkup</div>
+  <div class="page-sub">Health Checkup &amp; Cancer Screening</div>
+</div>
+
+<div class="page-nav">
+  <a href="#yoyaku">予約方法</a>
+  <a href="#plan">健診の種類</a>
+  <a href="#option">オプション検査</a>
+  <a href="#stomach">胃カメラ推奨者</a>
+  <a href="#colon">大腸カメラ間隔</a>
+  <a href="#results">令和6年度実績</a>
+  <a href="#faq">よくある疑問</a>
 </div>
 
 <div class="container">
 
-  <p class="lead">
+  <div class="lead-box">
     当院では法定健診から人間ドックまで各種健診を行っております。また天草市が行う健診、全国健康保険協会（協会けんぽ）、各共済組合の健診、船員手帳の健康診断も受託しています。
-  </p>
+  </div>
 
   <!-- 予約方法 -->
-  <div class="sec-label">Reservation</div>
-  <div class="sec-title">ご予約方法</div>
-  <div class="sec-line"></div>
-  <div class="yoyaku-grid">
-    <div class="yoyaku-card">
-      <div class="yoyaku-type">お電話でのご予約</div>
-      <div class="yoyaku-info">平日 9:00〜16:00 にお電話ください</div>
-      <div class="yoyaku-tel"><a href="tel:0969734171">0969-73-4171</a></div>
-    </div>
-    <div class="yoyaku-card">
-      <div class="yoyaku-type">ご来院でのご予約</div>
-      <div class="yoyaku-info">平日 9:00〜16:00 に<br>1階 健診受付にてご予約ください</div>
+  <div id="yoyaku">
+    <div class="sec-label">Reservation</div>
+    <div class="sec-title">ご予約方法</div>
+    <div class="sec-line"></div>
+    <div class="yoyaku-grid">
+      <div class="yoyaku-card">
+        <div class="yc-type">お電話でのご予約</div>
+        <div class="yc-info">平日 9:00〜16:00 にお電話ください</div>
+        <div class="yc-tel"><a href="tel:0969734171">0969-73-4171</a></div>
+      </div>
+      <div class="yoyaku-card">
+        <div class="yc-type">ご来院でのご予約</div>
+        <div class="yc-info">平日 9:00〜16:00 に<br>1階 健診受付にてご予約ください</div>
+      </div>
     </div>
   </div>
 
   <!-- 健診の種類 -->
-  <div class="sec-label">Plans</div>
-  <div class="sec-title">健診の種類・料金</div>
-  <div class="sec-line"></div>
-  <table class="data-table">
-    <thead>
-      <tr>
-        <th style="width:160px;">健診名</th>
-        <th>内容</th>
-        <th style="width:160px;">料金（税込）</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>法定健診１</td>
-        <td>問診、内科診察、身長、体重、視力、聴力、尿検査、血圧測定、胸部レントゲン撮影</td>
-        <td>5,170円</td>
-      </tr>
-      <tr>
-        <td>法定健診２</td>
-        <td>法定健診１に心電図検査、血液検査（貧血・肝機能・脂質代謝・糖代謝）が追加</td>
-        <td>8,800円</td>
-      </tr>
-      <tr>
-        <td>人間ドック（日帰り）</td>
-        <td>午前中ですべてが終了します</td>
-        <td>男性 44,000円<br>女性 55,000円</td>
-      </tr>
-      <tr>
-        <td>人間ドック（1泊2日）</td>
-        <td>2日間にわたり全身をチェックします</td>
-        <td>男性 63,000円<br>女性 78,000円</td>
-      </tr>
-      <tr>
-        <td>人間ドック（日帰り2日）</td>
-        <td>宿泊せず自宅から2日来られる方にお勧めです</td>
-        <td>男性 54,000円<br>女性 74,000円</td>
-      </tr>
-    </tbody>
-  </table>
-  <div class="data-table-note">※人間ドックのコース及び料金は健康保険の種類によって異なる場合があります。</div>
-
-  <!-- オプション検査 -->
-  <div class="sec-label">Options</div>
-  <div class="sec-title">オプション検査</div>
-  <div class="sec-line"></div>
-  <p style="font-size:13px;color:var(--muted);margin-bottom:16px;">各種健診に追加できます。</p>
-  <table class="data-table option-table">
-    <thead>
-      <tr>
-        <th style="width:180px;">検査名</th>
-        <th>内容</th>
-        <th style="width:100px;">料金（税込）</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>腹部超音波検査</td>
-        <td>肝・胆嚢・膵臓・腎臓・脾臓・腹部大動脈・膀胱・前立腺など、体に無害な超音波（エコー）を用いてがんなどの病気を調べます。</td>
-        <td>5,500円</td>
-      </tr>
-      <tr>
-        <td>甲状腺超音波検査</td>
-        <td>甲状腺のがんなどの病気を調べます。</td>
-        <td>3,300円</td>
-      </tr>
-      <tr>
-        <td>乳房超音波検査</td>
-        <td>乳房のがんなどの病気を調べます。</td>
-        <td>4,400円</td>
-      </tr>
-      <tr>
-        <td>骨密度検査（骨粗しょう症）</td>
-        <td>レントゲン撮影を用いて骨密度を調べます。</td>
-        <td>2,970円</td>
-      </tr>
-      <tr>
-        <td>胸部CT検査</td>
-        <td>肺のがんなどの病気を調べます。胸部レントゲン撮影では見つけにくい早期の肺がんを調べることができます。</td>
-        <td>9,900円</td>
-      </tr>
-      <tr>
-        <td>メタボCT検査</td>
-        <td>CTにて腹部の輪切りを撮影し、内臓脂肪の面積を計測することで内臓脂肪型肥満を調べます。</td>
-        <td>4,000円</td>
-      </tr>
-      <tr>
-        <td>血圧脈波検査</td>
-        <td>両手両足の血圧・脈波を調べることにより、動脈硬化の状態（血管年齢）と足までの血管のつまりを調べます。</td>
-        <td>1,100円</td>
-      </tr>
-      <tr>
-        <td>PSA（前立腺がん）</td>
-        <td>血液を用いて前立腺のがんを調べます。</td>
-        <td>1,600円</td>
-      </tr>
-      <tr>
-        <td>ヘリコバクター・ピロリ抗体中IgG</td>
-        <td>血液を用いて胃潰瘍・胃がんの原因とされているヘリコバクター・ピロリ菌の感染を調べます。</td>
-        <td>2,200円</td>
-      </tr>
-      <tr>
-        <td>便潜血反応検査</td>
-        <td>便を2日採取し肉眼では見えない出血の有無を検査し大腸がんを調べます。</td>
-        <td>880円</td>
-      </tr>
-      <tr>
-        <td>胃透視検査</td>
-        <td>バリウムを飲水し食道・胃・十二指腸のがん・潰瘍・ポリープなどを調べます。</td>
-        <td>8,800円</td>
-      </tr>
-      <tr>
-        <td>胃カメラ検査</td>
-        <td>口から内視鏡を入れ食道・胃・十二指腸のがん・潰瘍・ポリープなどを調べます。当院では苦痛の少ない鼻から入れる経鼻内視鏡も完備しています。</td>
-        <td>11,000円</td>
-      </tr>
-      <tr>
-        <td>脳MRI</td>
-        <td>脳全体・脳血管の画像を細かく撮影し、脳梗塞や脳腫瘍、脳動脈瘤の有無を調べることができます。</td>
-        <td>15,000円</td>
-      </tr>
-    </tbody>
-  </table>
-
-  <!-- よくある疑問 -->
-  <div class="sec-label" style="margin-top:48px;">FAQ</div>
-  <div class="sec-title">健康診断に関するよくある疑問</div>
-  <div class="sec-line"></div>
-  <div class="faq-list">
-
-    <div class="faq-item">
-      <button class="faq-q" onclick="toggleFaq(this)">
-        健康診断では何がわかるの？
-        <span class="faq-icon">+</span>
-      </button>
-      <div class="faq-a">
-        健康診断は「無症状」の方を対象として将来の病気発症のリスクを見積もるために、意義が高いと思われる検査項目に関して医療機器等を用いて調べるものです。大きく2つに分けて「動脈硬化対策」と「癌対策」に分かれます。
-        <ul>
-          <li>動脈硬化の原因として有名な病状が高血圧症・糖尿病・脂質異常症です。また肥満症や喫煙などもリスクとなります。最近では慢性腎臓病・高尿酸血症・運動不足なども指摘されています。</li>
-          <li>癌対策は「健診」ではなく対策型の「検診」となります。特定の臓器の癌をターゲットに絞って検査します。血液検査で分かる癌の代表として前立腺がんに対するPSA測定があります。</li>
-        </ul>
-      </div>
-    </div>
-
-    <div class="faq-item">
-      <button class="faq-q" onclick="toggleFaq(this)">
-        二次健診にひっかかったけど大丈夫？
-        <span class="faq-icon">+</span>
-      </button>
-      <div class="faq-a">
-        健康診断やメタボ健診などには「基準値」が設けられていますが、5%程度の人が基準値から外れると言われています。基準値を外れたからといって必ずしも病気というわけではありませんが、二次検査（精密検査）を受けることをお勧めします。当院の外来にてご相談ください。
-        <div class="ref-links">
-          <a href="https://www.kyoukaikenpo.or.jp/g4/cat410/sb4020/ra104/" target="_blank" rel="noopener" class="ref-link">協会けんぽ 基準値とは</a>
-          <a href="https://www.ningen-dock.jp/ningendock/wp-content/uploads/2025/01/2025hanteikubun.pdf" target="_blank" rel="noopener" class="ref-link">日本人間ドック学会 判定区分2025年度版</a>
-        </div>
-      </div>
-    </div>
-
-    <div class="faq-item">
-      <button class="faq-q" onclick="toggleFaq(this)">
-        外来受診でがんの早期発見はできないの？
-        <span class="faq-icon">+</span>
-      </button>
-      <div class="faq-a">
-        通常の外来診察では無症状の人に保険で検査を行うことはできません。外来受診をして無症状のがんを早期発見することは保険では認められていないため、健診・検診の制度があります。自覚症状がなくてもがんを早期に発見するためには定期的な健診・検診の受診が重要です。
-      </div>
-    </div>
-
-    <div class="faq-item">
-      <button class="faq-q" onclick="toggleFaq(this)">
-        大腸がん検査はどのくらいの頻度で受ければよい？
-        <span class="faq-icon">+</span>
-      </button>
-      <div class="faq-a">
-        便潜血検査は毎年受けることが推奨されています。大腸内視鏡検査（大腸カメラ）は、ポリープなどがなければ3〜5年に1回程度が目安とされています。ただし大腸がんや大腸ポリープの既往がある方、家族歴のある方はより短い間隔での受診が必要な場合がありますので、担当医にご相談ください。
-      </div>
-    </div>
-
-    <div class="faq-item">
-      <button class="faq-q" onclick="toggleFaq(this)">
-        胃がん検査はどんな人が必要？
-        <span class="faq-icon">+</span>
-      </button>
-      <div class="faq-a">
-        胃がんのリスクが高い方は積極的な検査をお勧めします。
-        <ul>
-          <li>ヘリコバクター・ピロリ菌感染者（または感染歴のある方）</li>
-          <li>萎縮性胃炎と診断されたことがある方</li>
-          <li>胃がん・胃潰瘍の家族歴がある方</li>
-          <li>以前にピロリ菌の除菌治療を受けた方（除菌後も定期的な内視鏡検査を推奨）</li>
-        </ul>
-        当院ではピロリ菌抗体検査（オプション2,200円）と胃カメラ検査（オプション11,000円）を実施しています。なお天草市では15歳の未成年を対象にピロリ菌検査を尿で行っています。
-      </div>
-    </div>
-
-    <div class="faq-item">
-      <button class="faq-q" onclick="toggleFaq(this)">
-        感染症によってリスクが高まるがんはある？
-        <span class="faq-icon">+</span>
-      </button>
-      <div class="faq-a">
-        事前に対策ができるがんとして3つが知られています。
-        <ul>
-          <li>肝炎ウイルスによる肝細胞がん</li>
-          <li>ヘリコバクター・ピロリ菌による胃がん</li>
-          <li>ヒトパピローマウイルス（HPV）による子宮頸がん</li>
-        </ul>
-        これらは一度検査をしたり、未成年のうちにHPVワクチンの接種などを検討されることが重要です。詳しくは<a href="https://ganjoho.jp/public/pre_scr/cause_prevention/evidence_based.html" target="_blank" rel="noopener">がん情報サービス</a>もご参照ください。
-      </div>
-    </div>
-
-    <div class="faq-item">
-      <button class="faq-q" onclick="toggleFaq(this)">
-        BMI・体重と健康の関係は？
-        <span class="faq-icon">+</span>
-      </button>
-      <div class="faq-a">
-        健康診断ではBMI25以下が推奨されています。ただし<a href="https://epi.ncc.go.jp/can_prev/evaluation/2830.html" target="_blank" rel="noopener">国立がん研究センターの情報</a>では男性はBMI21〜27が推奨されており、25以上でも一概に問題とはならない場合があります。BMIが14未満または40以上の場合は死亡リスクが明らかに高まるとされています。適切な体重の維持については担当医にご相談ください。
-      </div>
-    </div>
-
+  <div id="plan">
+    <div class="sec-label">Plans</div>
+    <div class="sec-title">健診の種類・料金</div>
+    <div class="sec-line"></div>
+    <table class="data-table">
+      <thead><tr><th style="width:180px;">健診名</th><th>内容</th><th style="width:170px;">料金（税込）</th></tr></thead>
+      <tbody>
+        <tr><td>法定健診１</td><td>問診、内科診察、身長、体重、視力、聴力、尿検査、血圧測定、胸部レントゲン撮影</td><td>5,170円</td></tr>
+        <tr><td>法定健診２</td><td>法定健診１に心電図検査、血液検査（貧血・肝機能・脂質代謝・糖代謝）が追加</td><td>8,800円</td></tr>
+        <tr><td>人間ドック（日帰り）</td><td>午前中ですべてが終了します</td><td>男性 44,000円<br>女性 55,000円</td></tr>
+        <tr><td>人間ドック（1泊2日）</td><td>2日間にわたり全身をチェックします</td><td>男性 63,000円<br>女性 78,000円</td></tr>
+        <tr><td>人間ドック（日帰り2日）</td><td>宿泊せず自宅から2日来られる方にお勧めです</td><td>男性 54,000円<br>女性 74,000円</td></tr>
+      </tbody>
+    </table>
+    <div class="table-note">※人間ドックのコース及び料金は健康保険の種類によって異なる場合があります。</div>
   </div>
 
-  <!-- 解説セクション -->
-  <div class="sec-label" style="margin-top:48px;">Information</div>
-  <div class="sec-title">健診に関する参考情報</div>
-  <div class="sec-line"></div>
+  <!-- オプション検査 -->
+  <div id="option">
+    <div class="sec-label">Options</div>
+    <div class="sec-title">オプション検査</div>
+    <div class="sec-line"></div>
+    <p style="font-size:13px;color:var(--muted);margin-bottom:16px;">各種健診に追加できます。</p>
+    <table class="data-table">
+      <thead><tr><th style="width:200px;">検査名</th><th>内容</th><th style="width:100px;">料金（税込）</th></tr></thead>
+      <tbody>
+        <tr><td>腹部超音波検査</td><td style="font-size:12px;color:var(--muted);">肝・胆嚢・膵臓・腎臓・脾臓・腹部大動脈・膀胱・前立腺など、超音波を用いてがんなどの病気を調べます。</td><td>5,500円</td></tr>
+        <tr><td>甲状腺超音波検査</td><td style="font-size:12px;color:var(--muted);">甲状腺のがんなどの病気を調べます。</td><td>3,300円</td></tr>
+        <tr><td>乳房超音波検査</td><td style="font-size:12px;color:var(--muted);">乳房のがんなどの病気を調べます。</td><td>4,400円</td></tr>
+        <tr><td>骨密度検査（骨粗しょう症）</td><td style="font-size:12px;color:var(--muted);">レントゲン撮影を用いて骨密度を調べます。</td><td>2,970円</td></tr>
+        <tr><td>胸部CT検査</td><td style="font-size:12px;color:var(--muted);">胸部レントゲンでは見つけにくい早期の肺がんを調べます。</td><td>9,900円</td></tr>
+        <tr><td>メタボCT検査</td><td style="font-size:12px;color:var(--muted);">CTにて腹部の輪切りを撮影し、内臓脂肪型肥満を調べます。</td><td>4,000円</td></tr>
+        <tr><td>血圧脈波検査</td><td style="font-size:12px;color:var(--muted);">動脈硬化の状態（血管年齢）と足までの血管のつまりを調べます。</td><td>1,100円</td></tr>
+        <tr><td>PSA（前立腺がん）</td><td style="font-size:12px;color:var(--muted);">血液を用いて前立腺のがんを調べます。</td><td>1,600円</td></tr>
+        <tr><td>ヘリコバクター・ピロリ抗体IgG</td><td style="font-size:12px;color:var(--muted);">胃潰瘍・胃がんの原因とされるピロリ菌の感染を調べます。</td><td>2,200円</td></tr>
+        <tr><td>便潜血反応検査</td><td style="font-size:12px;color:var(--muted);">便を2日採取し、肉眼では見えない出血の有無を検査し大腸がんを調べます。</td><td>880円</td></tr>
+        <tr><td>胃透視検査</td><td style="font-size:12px;color:var(--muted);">バリウムを飲水し食道・胃・十二指腸のがん・潰瘍・ポリープなどを調べます。</td><td>8,800円</td></tr>
+        <tr><td>胃カメラ検査</td><td style="font-size:12px;color:var(--muted);">内視鏡で食道・胃・十二指腸を調べます。当院では経鼻内視鏡も完備しています。</td><td>11,000円</td></tr>
+        <tr><td>脳MRI</td><td style="font-size:12px;color:var(--muted);">脳梗塞・脳腫瘍・脳動脈瘤の有無を調べます。</td><td>15,000円</td></tr>
+      </tbody>
+    </table>
+  </div>
 
-  <div class="explain-box">
-    <div class="explain-title">がん情報・参考リンク</div>
-    <div class="explain-body">
-      健診・検診に関する信頼性の高い情報源として以下をご参照ください。
-      <div class="ref-links">
-        <a href="https://ganjoho.jp/public/pre_scr/cause_prevention/evidence_based.html" target="_blank" rel="noopener" class="ref-link">がん情報サービス</a>
-        <a href="https://www.kyoukaikenpo.or.jp/g4/cat410/sb4020/ra104/" target="_blank" rel="noopener" class="ref-link">協会けんぽ 基準値とは</a>
-        <a href="https://www.ningen-dock.jp/ningendock/wp-content/uploads/2025/01/2025hanteikubun.pdf" target="_blank" rel="noopener" class="ref-link">日本人間ドック学会 判定区分2025年度版</a>
-        <a href="https://epi.ncc.go.jp/can_prev/evaluation/2830.html" target="_blank" rel="noopener" class="ref-link">国立がん研究センター がんと体重</a>
+  <!-- 胃カメラ推奨者フローチャート -->
+  <div id="stomach" class="flow-section" style="margin-top:48px;">
+    <div class="sec-label">Gastric Cancer Screening</div>
+    <div class="sec-title">胃内視鏡検査（胃カメラ）が推奨される方</div>
+    <div class="sec-line"></div>
+    <div class="flow-box">
+      <div class="flow-header">
+        <div class="flow-header-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"/></svg>
+        </div>
+        <div class="flow-header-title">胃カメラ推奨者フローチャート</div>
+        <div class="flow-header-src">参照：日本消化器内視鏡学会</div>
       </div>
+      <div class="flow-body">
+        <div class="flow-svg-wrap">
+          <svg width="100%" viewBox="0 0 900 560" xmlns="http://www.w3.org/2000/svg" style="min-width:600px;">
+            <defs>
+              <marker id="arr1" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+                <path d="M2 1L8 5L2 9" fill="none" stroke="#1a5f7a" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </marker>
+              <marker id="arr2" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+                <path d="M2 1L8 5L2 9" fill="none" stroke="#e84040" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </marker>
+              <marker id="arr3" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+                <path d="M2 1L8 5L2 9" fill="none" stroke="#1d9e75" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </marker>
+            </defs>
+
+            <!-- START -->
+            <rect x="325" y="20" width="250" height="44" rx="22" fill="#0a2342" stroke="#0a2342"/>
+            <text x="450" y="47" text-anchor="middle" fill="white" font-size="13" font-family="'Noto Sans JP',sans-serif" font-weight="500">胃カメラを受けたことがある？</text>
+
+            <!-- YES / NO ライン -->
+            <line x1="450" y1="64" x2="450" y2="104" stroke="#1a5f7a" stroke-width="1.5" marker-end="url(#arr1)"/>
+
+            <!-- ピロリ菌検査ボックス -->
+            <rect x="305" y="104" width="290" height="44" rx="6" fill="#e8f4f8" stroke="#4a9ebe" stroke-width="1"/>
+            <text x="450" y="131" text-anchor="middle" fill="#0a2342" font-size="13" font-family="'Noto Sans JP',sans-serif" font-weight="500">ピロリ菌感染歴・除菌歴はある？</text>
+
+            <!-- YES -->
+            <line x1="450" y1="148" x2="450" y2="192" stroke="#1a5f7a" stroke-width="1.5" marker-end="url(#arr1)"/>
+            <text x="458" y="174" fill="#1a5f7a" font-size="11" font-family="'Noto Sans JP',sans-serif">あり</text>
+
+            <!-- NO 右へ -->
+            <line x1="595" y1="126" x2="720" y2="126" stroke="#1d9e75" stroke-width="1.5" marker-end="url(#arr3)"/>
+            <text x="650" y="120" fill="#1d9e75" font-size="11" font-family="'Noto Sans JP',sans-serif" text-anchor="middle">なし</text>
+
+            <!-- 右: リスク低い -->
+            <rect x="720" y="104" width="160" height="44" rx="6" fill="#e8f8ee" stroke="#1d9e75" stroke-width="1"/>
+            <text x="800" y="124" text-anchor="middle" fill="#0f6e56" font-size="12" font-family="'Noto Sans JP',sans-serif" font-weight="500">リスク低</text>
+            <text x="800" y="140" text-anchor="middle" fill="#0f6e56" font-size="11" font-family="'Noto Sans JP',sans-serif">バリウムor便潜血を検討</text>
+
+            <!-- 萎縮性胃炎・腸上皮化生ボックス -->
+            <rect x="280" y="192" width="340" height="44" rx="6" fill="#e8f4f8" stroke="#4a9ebe" stroke-width="1"/>
+            <text x="450" y="212" text-anchor="middle" fill="#0a2342" font-size="13" font-family="'Noto Sans JP',sans-serif" font-weight="500">萎縮性胃炎・腸上皮化生の</text>
+            <text x="450" y="228" text-anchor="middle" fill="#0a2342" font-size="13" font-family="'Noto Sans JP',sans-serif" font-weight="500">所見がある？</text>
+
+            <!-- YES下へ -->
+            <line x1="450" y1="236" x2="450" y2="280" stroke="#1a5f7a" stroke-width="1.5" marker-end="url(#arr1)"/>
+            <text x="458" y="262" fill="#1a5f7a" font-size="11" font-family="'Noto Sans JP',sans-serif">あり</text>
+
+            <!-- NO 右へ -->
+            <line x1="620" y1="214" x2="720" y2="214" stroke="#1d9e75" stroke-width="1.5" marker-end="url(#arr3)"/>
+            <text x="668" y="208" fill="#1d9e75" font-size="11" font-family="'Noto Sans JP',sans-serif" text-anchor="middle">なし</text>
+
+            <!-- 右: 除菌後フォロー -->
+            <rect x="720" y="192" width="160" height="56" rx="6" fill="#e8f8ee" stroke="#1d9e75" stroke-width="1"/>
+            <text x="800" y="212" text-anchor="middle" fill="#0f6e56" font-size="12" font-family="'Noto Sans JP',sans-serif" font-weight="500">除菌成功後</text>
+            <text x="800" y="228" text-anchor="middle" fill="#0f6e56" font-size="11" font-family="'Noto Sans JP',sans-serif">定期的な内視鏡検査</text>
+            <text x="800" y="242" text-anchor="middle" fill="#0f6e56" font-size="11" font-family="'Noto Sans JP',sans-serif">を推奨（2〜3年毎）</text>
+
+            <!-- 強く推奨ボックス -->
+            <rect x="270" y="280" width="360" height="56" rx="6" fill="#fff0f0" stroke="#e84040" stroke-width="1.5"/>
+            <text x="450" y="302" text-anchor="middle" fill="#c0392b" font-size="13" font-family="'Noto Sans JP',sans-serif" font-weight="500">胃内視鏡検査を強く推奨</text>
+            <text x="450" y="320" text-anchor="middle" fill="#c0392b" font-size="12" font-family="'Noto Sans JP',sans-serif">2〜3年に1回の定期的な受診を推奨</text>
+
+            <!-- 下へ -->
+            <line x1="450" y1="336" x2="450" y2="376" stroke="#e84040" stroke-width="1.5" marker-end="url(#arr2)"/>
+
+            <!-- ピロリ菌除菌後ボックス -->
+            <rect x="295" y="376" width="310" height="44" rx="6" fill="#e8f4f8" stroke="#4a9ebe" stroke-width="1"/>
+            <text x="450" y="396" text-anchor="middle" fill="#0a2342" font-size="13" font-family="'Noto Sans JP',sans-serif" font-weight="500">ピロリ菌を除菌済み？</text>
+            <text x="450" y="412" text-anchor="middle" fill="#5a6a7a" font-size="11" font-family="'Noto Sans JP',sans-serif">（除菌後も胃がんリスクは残る）</text>
+
+            <!-- YES下 -->
+            <line x1="375" y1="420" x2="375" y2="464" stroke="#1a5f7a" stroke-width="1.5" marker-end="url(#arr1)"/>
+            <text x="350" y="446" fill="#1a5f7a" font-size="11" font-family="'Noto Sans JP',sans-serif">済み</text>
+
+            <!-- NO右 -->
+            <line x1="605" y1="398" x2="680" y2="398" stroke="#e84040" stroke-width="1.5" marker-end="url(#arr2)"/>
+            <text x="640" y="392" fill="#e84040" font-size="11" font-family="'Noto Sans JP',sans-serif" text-anchor="middle">未除菌</text>
+
+            <!-- 除菌推奨 -->
+            <rect x="680" y="376" width="190" height="44" rx="6" fill="#fff0f0" stroke="#e84040" stroke-width="1"/>
+            <text x="775" y="396" text-anchor="middle" fill="#c0392b" font-size="12" font-family="'Noto Sans JP',sans-serif" font-weight="500">ピロリ菌除菌療法を推奨</text>
+            <text x="775" y="412" text-anchor="middle" fill="#c0392b" font-size="11" font-family="'Noto Sans JP',sans-serif">（除菌後も内視鏡継続）</text>
+
+            <!-- 除菌後も継続ボックス -->
+            <rect x="255" y="464" width="240" height="56" rx="6" fill="#fff0f0" stroke="#e84040" stroke-width="1.5"/>
+            <text x="375" y="486" text-anchor="middle" fill="#c0392b" font-size="12" font-family="'Noto Sans JP',sans-serif" font-weight="500">除菌後も継続受診を推奨</text>
+            <text x="375" y="502" text-anchor="middle" fill="#c0392b" font-size="11" font-family="'Noto Sans JP',sans-serif">萎縮・腸上皮化生があれば</text>
+            <text x="375" y="516" text-anchor="middle" fill="#c0392b" font-size="11" font-family="'Noto Sans JP',sans-serif">胃がんリスクが残るため要経過観察</text>
+
+            <!-- 凡例 -->
+            <rect x="20" y="480" width="200" height="64" rx="6" fill="#f8f8f8" stroke="#ddd" stroke-width="0.5"/>
+            <text x="30" y="498" fill="#888" font-size="10" font-family="'Noto Sans JP',sans-serif">凡例</text>
+            <rect x="30" y="506" width="12" height="12" rx="2" fill="#fff0f0" stroke="#e84040" stroke-width="1"/>
+            <text x="48" y="517" fill="#555" font-size="11" font-family="'Noto Sans JP',sans-serif">胃カメラ推奨</text>
+            <rect x="30" y="524" width="12" height="12" rx="2" fill="#e8f8ee" stroke="#1d9e75" stroke-width="1"/>
+            <text x="48" y="535" fill="#555" font-size="11" font-family="'Noto Sans JP',sans-serif">リスク低・代替検査を検討</text>
+          </svg>
+        </div>
+        <p style="font-size:12px;color:var(--muted);margin-top:12px;line-height:1.8;">
+          ※ピロリ菌感染・除菌歴がある場合や萎縮性胃炎・腸上皮化生がある場合は胃がんリスクが高いため、定期的な胃内視鏡検査を強くお勧めします。除菌後も胃がんリスクは残るため、除菌後も継続した内視鏡検査が必要です。<br>
+          参照：<a href="https://www.jges.net/citizen/faq/esophagus-stomach_08" target="_blank" rel="noopener" style="color:var(--ocean);">日本消化器内視鏡学会 FAQ</a>
+        </p>
+      </div>
+    </div>
+
+    <!-- ピロリ菌除菌後の推奨間隔 -->
+    <div style="background:var(--foam);border-radius:8px;padding:20px 24px;margin-bottom:12px;border-left:3px solid var(--sky);">
+      <div style="font-size:14px;font-weight:500;color:var(--navy);margin-bottom:10px;">胃内視鏡の推奨受診間隔（日本消化器内視鏡学会より）</div>
+      <table style="width:100%;border-collapse:collapse;font-size:13px;">
+        <tr style="border-bottom:0.5px solid rgba(26,95,122,0.15);">
+          <th style="padding:10px 0;font-size:12px;font-weight:500;color:var(--ocean);width:220px;text-align:left;">対象</th>
+          <th style="padding:10px 14px;font-size:12px;font-weight:500;color:var(--ocean);text-align:left;">推奨間隔</th>
+        </tr>
+        <tr style="border-bottom:0.5px solid rgba(26,95,122,0.1);">
+          <td style="padding:12px 0;font-weight:500;color:var(--navy);">ピロリ菌感染・萎縮性胃炎あり</td>
+          <td style="padding:12px 14px;color:var(--text);">2〜3年に1回（早期発見のため定期受診を推奨）</td>
+        </tr>
+        <tr style="border-bottom:0.5px solid rgba(26,95,122,0.1);">
+          <td style="padding:12px 0;font-weight:500;color:var(--navy);">ピロリ菌除菌後・萎縮性胃炎残存</td>
+          <td style="padding:12px 14px;color:var(--text);">除菌後も2〜3年に1回継続（胃がんリスクは残存）</td>
+        </tr>
+        <tr style="border-bottom:0.5px solid rgba(26,95,122,0.1);">
+          <td style="padding:12px 0;font-weight:500;color:var(--navy);">ピロリ菌陰性・胃炎なし</td>
+          <td style="padding:12px 14px;color:var(--text);">リスクは低いが症状があれば受診を推奨</td>
+        </tr>
+        <tr>
+          <td style="padding:12px 0;font-weight:500;color:var(--navy);">胃がん・胃潰瘍の既往・家族歴あり</td>
+          <td style="padding:12px 14px;color:var(--text);">担当医と相談の上、より短い間隔での受診を推奨</td>
+        </tr>
+      </table>
+    </div>
+  </div>
+
+  <!-- 大腸カメラ インターバルフローチャート -->
+  <div id="colon" class="flow-section" style="margin-top:48px;">
+    <div class="sec-label">Colorectal Cancer Screening</div>
+    <div class="sec-title">大腸内視鏡検査（大腸カメラ）の受診間隔</div>
+    <div class="sec-line"></div>
+    <div class="flow-box">
+      <div class="flow-header">
+        <div class="flow-header-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
+        </div>
+        <div class="flow-header-title">大腸カメラ受診間隔フローチャート</div>
+        <div class="flow-header-src">参照：日本消化器内視鏡学会・大腸癌研究会</div>
+      </div>
+      <div class="flow-body">
+        <div class="flow-svg-wrap">
+          <svg width="100%" viewBox="0 0 900 500" xmlns="http://www.w3.org/2000/svg" style="min-width:600px;">
+            <defs>
+              <marker id="ba1" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+                <path d="M2 1L8 5L2 9" fill="none" stroke="#1a5f7a" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </marker>
+              <marker id="ba2" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+                <path d="M2 1L8 5L2 9" fill="none" stroke="#e84040" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </marker>
+              <marker id="ba3" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+                <path d="M2 1L8 5L2 9" fill="none" stroke="#1d9e75" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </marker>
+              <marker id="ba4" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+                <path d="M2 1L8 5L2 9" fill="none" stroke="#ba7517" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </marker>
+            </defs>
+
+            <!-- スタート -->
+            <rect x="300" y="20" width="300" height="44" rx="22" fill="#0a2342"/>
+            <text x="450" y="47" text-anchor="middle" fill="white" font-size="13" font-family="'Noto Sans JP',sans-serif" font-weight="500">大腸内視鏡検査の結果は？</text>
+
+            <line x1="450" y1="64" x2="450" y2="108" stroke="#1a5f7a" stroke-width="1.5" marker-end="url(#ba1)"/>
+
+            <!-- 分岐ボックス -->
+            <rect x="290" y="108" width="320" height="44" rx="6" fill="#e8f4f8" stroke="#4a9ebe" stroke-width="1"/>
+            <text x="450" y="134" text-anchor="middle" fill="#0a2342" font-size="13" font-family="'Noto Sans JP',sans-serif" font-weight="500">ポリープ（腺腫）は見つかった？</text>
+
+            <!-- 分岐 -->
+            <!-- なし→左 -->
+            <line x1="290" y1="130" x2="160" y2="130" stroke="#1d9e75" stroke-width="1.5" marker-end="url(#ba3)"/>
+            <text x="222" y="124" fill="#1d9e75" font-size="11" font-family="'Noto Sans JP',sans-serif" text-anchor="middle">なし</text>
+            <rect x="20" y="108" width="140" height="56" rx="6" fill="#e8f8ee" stroke="#1d9e75" stroke-width="1"/>
+            <text x="90" y="130" text-anchor="middle" fill="#0f6e56" font-size="12" font-family="'Noto Sans JP',sans-serif" font-weight="500">ポリープなし</text>
+            <text x="90" y="148" text-anchor="middle" fill="#0f6e56" font-size="11" font-family="'Noto Sans JP',sans-serif">5〜10年後に</text>
+            <text x="90" y="162" text-anchor="middle" fill="#0f6e56" font-size="11" font-family="'Noto Sans JP',sans-serif">再検査推奨</text>
+
+            <!-- あり→下 -->
+            <line x1="450" y1="152" x2="450" y2="196" stroke="#1a5f7a" stroke-width="1.5" marker-end="url(#ba1)"/>
+            <text x="458" y="178" fill="#1a5f7a" font-size="11" font-family="'Noto Sans JP',sans-serif">あり</text>
+
+            <!-- ポリープサイズ分岐 -->
+            <rect x="270" y="196" width="360" height="44" rx="6" fill="#e8f4f8" stroke="#4a9ebe" stroke-width="1"/>
+            <text x="450" y="216" text-anchor="middle" fill="#0a2342" font-size="13" font-family="'Noto Sans JP',sans-serif" font-weight="500">ポリープの状態は？</text>
+            <text x="450" y="232" text-anchor="middle" fill="#5a6a7a" font-size="11" font-family="'Noto Sans JP',sans-serif">（個数・サイズ・組織型）</text>
+
+            <!-- 低リスク→左 -->
+            <line x1="270" y1="218" x2="160" y2="260" stroke="#ba7517" stroke-width="1.5" marker-end="url(#ba4)"/>
+            <text x="195" y="240" fill="#ba7517" font-size="10" font-family="'Noto Sans JP',sans-serif">低リスク</text>
+
+            <!-- 高リスク→右 -->
+            <line x1="630" y1="218" x2="730" y2="260" stroke="#e84040" stroke-width="1.5" marker-end="url(#ba2)"/>
+            <text x="695" y="240" fill="#e84040" font-size="10" font-family="'Noto Sans JP',sans-serif">高リスク</td></text>
+
+            <!-- 切除→下 -->
+            <line x1="450" y1="240" x2="450" y2="284" stroke="#1a5f7a" stroke-width="1.5" marker-end="url(#ba1)"/>
+            <text x="458" y="266" fill="#1a5f7a" font-size="11" font-family="'Noto Sans JP',sans-serif">切除済み</text>
+
+            <!-- 低リスクボックス -->
+            <rect x="20" y="260" width="140" height="68" rx="6" fill="#fef9e8" stroke="#ba7517" stroke-width="1"/>
+            <text x="90" y="282" text-anchor="middle" fill="#633806" font-size="12" font-family="'Noto Sans JP',sans-serif" font-weight="500">低リスク腺腫</text>
+            <text x="90" y="298" text-anchor="middle" fill="#633806" font-size="11" font-family="'Noto Sans JP',sans-serif">（5mm以下・1〜2個）</text>
+            <text x="90" y="314" text-anchor="middle" fill="#633806" font-size="11" font-family="'Noto Sans JP',sans-serif">3〜5年後に再検査</text>
+
+            <!-- 高リスクボックス -->
+            <rect x="730" y="260" width="150" height="68" rx="6" fill="#fff0f0" stroke="#e84040" stroke-width="1"/>
+            <text x="805" y="282" text-anchor="middle" fill="#c0392b" font-size="12" font-family="'Noto Sans JP',sans-serif" font-weight="500">高リスク腺腫</text>
+            <text x="805" y="298" text-anchor="middle" fill="#c0392b" font-size="11" font-family="'Noto Sans JP',sans-serif">（10mm以上・多発・</text>
+            <text x="805" y="314" text-anchor="middle" fill="#c0392b" font-size="11" font-family="'Noto Sans JP',sans-serif">絨毛成分あり）</text>
+
+            <!-- 高リスク→1年 -->
+            <line x1="805" y1="328" x2="805" y2="372" stroke="#e84040" stroke-width="1.5" marker-end="url(#ba2)"/>
+            <rect x="730" y="372" width="150" height="44" rx="6" fill="#fff0f0" stroke="#e84040" stroke-width="1.5"/>
+            <text x="805" y="392" text-anchor="middle" fill="#c0392b" font-size="12" font-family="'Noto Sans JP',sans-serif" font-weight="500">1年後に再検査</text>
+            <text x="805" y="408" text-anchor="middle" fill="#c0392b" font-size="11" font-family="'Noto Sans JP',sans-serif">（早期フォロー推奨）</text>
+
+            <!-- 切除後通常ボックス -->
+            <rect x="280" y="284" width="340" height="44" rx="6" fill="#e8f4f8" stroke="#4a9ebe" stroke-width="1"/>
+            <text x="450" y="310" text-anchor="middle" fill="#0a2342" font-size="13" font-family="'Noto Sans JP',sans-serif" font-weight="500">完全切除できた？</text>
+
+            <!-- 完全→下 -->
+            <line x1="450" y1="328" x2="450" y2="372" stroke="#1a5f7a" stroke-width="1.5" marker-end="url(#ba1)"/>
+            <text x="458" y="354" fill="#1a5f7a" font-size="11" font-family="'Noto Sans JP',sans-serif">完全切除</text>
+
+            <!-- 不完全→左 -->
+            <line x1="280" y1="306" x2="200" y2="372" stroke="#e84040" stroke-width="1.5" marker-end="url(#ba2)"/>
+            <text x="224" y="340" fill="#e84040" font-size="10" font-family="'Noto Sans JP',sans-serif">不完全</text>
+            <rect x="60" y="372" width="140" height="44" rx="6" fill="#fff0f0" stroke="#e84040" stroke-width="1"/>
+            <text x="130" y="392" text-anchor="middle" fill="#c0392b" font-size="12" font-family="'Noto Sans JP',sans-serif" font-weight="500">3〜6ヶ月後に</text>
+            <text x="130" y="408" text-anchor="middle" fill="#c0392b" font-size="11" font-family="'Noto Sans JP',sans-serif">再検査（残存確認）</text>
+
+            <!-- 通常フォローボックス -->
+            <rect x="290" y="372" width="320" height="56" rx="6" fill="#e8f8ee" stroke="#1d9e75" stroke-width="1.5"/>
+            <text x="450" y="394" text-anchor="middle" fill="#085041" font-size="13" font-family="'Noto Sans JP',sans-serif" font-weight="500">切除後フォローアップ</text>
+            <text x="450" y="412" text-anchor="middle" fill="#085041" font-size="12" font-family="'Noto Sans JP',sans-serif">1〜3年後に再検査推奨</text>
+            <text x="450" y="428" text-anchor="middle" fill="#085041" font-size="11" font-family="'Noto Sans JP',sans-serif">（担当医の指示に従う）</text>
+
+            <!-- 大腸がん既往→右上から -->
+            <line x1="610" y1="130" x2="750" y2="130" stroke="#e84040" stroke-width="1.5" marker-end="url(#ba2)"/>
+            <text x="678" y="124" fill="#e84040" font-size="11" font-family="'Noto Sans JP',sans-serif" text-anchor="middle">がん既往あり</text>
+            <rect x="750" y="108" width="130" height="56" rx="6" fill="#fff0f0" stroke="#e84040" stroke-width="1.5"/>
+            <text x="815" y="130" text-anchor="middle" fill="#c0392b" font-size="12" font-family="'Noto Sans JP',sans-serif" font-weight="500">大腸がん術後</text>
+            <text x="815" y="146" text-anchor="middle" fill="#c0392b" font-size="11" font-family="'Noto Sans JP',sans-serif">術後1年・以降</text>
+            <text x="815" y="160" text-anchor="middle" fill="#c0392b" font-size="11" font-family="'Noto Sans JP',sans-serif">2〜3年毎に検査</text>
+
+            <!-- 凡例 -->
+            <rect x="20" y="440" width="260" height="48" rx="6" fill="#f8f8f8" stroke="#ddd" stroke-width="0.5"/>
+            <text x="30" y="458" fill="#888" font-size="10" font-family="'Noto Sans JP',sans-serif">凡例</text>
+            <rect x="30" y="464" width="10" height="10" rx="2" fill="#e8f8ee" stroke="#1d9e75" stroke-width="1"/>
+            <text x="46" y="473" fill="#555" font-size="10" font-family="'Noto Sans JP',sans-serif">低リスク・長間隔</text>
+            <rect x="130" y="464" width="10" height="10" rx="2" fill="#fef9e8" stroke="#ba7517" stroke-width="1"/>
+            <text x="146" y="473" fill="#555" font-size="10" font-family="'Noto Sans JP',sans-serif">中リスク</text>
+            <rect x="195" y="464" width="10" height="10" rx="2" fill="#fff0f0" stroke="#e84040" stroke-width="1"/>
+            <text x="211" y="473" fill="#555" font-size="10" font-family="'Noto Sans JP',sans-serif">高リスク・短間隔</text>
+          </svg>
+        </div>
+        <p style="font-size:12px;color:var(--muted);margin-top:12px;line-height:1.8;">
+          ※受診間隔はポリープの個数・サイズ・組織型・切除状況によって異なります。担当医の指示を必ずご確認ください。<br>
+          大腸がんや大腸ポリープの既往・家族歴のある方は、より短い間隔での受診が必要な場合があります。
+        </p>
+      </div>
+    </div>
+
+    <!-- インターバルまとめ表 -->
+    <div style="background:var(--foam);border-radius:8px;padding:20px 24px;margin-bottom:12px;border-left:3px solid var(--sky);">
+      <div style="font-size:14px;font-weight:500;color:var(--navy);margin-bottom:12px;">大腸内視鏡検査の推奨受診間隔まとめ</div>
+      <table style="width:100%;border-collapse:collapse;font-size:13px;">
+        <tr style="border-bottom:0.5px solid rgba(26,95,122,0.15);">
+          <th style="padding:10px 0;font-size:12px;font-weight:500;color:var(--ocean);width:240px;text-align:left;">状況</th>
+          <th style="padding:10px 14px;font-size:12px;font-weight:500;color:var(--ocean);text-align:left;">推奨間隔</th>
+        </tr>
+        <tr style="border-bottom:0.5px solid rgba(26,95,122,0.1);">
+          <td style="padding:12px 0;font-weight:500;color:var(--navy);">ポリープなし（正常）</td>
+          <td style="padding:12px 14px;">5〜10年後（リスク低）</td>
+        </tr>
+        <tr style="border-bottom:0.5px solid rgba(26,95,122,0.1);">
+          <td style="padding:12px 0;font-weight:500;color:var(--navy);">低リスク腺腫（5mm以下・1〜2個）切除後</td>
+          <td style="padding:12px 14px;">3〜5年後</td>
+        </tr>
+        <tr style="border-bottom:0.5px solid rgba(26,95,122,0.1);">
+          <td style="padding:12px 0;font-weight:500;color:var(--navy);">高リスク腺腫（10mm以上・多発・絨毛成分あり）切除後</td>
+          <td style="padding:12px 14px;color:#c0392b;font-weight:500;">1年後（短期フォロー）</td>
+        </tr>
+        <tr style="border-bottom:0.5px solid rgba(26,95,122,0.1);">
+          <td style="padding:12px 0;font-weight:500;color:var(--navy);">不完全切除後</td>
+          <td style="padding:12px 14px;color:#c0392b;font-weight:500;">3〜6ヶ月後（残存確認）</td>
+        </tr>
+        <tr style="border-bottom:0.5px solid rgba(26,95,122,0.1);">
+          <td style="padding:12px 0;font-weight:500;color:var(--navy);">大腸がん術後</td>
+          <td style="padding:12px 14px;color:#c0392b;font-weight:500;">術後1年・以降2〜3年毎</td>
+        </tr>
+        <tr>
+          <td style="padding:12px 0;font-weight:500;color:var(--navy);">便潜血陽性（要精検）</td>
+          <td style="padding:12px 14px;">速やかに大腸内視鏡検査を受診</td>
+        </tr>
+      </table>
+    </div>
+  </div>
+
+  <!-- 令和6年度実績 -->
+  <div id="results" style="margin-top:48px;">
+    <div class="sec-label">Results</div>
+    <div class="sec-title">当院でのがん検診発見数（令和6年度）</div>
+    <div class="sec-line"></div>
+    <div style="overflow-x:auto;margin-bottom:8px;">
+      <table class="results-table">
+        <thead>
+          <tr>
+            <th>部位</th><th>検査種類</th><th>検査数</th>
+            <th>要精査</th><th>受診</th><th>未受診</th><th>がんと診断</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>肺がん</td><td>胸部レントゲン</td><td>1,100</td><td>45</td><td>36</td><td>9</td><td>0</td></tr>
+          <tr><td rowspan="2">胃がん</td><td>上部消化管内視鏡</td><td>495</td><td>19</td><td>18</td><td>1</td><td class="cancer">1</td></tr>
+          <tr><td>胃透視（バリウム）</td><td>75</td><td>3</td><td>2</td><td>1</td><td>0</td></tr>
+          <tr><td rowspan="2">乳がん</td><td>マンモグラフィー</td><td>122</td><td>10</td><td>10</td><td>0</td><td>0</td></tr>
+          <tr><td>超音波</td><td>106</td><td>4</td><td>3</td><td>1</td><td class="cancer">2</td></tr>
+          <tr><td>子宮頸がん</td><td>細胞診</td><td>133</td><td>7</td><td>4</td><td>3</td><td>0</td></tr>
+          <tr><td>大腸がん</td><td>便潜血</td><td>691</td><td>27</td><td>15</td><td>12</td><td class="cancer">2</td></tr>
+          <tr><td>前立腺がん</td><td>PSA</td><td>161</td><td>9</td><td>8</td><td>1</td><td class="cancer">1</td></tr>
+          <tr><td>腹部スクリーニング</td><td>超音波</td><td>446</td><td>22</td><td>21</td><td>1</td><td class="cancer">2</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="table-note">※「未受診」は要精査の連絡をしたが精密検査を受けていない方の数です。精密検査が必要と言われた方は必ず受診してください。</div>
+  </div>
+
+  <!-- よくある疑問 -->
+  <div id="faq" style="margin-top:48px;">
+    <div class="sec-label">FAQ</div>
+    <div class="sec-title">健康診断に関するよくある疑問</div>
+    <div class="sec-line"></div>
+    <div class="faq-list">
+
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">健康診断では何がわかるの？<span class="faq-icon">+</span></button>
+        <div class="faq-a">
+          健康診断は「無症状」の方を対象として将来の病気発症のリスクを見積もるために、意義が高いと思われる検査項目を医療機器等で調べるものです。大きく2つに分けて「動脈硬化対策」と「癌対策」に分かれます。
+          <ul>
+            <li>動脈硬化の原因として有名な病状が高血圧症・糖尿病・脂質異常症です。また肥満症や喫煙、慢性腎臓病・高尿酸血症・運動不足などもリスクとなります。</li>
+            <li>癌対策は「健診」ではなく対策型の「検診」となります。特定の臓器の癌をターゲットに絞って検査します。</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">二次健診にひっかかったけど大丈夫？<span class="faq-icon">+</span></button>
+        <div class="faq-a">
+          健康診断には「基準値」が設けられており、5%程度の方が基準値から外れると言われています。基準値を外れたからといって必ずしも病気とは限りませんが、精密検査を受けることを強くお勧めします。当院外来にてご相談ください。
+          <div class="ref-links">
+            <a href="https://www.kyoukaikenpo.or.jp/g4/cat410/sb4020/ra104/" target="_blank" rel="noopener" class="ref-link">協会けんぽ 基準値とは</a>
+            <a href="https://www.ningen-dock.jp/ningendock/wp-content/uploads/2025/01/2025hanteikubun.pdf" target="_blank" rel="noopener" class="ref-link">日本人間ドック学会 判定区分2025年度版</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">外来受診でがんの早期発見はできないの？<span class="faq-icon">+</span></button>
+        <div class="faq-a">
+          通常の外来診察では無症状の方に保険で検査を行うことはできません。無症状でのがん早期発見には健診・検診の制度が必要です。自覚症状がなくても定期的な健診受診が重要です。
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">感染症によってリスクが高まるがんはある？<span class="faq-icon">+</span></button>
+        <div class="faq-a">
+          事前に対策ができるがんとして以下の3つが代表的です。
+          <ul>
+            <li>肝炎ウイルスによる肝細胞がん</li>
+            <li>ヘリコバクター・ピロリ菌による胃がん</li>
+            <li>ヒトパピローマウイルス（HPV）による子宮頸がん</li>
+          </ul>
+          これらは一度検査したり、未成年のうちにHPVワクチンの接種などを検討することが重要です。天草市では15歳の未成年を対象にピロリ菌検査を尿で行っています。
+          <div class="ref-links">
+            <a href="https://ganjoho.jp/public/pre_scr/cause_prevention/evidence_based.html" target="_blank" rel="noopener" class="ref-link">がん情報サービス（科学的根拠に基づくがん予防）</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">BMI・体重と健康の関係は？<span class="faq-icon">+</span></button>
+        <div class="faq-a">
+          健康診断ではBMI25以下が推奨されていますが、国立がん研究センターの情報では男性はBMI21〜27が推奨されており、25以上でも一概に問題とはなりません。BMIが14未満または40以上の場合は死亡リスクが明らかに高まるとされています。
+          <div class="ref-links">
+            <a href="https://epi.ncc.go.jp/can_prev/evaluation/2830.html" target="_blank" rel="noopener" class="ref-link">国立がん研究センター がんと体重</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">悪玉コレステロールだけが異常だったが、どんなリスクがある？<span class="faq-icon">+</span></button>
+        <div class="faq-a">
+          「脳卒中・虚血性心疾患発症確率計算」というツールがあります。40歳から75歳の日本人の健診データを基に将来リスクを算出できます。ご自身の発症リスクの参考にされてください。
+          <div class="ref-links">
+            <a href="https://www.osaka-ganjun.jp/health/si-estimate/" target="_blank" rel="noopener" class="ref-link">脳卒中・虚血性心疾患発症確率計算</a>
+          </div>
+        </div>
+      </div>
+
     </div>
   </div>
 
@@ -403,9 +695,10 @@ footer{background:#06182e;padding:36px 60px;display:flex;align-items:flex-start;
 <script>
 function toggleFaq(btn) {
   btn.classList.toggle('open');
-  const answer = btn.nextElementSibling;
+  var answer = btn.nextElementSibling;
   answer.classList.toggle('open');
 }
 </script>
+
 </body>
 </html>
