@@ -6,71 +6,149 @@
 <title>外来のご案内 | 天草市立 牛深市民病院</title>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300;400;600&family=Noto+Sans+JP:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
-*{margin:0;padding:0;box-sizing:border-box;}
-:root{--navy:#0a2342;--ocean:#1a5f7a;--sky:#4a9ebe;--foam:#e8f4f8;--sand:#f5f0e8;--text:#1a1a2e;--muted:#5a6a7a;--white:#ffffff;--accent:#c8832a;}
-body{font-family:'Noto Sans JP',sans-serif;color:var(--text);background:var(--white);overflow-x:hidden;}
-nav{position:sticky;top:0;z-index:100;background:rgba(10,35,66,0.97);backdrop-filter:blur(8px);display:flex;align-items:center;justify-content:space-between;padding:0 40px;height:64px;}
-.nav-logo{font-family:'Noto Serif JP',serif;font-size:15px;font-weight:600;color:var(--white);letter-spacing:0.08em;text-decoration:none;}
-.nav-logo span{font-size:10px;font-weight:300;display:block;letter-spacing:0.12em;color:rgba(255,255,255,0.55);margin-top:2px;}
-.nav-links{display:flex;}
-.nav-links a{color:rgba(255,255,255,0.8);text-decoration:none;font-size:12px;padding:0 14px;height:64px;display:flex;align-items:center;transition:all 0.2s;border-bottom:2px solid transparent;}
-.nav-links a:hover,.nav-links a.active{color:var(--white);border-bottom-color:var(--sky);}
-.nav-tel a{color:var(--white);font-size:16px;font-weight:500;text-decoration:none;}
-.nav-tel span{font-size:10px;display:block;color:rgba(255,255,255,0.5);margin-top:2px;text-align:right;}
-.page-hero{background:linear-gradient(135deg,var(--navy) 0%,var(--ocean) 100%);padding:52px 60px 44px;position:relative;overflow:hidden;}
-.page-hero::after{content:'';position:absolute;bottom:0;left:0;right:0;height:4px;background:linear-gradient(90deg,var(--sky),var(--foam));}
-.breadcrumb{display:flex;gap:8px;margin-bottom:16px;}
-.breadcrumb a,.breadcrumb span{font-size:12px;color:rgba(255,255,255,0.55);text-decoration:none;}
-.breadcrumb a:hover{color:rgba(255,255,255,0.8);}
-.breadcrumb .sep{color:rgba(255,255,255,0.3);}
-.page-title{font-family:'Noto Serif JP',serif;font-size:32px;font-weight:600;color:var(--white);letter-spacing:0.04em;margin-bottom:8px;}
-.page-sub{font-size:13px;color:rgba(255,255,255,0.6);letter-spacing:0.08em;}
-.container{max-width:1000px;margin:0 auto;padding:52px 60px;}
-.sec-label{font-size:10px;letter-spacing:0.2em;color:var(--sky);text-transform:uppercase;margin-bottom:8px;}
-.sec-title{font-family:'Noto Serif JP',serif;font-size:22px;font-weight:600;color:var(--navy);margin-bottom:16px;}
-.sec-line{width:36px;height:2px;background:var(--sky);margin-bottom:28px;}
-.hours-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-bottom:16px;}
-.hours-card{background:var(--foam);border-radius:8px;padding:20px;border:0.5px solid rgba(26,95,122,0.12);}
-.hc-day{font-size:12px;font-weight:500;color:var(--ocean);margin-bottom:8px;letter-spacing:0.06em;}
-.hc-time{font-family:'Noto Serif JP',serif;font-size:20px;font-weight:600;color:var(--navy);margin-bottom:6px;}
-.hc-note{font-size:11px;color:var(--muted);line-height:1.8;}
-.alert-box{background:#fff8e8;border:0.5px solid #e8c87a;border-radius:8px;padding:16px 20px;font-size:13px;color:#6b4a00;line-height:1.8;margin-bottom:32px;}
-.alert-box strong{display:block;margin-bottom:4px;font-size:14px;}
-.schedule-wrap{overflow-x:auto;margin-bottom:12px;}
-table{width:100%;border-collapse:collapse;font-size:13px;}
-th{background:var(--navy);color:var(--white);padding:10px 12px;text-align:center;font-weight:500;font-size:12px;letter-spacing:0.04em;}
-th:first-child{text-align:left;width:130px;}
-td{padding:10px 12px;border-bottom:0.5px solid rgba(26,95,122,0.1);text-align:center;vertical-align:middle;line-height:1.6;}
-td:first-child{text-align:left;font-weight:500;color:var(--navy);background:var(--foam);}
-tr:last-child td{border-bottom:none;}
-tr:hover td{background:rgba(232,244,248,0.5);}
-tr:hover td:first-child{background:var(--foam);}
-.doc{font-size:12px;color:var(--text);}
-.closed{font-size:11px;color:var(--muted);}
-.firsttime-section{background:var(--sand);border-radius:12px;padding:36px;margin-bottom:48px;}
-.steps{display:flex;flex-direction:column;}
-.step{display:flex;gap:20px;align-items:flex-start;padding:20px 0;border-bottom:0.5px solid rgba(26,95,122,0.1);}
-.step:last-child{border-bottom:none;}
-.step-num{width:36px;height:36px;border-radius:50%;background:var(--ocean);color:var(--white);display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:500;flex-shrink:0;margin-top:2px;}
-.step-title{font-size:15px;font-weight:500;color:var(--navy);margin-bottom:4px;}
-.step-desc{font-size:13px;color:var(--muted);line-height:1.8;}
-.info-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-bottom:48px;}
-.info-card{border:0.5px solid rgba(26,95,122,0.15);border-radius:8px;padding:24px;text-decoration:none;display:block;transition:all 0.2s;position:relative;overflow:hidden;}
-.info-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--ocean),var(--sky));transform:scaleX(0);transform-origin:left;transition:transform 0.3s;}
-.info-card:hover::before{transform:scaleX(1);}
-.info-card:hover{border-color:var(--sky);transform:translateY(-2px);}
-.ic-title{font-size:15px;font-weight:500;color:var(--navy);margin-bottom:8px;}
-.ic-desc{font-size:12px;color:var(--muted);line-height:1.8;}
-footer{background:#06182e;padding:36px 60px;display:flex;align-items:flex-start;justify-content:space-between;gap:40px;}
-.footer-logo{font-family:'Noto Serif JP',serif;font-size:15px;color:rgba(255,255,255,0.85);letter-spacing:0.08em;}
-.footer-logo span{font-size:10px;display:block;color:rgba(255,255,255,0.4);margin-top:4px;line-height:1.8;}
-.footer-links{display:flex;gap:24px;flex-wrap:wrap;}
-.footer-links a{font-size:12px;color:rgba(255,255,255,0.5);text-decoration:none;transition:color 0.2s;}
-.footer-links a:hover{color:rgba(255,255,255,0.8);}
-@media(max-width:768px){nav{padding:0 16px;}.nav-links{display:none;}.page-hero{padding:36px 20px 28px;}.page-title{font-size:22px;}.container{padding:36px 20px;}.hours-grid{grid-template-columns:1fr;}.info-grid{grid-template-columns:1fr;}footer{padding:24px 16px;flex-direction:column;gap:16px;}}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+:root {
+  --navy: #0a2342; --ocean: #1a5f7a; --sky: #4a9ebe;
+  --foam: #e8f4f8; --sand: #f5f0e8; --text: #1a1a2e;
+  --muted: #5a6a7a; --white: #ffffff;
+}
+body { font-family: 'Noto Sans JP', sans-serif; color: var(--text); background: var(--white); }
+
+/* ===== NAV ===== */
+nav {
+  position: sticky; top: 0; z-index: 100;
+  background: rgba(10,35,66,0.97); backdrop-filter: blur(8px);
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 0 40px; height: 64px;
+}
+.nav-logo { font-family: 'Noto Serif JP', serif; font-size: 15px; font-weight: 600; color: #fff; letter-spacing: 0.08em; text-decoration: none; }
+.nav-logo span { font-size: 10px; display: block; color: rgba(255,255,255,0.55); margin-top: 2px; }
+.nav-links { display: flex; }
+.nav-links a { color: rgba(255,255,255,0.8); text-decoration: none; font-size: 12px; padding: 0 14px; height: 64px; display: flex; align-items: center; border-bottom: 2px solid transparent; transition: all 0.2s; }
+.nav-links a:hover, .nav-links a.active { color: #fff; border-bottom-color: var(--sky); }
+.nav-tel a { color: #fff; font-size: 16px; font-weight: 500; text-decoration: none; }
+.nav-tel span { font-size: 10px; display: block; color: rgba(255,255,255,0.5); margin-top: 2px; text-align: right; }
+
+/* ===== HERO ===== */
+.page-hero { background: linear-gradient(135deg, var(--navy) 0%, var(--ocean) 100%); padding: 52px 60px 0; position: relative; overflow: hidden; }
+.page-hero::after { content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 4px; background: linear-gradient(90deg, var(--sky), var(--foam)); }
+.breadcrumb { display: flex; gap: 8px; margin-bottom: 16px; }
+.breadcrumb a, .breadcrumb span { font-size: 12px; color: rgba(255,255,255,0.55); text-decoration: none; }
+.breadcrumb a:hover { color: rgba(255,255,255,0.85); }
+.breadcrumb .sep { color: rgba(255,255,255,0.3); }
+.page-title { font-family: 'Noto Serif JP', serif; font-size: 32px; font-weight: 600; color: #fff; margin-bottom: 6px; }
+.page-sub { font-size: 13px; color: rgba(255,255,255,0.6); letter-spacing: 0.08em; margin-bottom: 28px; }
+
+/* ===== ページ内タブナビ（ヒーロー下部に張り付く） ===== */
+.page-tabs {
+  display: flex; gap: 0; overflow-x: auto;
+  scrollbar-width: none; -ms-overflow-style: none;
+}
+.page-tabs::-webkit-scrollbar { display: none; }
+.page-tab {
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  gap: 4px; padding: 14px 20px; text-decoration: none;
+  border-bottom: 3px solid transparent;
+  transition: all 0.2s; white-space: nowrap; min-width: 0; flex-shrink: 0;
+  background: rgba(255,255,255,0.07);
+}
+.page-tab:hover { background: rgba(255,255,255,0.13); border-bottom-color: rgba(255,255,255,0.4); }
+.page-tab.ext { background: rgba(74,158,190,0.18); }
+.page-tab.ext:hover { background: rgba(74,158,190,0.28); border-bottom-color: var(--sky); }
+.tab-icon { width: 20px; height: 20px; opacity: 0.75; flex-shrink: 0; }
+.tab-label { font-size: 11px; color: rgba(255,255,255,0.85); letter-spacing: 0.04em; line-height: 1.3; text-align: center; }
+.page-tab.ext .tab-label { color: #a8ddf4; }
+.tab-arrow { font-size: 9px; color: rgba(255,255,255,0.4); }
+.page-tab.ext .tab-arrow { color: rgba(168,221,244,0.7); }
+
+/* ===== CONTAINER ===== */
+.container { max-width: 1000px; margin: 0 auto; padding: 52px 60px; }
+.sec-label { font-size: 10px; letter-spacing: 0.2em; color: var(--sky); text-transform: uppercase; margin-bottom: 8px; }
+.sec-title { font-family: 'Noto Serif JP', serif; font-size: 22px; font-weight: 600; color: var(--navy); margin-bottom: 16px; }
+.sec-line { width: 36px; height: 2px; background: var(--sky); margin-bottom: 28px; }
+
+/* ===== 受付時間 ===== */
+.hours-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-bottom: 16px; }
+.hours-card { background: var(--foam); border-radius: 8px; padding: 20px; border: 0.5px solid rgba(26,95,122,0.12); }
+.hc-day { font-size: 12px; font-weight: 500; color: var(--ocean); margin-bottom: 8px; letter-spacing: 0.06em; }
+.hc-time { font-family: 'Noto Serif JP', serif; font-size: 20px; font-weight: 600; color: var(--navy); margin-bottom: 6px; }
+.hc-note { font-size: 11px; color: var(--muted); line-height: 1.8; }
+
+/* ===== アラート ===== */
+.alert-box { background: #fff8e8; border: 0.5px solid #e8c87a; border-radius: 8px; padding: 16px 20px; font-size: 13px; color: #6b4a00; line-height: 1.8; margin-bottom: 32px; }
+.alert-box strong { display: block; margin-bottom: 4px; font-size: 14px; }
+
+/* ===== 担当表 ===== */
+.schedule-wrap { overflow-x: auto; margin-bottom: 12px; }
+.schedule-wrap table { width: 100%; border-collapse: collapse; font-size: 13px; }
+.schedule-wrap th { background: var(--navy); color: #fff; padding: 10px 12px; text-align: center; font-weight: 500; font-size: 12px; }
+.schedule-wrap th:first-child { text-align: left; width: 130px; }
+.schedule-wrap td { padding: 10px 12px; border-bottom: 0.5px solid rgba(26,95,122,0.1); text-align: center; line-height: 1.6; }
+.schedule-wrap td:first-child { text-align: left; font-weight: 500; color: var(--navy); background: var(--foam); }
+.schedule-wrap tr:last-child td { border-bottom: none; }
+.schedule-wrap tr:hover td { background: rgba(232,244,248,0.5); }
+.schedule-wrap tr:hover td:first-child { background: var(--foam); }
+.doc { font-size: 12px; color: var(--text); }
+.closed { font-size: 11px; color: var(--muted); }
+
+/* ===== 初診ステップ ===== */
+.firsttime-box { background: var(--sand); border-radius: 12px; padding: 36px; margin-bottom: 48px; }
+.steps { display: flex; flex-direction: column; }
+.step { display: flex; gap: 20px; align-items: flex-start; padding: 18px 0; border-bottom: 0.5px solid rgba(26,95,122,0.1); }
+.step:last-child { border-bottom: none; }
+.step-num { width: 34px; height: 34px; border-radius: 50%; background: var(--ocean); color: #fff; display: flex; align-items: center; justify-content: center; font-size: 14px; font-weight: 500; flex-shrink: 0; margin-top: 2px; }
+.step-title { font-size: 14px; font-weight: 500; color: var(--navy); margin-bottom: 4px; }
+.step-desc { font-size: 13px; color: var(--muted); line-height: 1.8; }
+
+/* ===== 外来サービスカード ===== */
+.service-section { margin-bottom: 0; }
+.service-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; }
+.service-card {
+  border: 0.5px solid rgba(26,95,122,0.15); border-radius: 10px;
+  padding: 24px; text-decoration: none; display: flex;
+  align-items: flex-start; gap: 16px; transition: all 0.2s;
+  position: relative; overflow: hidden;
+}
+.service-card::before {
+  content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px;
+  background: linear-gradient(90deg, var(--ocean), var(--sky));
+  transform: scaleX(0); transform-origin: left; transition: transform 0.3s;
+}
+.service-card:hover::before { transform: scaleX(1); }
+.service-card:hover { border-color: var(--sky); transform: translateY(-2px); box-shadow: 0 4px 16px rgba(26,95,122,0.1); }
+.sc-icon {
+  width: 44px; height: 44px; border-radius: 10px; background: var(--foam);
+  display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+}
+.sc-icon svg { width: 22px; height: 22px; }
+.sc-body { flex: 1; }
+.sc-title { font-size: 15px; font-weight: 500; color: var(--navy); margin-bottom: 6px; }
+.sc-desc { font-size: 12px; color: var(--muted); line-height: 1.8; }
+.sc-arrow { font-size: 18px; color: var(--sky); align-self: center; flex-shrink: 0; margin-left: 4px; opacity: 0.6; transition: transform 0.2s; }
+.service-card:hover .sc-arrow { transform: translateX(3px); opacity: 1; }
+
+/* ===== FOOTER ===== */
+footer { background: #06182e; padding: 36px 60px; display: flex; align-items: flex-start; justify-content: space-between; gap: 40px; }
+.footer-logo { font-family: 'Noto Serif JP', serif; font-size: 15px; color: rgba(255,255,255,0.85); }
+.footer-logo span { font-size: 10px; display: block; color: rgba(255,255,255,0.4); margin-top: 4px; line-height: 1.8; }
+.footer-links { display: flex; gap: 24px; flex-wrap: wrap; }
+.footer-links a { font-size: 12px; color: rgba(255,255,255,0.5); text-decoration: none; transition: color 0.2s; }
+.footer-links a:hover { color: rgba(255,255,255,0.85); }
+
+@media (max-width: 768px) {
+  nav { padding: 0 16px; } .nav-links { display: none; }
+  .page-hero { padding: 36px 20px 0; } .page-title { font-size: 24px; }
+  .page-tab { padding: 12px 14px; }
+  .tab-label { font-size: 10px; }
+  .container { padding: 36px 20px; }
+  .hours-grid { grid-template-columns: 1fr; }
+  .service-grid { grid-template-columns: 1fr; }
+  footer { padding: 24px 16px; flex-direction: column; gap: 16px; }
+}
 </style>
 </head>
 <body>
+
 <nav>
   <a href="index.html" class="nav-logo">天草市立 牛深市民病院<span>USHIBUKA CITY HOSPITAL</span></a>
   <div class="nav-links">
@@ -84,122 +162,217 @@ footer{background:#06182e;padding:36px 60px;display:flex;align-items:flex-start;
   <div class="nav-tel"><a href="tel:0969734171">0969-73-4171</a><span>代表電話（24時間救急対応）</span></div>
 </nav>
 
+<!-- HERO + タブナビ一体型 -->
 <div class="page-hero">
-  <div class="breadcrumb"><a href="index.html">ホーム</a><span class="sep">›</span><span>外来のご案内</span></div>
+  <div class="breadcrumb">
+    <a href="index.html">ホーム</a><span class="sep">›</span><span>外来のご案内</span>
+  </div>
   <div class="page-title">外来のご案内</div>
   <div class="page-sub">Outpatient Services</div>
+
+  <!-- タブナビ：ヒーロー内部の下端 -->
+  <div class="page-tabs">
+
+    <!-- ページ内ジャンプ（同一ページ） -->
+    <a href="#hours" class="page-tab">
+      <svg class="tab-icon" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.8)" stroke-width="1.5"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+      <span class="tab-label">受付時間</span>
+      <span class="tab-arrow">▼</span>
+    </a>
+
+    <a href="#schedule" class="page-tab">
+      <svg class="tab-icon" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.8)" stroke-width="1.5"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg>
+      <span class="tab-label">外来担当表</span>
+      <span class="tab-arrow">▼</span>
+    </a>
+
+    <a href="#firsttime" class="page-tab">
+      <svg class="tab-icon" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.8)" stroke-width="1.5"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+      <span class="tab-label">初めての方へ</span>
+      <span class="tab-arrow">▼</span>
+    </a>
+
+    <!-- 別ページへ移動（ext スタイル） -->
+    <a href="kenshin.html" class="page-tab ext">
+      <svg class="tab-icon" viewBox="0 0 24 24" fill="none" stroke="rgba(168,221,244,0.9)" stroke-width="1.5"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/></svg>
+      <span class="tab-label">健診のご案内</span>
+      <span class="tab-arrow">→</span>
+    </a>
+
+    <a href="kenshin.html" class="page-tab ext">
+      <svg class="tab-icon" viewBox="0 0 24 24" fill="none" stroke="rgba(168,221,244,0.9)" stroke-width="1.5"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+      <span class="tab-label">予防接種</span>
+      <span class="tab-arrow">→</span>
+    </a>
+
+    <a href="doctors.html" class="page-tab ext">
+      <svg class="tab-icon" viewBox="0 0 24 24" fill="none" stroke="rgba(168,221,244,0.9)" stroke-width="1.5"><circle cx="12" cy="8" r="4"/><path d="M6 20v-2a4 4 0 014-4h4a4 4 0 014 4v2"/></svg>
+      <span class="tab-label">医師紹介</span>
+      <span class="tab-arrow">→</span>
+    </a>
+
+    <a href="contact.html" class="page-tab ext">
+      <svg class="tab-icon" viewBox="0 0 24 24" fill="none" stroke="rgba(168,221,244,0.9)" stroke-width="1.5"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 8.63 19.79 19.79 0 012 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 7.91a16 16 0 006.29 6.29l1.28-1.29a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+      <span class="tab-label">お問い合わせ</span>
+      <span class="tab-arrow">→</span>
+    </a>
+
+  </div>
 </div>
 
 <div class="container">
 
-  <div class="sec-label">Hours</div>
-  <div class="sec-title">受付時間</div>
-  <div class="sec-line"></div>
-  <div class="hours-grid">
-    <div class="hours-card">
-      <div class="hc-day">平日（月〜金）</div>
-      <div class="hc-time">8:00 〜 11:30</div>
-      <div class="hc-note">内科は午後 14:00〜17:00 も受付<br>産婦人科・特別外来は午後より</div>
-    </div>
-    <div class="hours-card">
-      <div class="hc-day">土曜日</div>
-      <div class="hc-time">8:30 〜 12:00</div>
-      <div class="hc-note">一部診療科のみ<br>下記担当表をご確認ください</div>
-    </div>
-    <div class="hours-card">
-      <div class="hc-day">日曜・祝日</div>
-      <div class="hc-time">休　診</div>
-      <div class="hc-note">救急・時間外は24時間対応<br>0969-73-4171 までお電話ください</div>
-    </div>
-  </div>
-  <div class="alert-box">
-    <strong>小児科・産婦人科をご受診の方へ</strong>
-    小児科の受診についてはお問い合わせください。産婦人科および特別外来は午後より診療となります。
-  </div>
-
-  <div class="sec-label">Schedule</div>
-  <div class="sec-title">外来医師担当表</div>
-  <div class="sec-line"></div>
-  <div class="schedule-wrap">
-    <table>
-      <thead>
-        <tr><th>診療科</th><th>月</th><th>火</th><th>水</th><th>木</th><th>金</th><th>土</th></tr>
-      </thead>
-      <tbody>
-        <tr><td>内科（午前）</td><td><span class="doc">常勤医</span></td><td><span class="doc">常勤医</span></td><td><span class="doc">常勤医</span></td><td><span class="doc">常勤医</span></td><td><span class="doc">常勤医</span></td><td><span class="doc">常勤医</span></td></tr>
-        <tr><td>内科（午後）</td><td><span class="doc">14:00〜17:00</span></td><td><span class="doc">14:00〜17:00</span></td><td><span class="doc">14:00〜17:00</span></td><td><span class="doc">14:00〜17:00</span></td><td><span class="doc">14:00〜17:00</span></td><td><span class="closed">—</span></td></tr>
-        <tr><td>外科</td><td><span class="doc">常勤医</span></td><td><span class="doc">常勤医</span></td><td><span class="doc">常勤医</span></td><td><span class="doc">常勤医</span></td><td><span class="doc">常勤医</span></td><td><span class="closed">—</span></td></tr>
-        <tr><td>整形外科</td><td><span class="doc">非常勤医</span></td><td><span class="doc">非常勤医</span></td><td><span class="doc">非常勤医</span></td><td><span class="doc">非常勤医</span></td><td><span class="doc">非常勤医</span></td><td><span class="closed">—</span></td></tr>
-        <tr><td>小児科</td><td><span class="doc">要問合せ</span></td><td><span class="doc">要問合せ</span></td><td><span class="doc">要問合せ</span></td><td><span class="doc">要問合せ</span></td><td><span class="doc">要問合せ</span></td><td><span class="closed">—</span></td></tr>
-        <tr><td>産婦人科</td><td><span class="closed">—</span></td><td><span class="doc">午後より</span></td><td><span class="closed">—</span></td><td><span class="doc">午後より</span></td><td><span class="closed">—</span></td><td><span class="closed">—</span></td></tr>
-        <tr><td>眼科</td><td><span class="doc">非常勤医</span></td><td><span class="closed">—</span></td><td><span class="doc">非常勤医</span></td><td><span class="closed">—</span></td><td><span class="closed">—</span></td><td><span class="closed">—</span></td></tr>
-        <tr><td>耳鼻咽喉科</td><td><span class="closed">—</span></td><td><span class="doc">非常勤医</span></td><td><span class="closed">—</span></td><td><span class="closed">—</span></td><td><span class="doc">非常勤医</span></td><td><span class="closed">—</span></td></tr>
-        <tr><td>人工透析</td><td><span class="doc">常勤医</span></td><td><span class="doc">常勤医</span></td><td><span class="doc">常勤医</span></td><td><span class="doc">常勤医</span></td><td><span class="doc">常勤医</span></td><td><span class="doc">常勤医</span></td></tr>
-        <tr><td>救急科</td><td><span class="doc">24時間対応</span></td><td><span class="doc">24時間対応</span></td><td><span class="doc">24時間対応</span></td><td><span class="doc">24時間対応</span></td><td><span class="doc">24時間対応</span></td><td><span class="doc">24時間対応</span></td></tr>
-      </tbody>
-    </table>
-  </div>
-  <div class="alert-box">
-    <strong>担当医は変更になる場合があります</strong>
-    各月の詳細な担当医については、お知らせページの担当医PDF、またはお電話（0969-73-4171）でご確認ください。
-  </div>
-
-  <div id="firsttime"></div>
-  <div class="sec-label">First Visit</div>
-  <div class="sec-title">初めて来院される方へ</div>
-  <div class="sec-line"></div>
-  <div class="firsttime-section">
-    <div class="steps">
-      <div class="step">
-        <div class="step-num">1</div>
-        <div>
-          <div class="step-title">受付（8:00〜11:30）</div>
-          <div class="step-desc">1階の総合受付にお越しください。保険証・診察券（お持ちの方）・紹介状（お持ちの方）をご提示ください。初診の方は問診票を記入していただきます。</div>
-        </div>
+  <!-- 受付時間 -->
+  <div id="hours" style="padding-top:4px;">
+    <div class="sec-label">Hours</div>
+    <div class="sec-title">受付時間</div>
+    <div class="sec-line"></div>
+    <div class="hours-grid">
+      <div class="hours-card">
+        <div class="hc-day">平日（月〜金）</div>
+        <div class="hc-time">8:00 〜 11:30</div>
+        <div class="hc-note">内科は午後 14:00〜17:00 も受付<br>産婦人科・特別外来は午後より</div>
       </div>
-      <div class="step">
-        <div class="step-num">2</div>
-        <div>
-          <div class="step-title">診察・検査</div>
-          <div class="step-desc">各診療科の待合室でお待ちください。診察の結果、必要に応じて血液検査・レントゲン・内視鏡などの検査をご案内します。</div>
-        </div>
+      <div class="hours-card">
+        <div class="hc-day">土曜日</div>
+        <div class="hc-time">8:30 〜 12:00</div>
+        <div class="hc-note">一部診療科のみ<br>下記担当表をご確認ください</div>
       </div>
-      <div class="step">
-        <div class="step-num">3</div>
-        <div>
-          <div class="step-title">処方・会計</div>
-          <div class="step-desc">処方箋が発行された場合は、院外薬局にてお薬をお受け取りください。会計は1階の会計窓口にてお支払いをお願いします。</div>
-        </div>
+      <div class="hours-card">
+        <div class="hc-day">日曜・祝日</div>
+        <div class="hc-time">休　診</div>
+        <div class="hc-note">救急・時間外は24時間対応<br>0969-73-4171 までお電話ください</div>
       </div>
+    </div>
+    <div class="alert-box">
+      <strong>小児科・産婦人科をご受診の方へ</strong>
+      小児科の受診についてはお問い合わせください。産婦人科および特別外来は午後より診療となります。
     </div>
   </div>
 
-  <div class="sec-label">Services</div>
-  <div class="sec-title">各種外来サービス</div>
-  <div class="sec-line"></div>
-  <div class="info-grid">
-    <a href="kenshin.html" class="info-card">
-      <div class="ic-title">健診のご案内</div>
-      <div class="ic-desc">特定健診・各種がん検診・人間ドックなど各種健康診断を実施しています。料金・オプション検査の詳細はこちら。</div>
-    </a>
-    <a href="kenshin.html" class="info-card">
-      <div class="ic-title">予防接種のご案内</div>
-      <div class="ic-desc">インフルエンザ・肺炎球菌・各種ワクチンの予防接種を実施しています。事前予約制となっています。</div>
-    </a>
-    <a href="doctors.html" class="info-card">
-      <div class="ic-title">医師紹介</div>
-      <div class="ic-desc">当院に勤務する常勤医師6名の専門分野・資格・経歴をご紹介します。</div>
-    </a>
-    <a href="contact.html" class="info-card">
-      <div class="ic-title">お問い合わせ</div>
-      <div class="ic-desc">診療に関するご不明点はお気軽にお電話ください。<br>TEL：0969-73-4171（代表）</div>
-    </a>
+  <!-- 外来医師担当表 -->
+  <div id="schedule" style="margin-bottom:48px;">
+    <div class="sec-label">Schedule</div>
+    <div class="sec-title">外来医師担当表</div>
+    <div class="sec-line"></div>
+    <div class="schedule-wrap">
+      <table>
+        <thead>
+          <tr><th>診療科</th><th>月</th><th>火</th><th>水</th><th>木</th><th>金</th><th>土</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>内科（午前）</td><td><span class="doc">常勤医</span></td><td><span class="doc">常勤医</span></td><td><span class="doc">常勤医</span></td><td><span class="doc">常勤医</span></td><td><span class="doc">常勤医</span></td><td><span class="doc">常勤医</span></td></tr>
+          <tr><td>内科（午後）</td><td><span class="doc">14:00〜17:00</span></td><td><span class="doc">14:00〜17:00</span></td><td><span class="doc">14:00〜17:00</span></td><td><span class="doc">14:00〜17:00</span></td><td><span class="doc">14:00〜17:00</span></td><td><span class="closed">—</span></td></tr>
+          <tr><td>外科</td><td><span class="doc">常勤医</span></td><td><span class="doc">常勤医</span></td><td><span class="doc">常勤医</span></td><td><span class="doc">常勤医</span></td><td><span class="doc">常勤医</span></td><td><span class="closed">—</span></td></tr>
+          <tr><td>整形外科</td><td><span class="doc">非常勤医</span></td><td><span class="doc">非常勤医</span></td><td><span class="doc">非常勤医</span></td><td><span class="doc">非常勤医</span></td><td><span class="doc">非常勤医</span></td><td><span class="closed">—</span></td></tr>
+          <tr><td>小児科</td><td><span class="doc">要問合せ</span></td><td><span class="doc">要問合せ</span></td><td><span class="doc">要問合せ</span></td><td><span class="doc">要問合せ</span></td><td><span class="doc">要問合せ</span></td><td><span class="closed">—</span></td></tr>
+          <tr><td>産婦人科</td><td><span class="closed">—</span></td><td><span class="doc">午後より</span></td><td><span class="closed">—</span></td><td><span class="doc">午後より</span></td><td><span class="closed">—</span></td><td><span class="closed">—</span></td></tr>
+          <tr><td>眼科</td><td><span class="doc">非常勤医</span></td><td><span class="closed">—</span></td><td><span class="doc">非常勤医</span></td><td><span class="closed">—</span></td><td><span class="closed">—</span></td><td><span class="closed">—</span></td></tr>
+          <tr><td>耳鼻咽喉科</td><td><span class="closed">—</span></td><td><span class="doc">非常勤医</span></td><td><span class="closed">—</span></td><td><span class="closed">—</span></td><td><span class="doc">非常勤医</span></td><td><span class="closed">—</span></td></tr>
+          <tr><td>人工透析</td><td><span class="doc">常勤医</span></td><td><span class="doc">常勤医</span></td><td><span class="doc">常勤医</span></td><td><span class="doc">常勤医</span></td><td><span class="doc">常勤医</span></td><td><span class="doc">常勤医</span></td></tr>
+          <tr><td>救急科</td><td><span class="doc">24時間対応</span></td><td><span class="doc">24時間対応</span></td><td><span class="doc">24時間対応</span></td><td><span class="doc">24時間対応</span></td><td><span class="doc">24時間対応</span></td><td><span class="doc">24時間対応</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="alert-box">
+      <strong>担当医は変更になる場合があります</strong>
+      各月の詳細な担当医については、<a href="info.html" style="color:var(--ocean);">お知らせページ</a>の担当医PDF、またはお電話（0969-73-4171）でご確認ください。
+    </div>
+  </div>
+
+  <!-- 初めての方へ -->
+  <div id="firsttime" style="margin-bottom:48px;">
+    <div class="sec-label">First Visit</div>
+    <div class="sec-title">初めて来院される方へ</div>
+    <div class="sec-line"></div>
+    <div class="firsttime-box">
+      <div class="steps">
+        <div class="step">
+          <div class="step-num">1</div>
+          <div>
+            <div class="step-title">受付（8:00〜11:30）</div>
+            <div class="step-desc">1階の総合受付にお越しください。健康保険証・診察券（お持ちの方）・紹介状（お持ちの方）をご提示ください。初診の方は問診票を記入していただきます。</div>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">2</div>
+          <div>
+            <div class="step-title">診察・検査</div>
+            <div class="step-desc">各診療科の待合室でお待ちください。診察の結果、必要に応じて血液検査・レントゲン・内視鏡などの検査をご案内します。</div>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">3</div>
+          <div>
+            <div class="step-title">処方・会計</div>
+            <div class="step-desc">処方箋が発行された場合は、院外薬局にてお薬をお受け取りください。会計は1階の会計窓口にてお支払いをお願いします。</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 各種外来サービス -->
+  <div class="service-section">
+    <div class="sec-label">Services</div>
+    <div class="sec-title">各種外来サービス</div>
+    <div class="sec-line"></div>
+    <div class="service-grid">
+
+      <a href="kenshin.html" class="service-card">
+        <div class="sc-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#1a5f7a" stroke-width="1.4"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/></svg>
+        </div>
+        <div class="sc-body">
+          <div class="sc-title">健診のご案内</div>
+          <div class="sc-desc">特定健診・各種がん検診・人間ドックを実施しています。料金・オプション検査・発症リスク計算機はこちら。</div>
+        </div>
+        <div class="sc-arrow">›</div>
+      </a>
+
+      <a href="kenshin.html" class="service-card">
+        <div class="sc-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#1a5f7a" stroke-width="1.4"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+        </div>
+        <div class="sc-body">
+          <div class="sc-title">予防接種のご案内</div>
+          <div class="sc-desc">インフルエンザ・肺炎球菌・帯状疱疹などの予防接種を実施しています。事前予約制です。</div>
+        </div>
+        <div class="sc-arrow">›</div>
+      </a>
+
+      <a href="doctors.html" class="service-card">
+        <div class="sc-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#1a5f7a" stroke-width="1.4"><circle cx="12" cy="8" r="4"/><path d="M6 20v-2a4 4 0 014-4h4a4 4 0 014 4v2"/></svg>
+        </div>
+        <div class="sc-body">
+          <div class="sc-title">医師紹介</div>
+          <div class="sc-desc">常勤医師6名の専門分野・資格をご紹介します。</div>
+        </div>
+        <div class="sc-arrow">›</div>
+      </a>
+
+      <a href="contact.html" class="service-card">
+        <div class="sc-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#1a5f7a" stroke-width="1.4"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 8.63 19.79 19.79 0 012 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 7.91a16 16 0 006.29 6.29l1.28-1.29a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+        </div>
+        <div class="sc-body">
+          <div class="sc-title">お問い合わせ</div>
+          <div class="sc-desc">診療に関するご不明点はお気軽にお電話ください。TEL：0969-73-4171（代表）</div>
+        </div>
+        <div class="sc-arrow">›</div>
+      </a>
+
+    </div>
   </div>
 
 </div>
 
 <footer>
-  <div class="footer-logo">天草市立 牛深市民病院<span>〒863-1901 熊本県天草市牛深町3050<br>TEL: 0969-73-4171　FAX: 0969-73-4174<br>© 2025 Ushibuka City Hospital. All rights reserved.</span></div>
+  <div class="footer-logo">
+    天草市立 牛深市民病院
+    <span>〒863-1901 熊本県天草市牛深町3050<br>TEL: 0969-73-4171　FAX: 0969-73-4174<br>© 2025 Ushibuka City Hospital. All rights reserved.</span>
+  </div>
   <div class="footer-links">
     <a href="about.html">病院のご案内</a>
     <a href="diagnosis.html">外来のご案内</a>
@@ -210,5 +383,6 @@ footer{background:#06182e;padding:36px 60px;display:flex;align-items:flex-start;
     <a href="contact.html">お問い合わせ</a>
   </div>
 </footer>
+
 </body>
 </html>
