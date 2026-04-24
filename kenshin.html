@@ -177,6 +177,7 @@ footer { background: #06182e; padding: 36px 60px; display: flex; align-items: fl
   <a href="#colon">大腸カメラ間隔</a>
   <a href="#results">令和6年度実績</a>
   <a href="#faq">よくある疑問</a>
+  <a href="#risk-calc">リスク計算機</a>
 </div>
 
 <div class="container">
@@ -670,6 +671,156 @@ footer { background: #06182e; padding: 36px 60px; display: flex; align-items: fl
     </div>
   </div>
 
+  <!-- ============================
+       循環器病発症リスク計算機
+  ============================= -->
+  <div id="risk-calc" style="margin-top:48px;">
+    <div class="sec-label">Risk Calculator</div>
+    <div class="sec-title">循環器病 発症リスク計算機</div>
+    <div class="sec-line"></div>
+
+    <div style="background:var(--foam);border-radius:8px;padding:16px 20px;margin-bottom:24px;border-left:3px solid var(--sky);font-size:13px;color:var(--muted);line-height:1.9;">
+      吹田CVDスコア（国立循環器病研究センター, 2020）に基づき、脳卒中・冠動脈疾患の発症確率を算定します。健診後の数値をそのまま入力してご利用ください。
+    </div>
+
+    <div id="calc-wrap">
+      <!-- 入力フォーム -->
+      <div id="calc-form">
+
+        <!-- 基本情報 -->
+        <div class="ci-section">
+          <div class="ci-sec-label">基本情報</div>
+          <div class="ci-field">
+            <div class="ci-field-label">年齢（30〜79歳）</div>
+            <div class="ci-input-row">
+              <input type="number" id="c-age" min="30" max="79" placeholder="例：55" class="ci-input">
+              <span class="ci-unit">歳</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- 血圧 -->
+        <div class="ci-section">
+          <div class="ci-sec-label">血圧</div>
+          <div class="ci-field">
+            <div class="ci-field-label">収縮期 / 拡張期（mmHg）</div>
+            <div class="ci-input-row">
+              <input type="number" id="c-sbp" min="70" max="250" placeholder="収縮期" class="ci-input">
+              <span style="color:var(--muted);font-size:18px;padding:0 4px;">/</span>
+              <input type="number" id="c-dbp" min="40" max="150" placeholder="拡張期" class="ci-input">
+              <span class="ci-unit">mmHg</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- 脂質 -->
+        <div class="ci-section">
+          <div class="ci-sec-label">脂質（健診結果より）</div>
+          <div class="ci-field">
+            <div class="ci-field-label">Non-HDLコレステロール（総コレステロール − HDL）</div>
+            <div class="ci-input-row">
+              <input type="number" id="c-nonhdl" min="30" max="400" placeholder="例：150" class="ci-input">
+              <span class="ci-unit">mg/dL</span>
+            </div>
+          </div>
+          <div class="ci-field">
+            <div class="ci-field-label">HDLコレステロール</div>
+            <div class="ci-input-row">
+              <input type="number" id="c-hdl" min="15" max="150" placeholder="例：55" class="ci-input">
+              <span class="ci-unit">mg/dL</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- リスク因子 -->
+        <div class="ci-section">
+          <div class="ci-sec-label">リスク因子</div>
+          <div class="ci-field">
+            <div class="ci-field-label">現在喫煙</div>
+            <div class="ci-choice-row" data-cgroup="smoke">
+              <button class="ci-choice" data-cvalue="no">なし</button>
+              <button class="ci-choice" data-cvalue="yes">あり</button>
+            </div>
+          </div>
+          <div class="ci-field">
+            <div class="ci-field-label">糖尿病</div>
+            <div class="ci-choice-row" data-cgroup="dm">
+              <button class="ci-choice" data-cvalue="no">なし</button>
+              <button class="ci-choice" data-cvalue="yes">あり</button>
+            </div>
+          </div>
+          <div class="ci-field">
+            <div class="ci-field-label">尿蛋白</div>
+            <div class="ci-choice-row" data-cgroup="protein">
+              <button class="ci-choice" data-cvalue="no">陰性（−）</button>
+              <button class="ci-choice" data-cvalue="yes">陽性（±以上）</button>
+            </div>
+          </div>
+        </div>
+
+        <button class="ci-calc-btn" onclick="ciCalculate()">発症リスクを計算する</button>
+      </div>
+
+      <!-- 結果エリア -->
+      <div id="ci-result" style="display:none;">
+        <div class="ci-result-box">
+          <div class="ci-result-header">
+            <div class="ci-result-eyebrow">Suita CVD Score</div>
+            <div class="ci-result-title">発症リスク判定結果</div>
+          </div>
+
+          <div style="text-align:center;margin-bottom:20px;">
+            <div style="font-size:11px;color:var(--muted);letter-spacing:0.15em;margin-bottom:4px;">SCORE</div>
+            <div style="font-size:48px;font-weight:600;color:var(--navy);line-height:1;" id="ci-score-num">—</div>
+            <div style="font-size:13px;color:var(--muted);margin-top:2px;">点</div>
+          </div>
+
+          <div id="ci-risk-cat" class="ci-cat-box">
+            <div style="font-size:10px;letter-spacing:0.2em;color:var(--muted);margin-bottom:4px;">CATEGORY</div>
+            <div class="ci-cat-text" id="ci-cat-text">—</div>
+          </div>
+
+          <div class="ci-prob-grid">
+            <div class="ci-prob-cell">
+              <div class="ci-prob-period">1年以内</div>
+              <div class="ci-prob-val"><span id="ci-p1">—</span><span class="ci-pct">%</span></div>
+            </div>
+            <div class="ci-prob-cell">
+              <div class="ci-prob-period">5年以内</div>
+              <div class="ci-prob-val"><span id="ci-p5">—</span><span class="ci-pct">%</span></div>
+            </div>
+            <div class="ci-prob-cell">
+              <div class="ci-prob-period">10年以内</div>
+              <div class="ci-prob-val"><span id="ci-p10">—</span><span class="ci-pct">%</span></div>
+            </div>
+          </div>
+
+          <div class="ci-message" id="ci-message"></div>
+
+          <div style="font-size:11px;color:var(--muted);line-height:1.7;margin-top:16px;padding-top:14px;border-top:0.5px solid rgba(26,95,122,0.12);">
+            本スコアは吹田研究（都市部日本人コホート）に基づく脳卒中・冠動脈疾患発症予測モデルです。個別の診断・治療は必ず医師にご相談ください。
+          </div>
+
+          <button class="ci-reset-btn" onclick="ciReset()">もう一度計算する</button>
+        </div>
+
+        <!-- 免責事項 -->
+        <div class="ci-disclaimer">
+          <div class="ci-disc-title">⚠ ご注意</div>
+          <ul class="ci-disc-list">
+            <li>本スコアは診断ツールではなく、健康管理の参考情報です</li>
+            <li>個別の診断・治療・健康相談は必ず医師にご相談ください</li>
+            <li>スコアは一般的な発症確率の目安であり、個人の診断機器ではありません</li>
+          </ul>
+          <div class="ci-disc-source">
+            出典：吹田CVDスコア（国立循環器病研究センター, 2020）<br>
+            Journal of Atherosclerosis and Thrombosis, 2020;27(11):1160-1175. PMID: 32023562
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <div class="contact-box">
     <div class="contact-title">健診のご予約・お問い合わせ</div>
     <p class="contact-desc">健診の種類・料金・実施日程など、お気軽にお問い合わせください。<br>平日 9:00〜16:00に健診受付またはお電話にてご予約ください。</p>
@@ -692,7 +843,218 @@ footer { background: #06182e; padding: 36px 60px; display: flex; align-items: fl
   </div>
 </footer>
 
+<style>
+/* ========== 循環器リスク計算機 ========== */
+#calc-wrap { max-width: 600px; margin: 0 auto; }
+.ci-section { margin-bottom: 16px; }
+.ci-sec-label {
+  font-size: 11px; letter-spacing: 0.15em; color: var(--sky);
+  text-transform: uppercase; margin-bottom: 10px; padding-bottom: 6px;
+  border-bottom: 0.5px solid rgba(26,95,122,0.15);
+}
+.ci-field {
+  background: var(--white); border: 0.5px solid rgba(26,95,122,0.18);
+  border-radius: 6px; padding: 14px 16px; margin-bottom: 10px;
+  transition: border-color 0.2s;
+}
+.ci-field:focus-within { border-color: var(--sky); }
+.ci-field-label { font-size: 12px; color: var(--muted); margin-bottom: 10px; }
+.ci-input-row { display: flex; align-items: center; gap: 8px; }
+.ci-input {
+  flex: 1; padding: 9px 12px; border: 0.5px solid rgba(26,95,122,0.25);
+  border-radius: 4px; font-size: 16px; color: var(--navy);
+  background: var(--white); font-family: inherit;
+  -moz-appearance: textfield;
+}
+.ci-input::-webkit-inner-spin-button,
+.ci-input::-webkit-outer-spin-button { -webkit-appearance: none; }
+.ci-input:focus { outline: none; border-color: var(--sky); }
+.ci-unit { font-size: 12px; color: var(--muted); white-space: nowrap; flex-shrink: 0; }
+.ci-choice-row { display: flex; gap: 8px; }
+.ci-choice {
+  flex: 1; padding: 10px 8px; border: 0.5px solid rgba(26,95,122,0.25);
+  background: transparent; color: var(--muted); font-family: inherit;
+  font-size: 13px; cursor: pointer; border-radius: 4px;
+  transition: all 0.15s; text-align: center;
+}
+.ci-choice:hover { border-color: var(--sky); color: var(--ocean); }
+.ci-choice.active { background: var(--ocean); color: var(--white); border-color: var(--ocean); }
+.ci-calc-btn {
+  width: 100%; padding: 16px; margin-top: 8px; background: var(--navy);
+  color: var(--white); border: none; border-radius: 6px;
+  font-family: inherit; font-size: 14px; font-weight: 500;
+  letter-spacing: 0.06em; cursor: pointer; transition: background 0.2s;
+}
+.ci-calc-btn:hover { background: var(--ocean); }
+/* 結果 */
+.ci-result-box {
+  background: var(--white); border: 0.5px solid rgba(26,95,122,0.2);
+  border-radius: 10px; padding: 28px; margin-bottom: 16px;
+  animation: ci-fadein 0.4s ease;
+}
+@keyframes ci-fadein { from { opacity:0; transform:translateY(8px); } to { opacity:1; transform:translateY(0); } }
+.ci-result-header { text-align: center; margin-bottom: 20px; padding-bottom: 16px; border-bottom: 0.5px solid rgba(26,95,122,0.12); }
+.ci-result-eyebrow { font-size: 11px; letter-spacing: 0.15em; color: var(--sky); margin-bottom: 4px; }
+.ci-result-title { font-family: 'Noto Serif JP', serif; font-size: 16px; font-weight: 600; color: var(--navy); }
+.ci-cat-box {
+  text-align: center; padding: 12px; margin-bottom: 20px;
+  border-radius: 6px; border: 0.5px solid rgba(26,95,122,0.2);
+}
+.ci-cat-box.low { background: #e8f8ee; border-color: #1d9e75; }
+.ci-cat-box.mid { background: #fef9e8; border-color: #ba7517; }
+.ci-cat-box.high { background: #fff0f0; border-color: #e84040; }
+.ci-cat-text { font-size: 18px; font-weight: 600; color: var(--navy); }
+.ci-cat-box.low .ci-cat-text { color: #0f6e56; }
+.ci-cat-box.mid .ci-cat-text { color: #7a4a00; }
+.ci-cat-box.high .ci-cat-text { color: #c0392b; }
+.ci-prob-grid {
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px;
+  background: rgba(26,95,122,0.1); border: 0.5px solid rgba(26,95,122,0.15);
+  border-radius: 6px; overflow: hidden; margin-bottom: 16px;
+}
+.ci-prob-cell { background: var(--foam); padding: 16px 8px; text-align: center; }
+.ci-prob-period { font-size: 11px; color: var(--muted); margin-bottom: 6px; }
+.ci-prob-val { font-size: 28px; font-weight: 600; color: var(--navy); line-height: 1; }
+.ci-pct { font-size: 14px; color: var(--muted); margin-left: 2px; }
+.ci-message {
+  font-size: 13px; color: var(--text); line-height: 1.9;
+  padding: 14px 16px; background: var(--foam); border-radius: 6px;
+  border-left: 3px solid var(--sky);
+}
+.ci-reset-btn {
+  display: block; width: 100%; margin-top: 16px; padding: 11px;
+  background: transparent; color: var(--muted);
+  border: 0.5px solid rgba(26,95,122,0.25); border-radius: 6px;
+  font-family: inherit; font-size: 13px; cursor: pointer; transition: all 0.2s;
+}
+.ci-reset-btn:hover { border-color: var(--navy); color: var(--navy); }
+.ci-disclaimer {
+  background: #fff8e8; border-left: 3px solid #d4a574;
+  border-radius: 6px; padding: 16px 18px;
+}
+.ci-disc-title { font-size: 13px; font-weight: 500; color: #8b4000; margin-bottom: 10px; }
+.ci-disc-list { list-style: none; margin-bottom: 12px; }
+.ci-disc-list li { font-size: 12px; color: var(--text); line-height: 1.8; padding-left: 14px; position: relative; margin-bottom: 4px; }
+.ci-disc-list li::before { content: '•'; position: absolute; left: 0; color: #d4a574; }
+.ci-disc-source { font-size: 10px; color: var(--muted); line-height: 1.7; padding-top: 10px; border-top: 0.5px solid rgba(139,64,0,0.15); }
+/* ページ内ナビに計算機を追加 */
+</style>
 <script>
+// 計算機の状態管理
+var ciState = { smoke: null, dm: null, protein: null };
+
+document.querySelectorAll('.ci-choice-row').forEach(function(row) {
+  var group = row.getAttribute('data-cgroup');
+  row.querySelectorAll('.ci-choice').forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      row.querySelectorAll('.ci-choice').forEach(function(b) { b.classList.remove('active'); });
+      btn.classList.add('active');
+      ciState[group] = btn.getAttribute('data-cvalue');
+    });
+  });
+});
+
+function ciGetScore() {
+  var score = 0;
+  var age = parseInt(document.getElementById('c-age').value);
+  if (isNaN(age) || age < 30 || age > 79) return null;
+  if (age <= 39) score += 0;
+  else if (age <= 49) score += 5;
+  else if (age <= 59) score += 10;
+  else if (age <= 69) score += 13;
+  else score += 15;
+
+  var sbp = parseInt(document.getElementById('c-sbp').value);
+  var dbp = parseInt(document.getElementById('c-dbp').value);
+  if (isNaN(sbp) || isNaN(dbp)) return null;
+  if (sbp < 120 && dbp < 80) score += 0;
+  else if (sbp >= 160 || dbp >= 100) score += 9;
+  else if ((sbp >= 140) || (dbp >= 90)) score += 6;
+  else score += 3;
+
+  var nonhdl = parseInt(document.getElementById('c-nonhdl').value);
+  if (isNaN(nonhdl)) return null;
+  if (nonhdl >= 170) score += 7;
+  else if (nonhdl >= 150) score += 5;
+  else if (nonhdl >= 130) score += 3;
+  else score += 0;
+
+  var hdl = parseInt(document.getElementById('c-hdl').value);
+  if (isNaN(hdl)) return null;
+  if (hdl < 40) score += 5;
+  else if (hdl < 60) score += 2;
+  else score += 0;
+
+  if (ciState.smoke === null || ciState.dm === null || ciState.protein === null) return null;
+  if (ciState.smoke === 'yes') score += 4;
+  if (ciState.dm === 'yes') score += 3;
+  if (ciState.protein === 'yes') score += 3;
+  return score;
+}
+
+function ciScoreToP10(score) {
+  if (score <= 20) return 2;
+  if (score <= 25) return 6;
+  if (score <= 30) return 9;
+  if (score <= 35) return 14;
+  return 25;
+}
+
+function ciExtrapolate(p10, years) {
+  var p = p10 / 100;
+  return (1 - Math.pow(1 - p, years / 10)) * 100;
+}
+
+function ciCategory(score) {
+  if (score <= 20) return {
+    cls: 'low', text: '低リスク',
+    msg: '現在のところ循環器病のリスクは高くありません。バランスのとれた食事と適度な運動を続けながら、定期的な健診で状態を確認していきましょう。'
+  };
+  if (score <= 30) return {
+    cls: 'mid', text: '中リスク',
+    msg: 'リスクは中程度です。定期的な健康チェックを続けながら、無理のない範囲で生活習慣を整えていきましょう。気になる数値がある場合はお気軽に外来にご相談ください。'
+  };
+  return {
+    cls: 'high', text: '高リスク',
+    msg: '数値は気になりますが、恐れすぎず。かかりつけ医と相談しながら、できることから一つずつ整えていくことが大切です。当院外来にてご相談いただけます。'
+  };
+}
+
+function ciCalculate() {
+  var score = ciGetScore();
+  if (score === null) {
+    alert('すべての項目を入力・選択してください');
+    return;
+  }
+  var p10 = ciScoreToP10(score);
+  var p5  = ciExtrapolate(p10, 5);
+  var p1  = ciExtrapolate(p10, 1);
+  var cat = ciCategory(score);
+
+  document.getElementById('ci-score-num').textContent = score;
+  document.getElementById('ci-p1').textContent  = p1 < 1 ? p1.toFixed(2) : p1.toFixed(1);
+  document.getElementById('ci-p5').textContent  = p5 < 1 ? p5.toFixed(2) : p5.toFixed(1);
+  document.getElementById('ci-p10').textContent = p10.toFixed(1);
+
+  var catEl = document.getElementById('ci-risk-cat');
+  catEl.className = 'ci-cat-box ' + cat.cls;
+  document.getElementById('ci-cat-text').textContent = cat.text;
+  document.getElementById('ci-message').textContent = cat.msg;
+
+  document.getElementById('ci-result').style.display = 'block';
+  setTimeout(function() {
+    document.getElementById('ci-result').scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }, 100);
+}
+
+function ciReset() {
+  document.querySelectorAll('#calc-form input').forEach(function(i) { i.value = ''; });
+  document.querySelectorAll('.ci-choice').forEach(function(b) { b.classList.remove('active'); });
+  ciState = { smoke: null, dm: null, protein: null };
+  document.getElementById('ci-result').style.display = 'none';
+  document.getElementById('risk-calc').scrollIntoView({ behavior: 'smooth', block: 'start' });
+}
+
 function toggleFaq(btn) {
   btn.classList.toggle('open');
   var answer = btn.nextElementSibling;
