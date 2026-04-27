@@ -54,7 +54,7 @@ footer{background:#06182e;padding:36px 60px;display:flex;align-items:flex-start;
 .footer-links a{font-size:12px;color:rgba(255,255,255,0.5);text-decoration:none;transition:color 0.2s;}
 .footer-links a:hover{color:rgba(255,255,255,0.8);}
 @media(max-width:768px){nav{padding:0 16px;}.nav-links{display:none;}.page-hero{padding:36px 20px 28px;}.page-title{font-size:22px;}.container{padding:36px 20px;}.doctor-body{grid-template-columns:1fr;}footer{padding:24px 16px;flex-direction:column;gap:16px;}}
-</style>
+.nav-right{display:flex;align-items:center;gap:16px;}.hamburger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:4px;}.hamburger span{display:block;width:22px;height:2px;background:rgba(255,255,255,0.8);border-radius:1px;}.sp-menu{display:none;position:fixed;top:64px;left:0;right:0;background:rgba(10,35,66,0.98);z-index:99;padding:16px 0;flex-direction:column;}.sp-menu.open{display:flex;}.sp-menu a{padding:14px 28px;font-size:14px;color:rgba(255,255,255,0.85);text-decoration:none;border-bottom:0.5px solid rgba(255,255,255,0.08);}.sp-menu a:hover{color:#fff;background:rgba(255,255,255,0.05);}.sp-tel{padding:16px 28px;border-top:0.5px solid rgba(255,255,255,0.15);margin-top:4px;}.sp-tel a{font-size:20px;font-weight:500;color:#fff;text-decoration:none;display:block;}.sp-tel span{font-size:11px;color:rgba(255,255,255,0.5);}@media(max-width:768px){.hamburger{display:flex;}.nav-tel span{display:none;}}</style>
 </head>
 <body>
 
@@ -68,8 +68,8 @@ footer{background:#06182e;padding:36px 60px;display:flex;align-items:flex-start;
     <a href="info.html">お知らせ</a>
     <a href="recruit.html">採用情報</a>
   </div>
-  <div class="nav-tel"><a href="tel:0969734171">0969-73-4171</a><span>代表電話（24時間救急対応）</span></div>
-</nav>
+  <div class="nav-right"><div class="nav-tel"><a href="tel:0969734171">0969-73-4171</a><span>代表電話（24時間救急対応）</span></div>
+</nav><div class="sp-menu" id="spMenu"><a href="about.html">病院のご案内</a><a href="diagnosis.html">外来のご案内</a><a href="hospitalization.html">入院・面会</a><a href="divisions.html">部門紹介</a><a href="info.html">お知らせ</a><a href="recruit.html">採用情報</a><a href="access.html">アクセス</a><a href="contact.html">お問い合わせ</a><div class="sp-tel"><a href="tel:0969734171">0969-73-4171</a><span>代表（24時間救急対応）</span></div></div>
 
 <div class="page-hero">
   <div class="breadcrumb">
@@ -269,5 +269,5 @@ footer{background:#06182e;padding:36px 60px;display:flex;align-items:flex-start;
     <a href="contact.html">お問い合わせ</a>
   </div>
 </footer>
-</body>
+<script>function toggleMenu(){document.getElementById("spMenu").classList.toggle("open");}document.addEventListener("click",function(e){var m=document.getElementById("spMenu");if(m</body></body>m.classList.contains("open")</body></body>!e.target.closest("nav")</body></body>!e.target.closest(".sp-menu")){m.classList.remove("open");}});</script></body>
 </html>
