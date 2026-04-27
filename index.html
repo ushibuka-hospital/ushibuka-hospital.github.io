@@ -27,16 +27,20 @@ nav{position:sticky;top:0;z-index:100;background:rgba(10,35,66,0.97);backdrop-fi
 /* HERO */
 .hero{
   position:relative;width:100%;overflow:hidden;
-  background:#2e8fd4;
+  background:#0a2342; min-height:520px;
 }
-.hero-svg{display:block;width:100%;height:auto;}
+.hero-img{
+  position:absolute;inset:0;width:100%;height:100%;
+  object-fit:cover;object-position:center 40%;
+  display:block;
+}
 .hero-overlay{
   position:absolute;inset:0;
-  background:linear-gradient(to right, rgba(10,35,66,0.72) 0%, rgba(10,35,66,0.45) 45%, rgba(10,35,66,0.05) 100%);
+  background:linear-gradient(to right, rgba(10,35,66,0.82) 0%, rgba(10,35,66,0.55) 50%, rgba(10,35,66,0.15) 100%);
 }
 .hero-content{
-  position:absolute;top:50%;left:0;transform:translateY(-50%);
-  padding:0 72px;max-width:580px;
+  position:relative;z-index:2;
+  padding:80px 72px;max-width:620px;
 }
 .hero-badge{
   display:inline-block;background:rgba(255,255,255,0.15);
@@ -71,10 +75,10 @@ nav{position:sticky;top:0;z-index:100;background:rgba(10,35,66,0.97);backdrop-fi
 
 /* 受付時間カード（右下） */
 .hero-info{
-  position:absolute;right:60px;bottom:40px;
-  background:rgba(10,35,66,0.75);backdrop-filter:blur(10px);
-  border:1px solid rgba(255,255,255,0.2);border-radius:10px;
-  padding:18px 22px;min-width:200px;
+  position:absolute;right:60px;bottom:40px;z-index:2;
+  background:rgba(10,35,66,0.78);backdrop-filter:blur(10px);
+  border:1px solid rgba(255,255,255,0.18);border-radius:10px;
+  padding:18px 22px;min-width:210px;
 }
 .hi-item{margin-bottom:12px;}
 .hi-item:last-child{margin-bottom:0;}
@@ -200,222 +204,7 @@ footer{background:#06182e;padding:36px 60px;display:flex;align-items:flex-start;
 
 <!-- HERO（ジブリ風SVGイラスト背景） -->
 <div class="hero">
-  <svg class="hero-svg" viewBox="0 0 1200 560" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-    <defs>
-      <linearGradient id="sky2" x1="0" y1="0" x2="0" y2="1">
-        <stop offset="0%" stop-color="#2e8fd4"/>
-        <stop offset="40%" stop-color="#5eb8e8"/>
-        <stop offset="80%" stop-color="#90d4f4"/>
-        <stop offset="100%" stop-color="#c8eaf8"/>
-      </linearGradient>
-      <linearGradient id="sea2" x1="0" y1="0" x2="0" y2="1">
-        <stop offset="0%" stop-color="#2e8abf"/>
-        <stop offset="100%" stop-color="#1a6090"/>
-      </linearGradient>
-      <linearGradient id="bm" x1="0" y1="0" x2="0" y2="1">
-        <stop offset="0%" stop-color="#f2f6ea"/>
-        <stop offset="100%" stop-color="#dce8cc"/>
-      </linearGradient>
-      <linearGradient id="bs" x1="0" y1="0" x2="0" y2="1">
-        <stop offset="0%" stop-color="#d4dfc4"/>
-        <stop offset="100%" stop-color="#c0ccb0"/>
-      </linearGradient>
-      <linearGradient id="bt" x1="0" y1="0" x2="0" y2="1">
-        <stop offset="0%" stop-color="#e8ecdc"/>
-        <stop offset="100%" stop-color="#d4dcc8"/>
-      </linearGradient>
-      <clipPath id="sc2"><rect x="0" y="0" width="1200" height="560"/></clipPath>
-    </defs>
-    <g clip-path="url(#sc2)">
-      <rect x="0" y="0" width="1200" height="560" fill="url(#sky2)"/>
-      <circle cx="980" cy="75" r="44" fill="#fff8c0" opacity="0.85"/>
-      <circle cx="980" cy="75" r="36" fill="#fffce0" opacity="0.9"/>
-      <ellipse cx="120" cy="95" rx="105" ry="44" fill="white" opacity="0.92"/>
-      <ellipse cx="195" cy="80" rx="85" ry="38" fill="white" opacity="0.92"/>
-      <ellipse cx="65" cy="108" rx="70" ry="32" fill="white" opacity="0.88"/>
-      <ellipse cx="155" cy="112" rx="95" ry="28" fill="white" opacity="0.85"/>
-      <ellipse cx="480" cy="60" rx="70" ry="28" fill="white" opacity="0.80"/>
-      <ellipse cx="540" cy="50" rx="55" ry="24" fill="white" opacity="0.80"/>
-      <ellipse cx="435" cy="70" rx="48" ry="20" fill="white" opacity="0.75"/>
-      <ellipse cx="750" cy="48" rx="60" ry="24" fill="white" opacity="0.75"/>
-      <ellipse cx="805" cy="40" rx="45" ry="20" fill="white" opacity="0.72"/>
-      <ellipse cx="1100" cy="105" rx="80" ry="34" fill="white" opacity="0.82"/>
-      <ellipse cx="1160" cy="92" rx="58" ry="26" fill="white" opacity="0.78"/>
-      <ellipse cx="1055" cy="115" rx="55" ry="24" fill="white" opacity="0.75"/>
-      <path d="M0,340 Q80,295 200,315 Q320,295 440,320 Q560,298 680,318 Q800,296 920,315 Q1040,295 1200,310 L1200,400 L0,400 Z" fill="#7abf8a" opacity="0.55"/>
-      <path d="M0,358 Q100,320 240,342 Q380,318 520,346 Q660,320 800,344 Q940,320 1080,340 Q1150,328 1200,336 L1200,420 L0,420 Z" fill="#5a9f6c" opacity="0.65"/>
-      <path d="M0,375 Q60,348 160,368 Q280,346 380,370 Q480,350 560,372 L560,430 L0,430 Z" fill="#4a8f5c" opacity="0.75"/>
-      <path d="M680,368 Q800,345 920,368 Q1020,348 1120,366 Q1160,355 1200,364 L1200,430 L680,430 Z" fill="#4a8f5c" opacity="0.75"/>
-      <path d="M0,395 Q300,378 600,390 Q900,378 1200,390 L1200,445 L0,445 Z" fill="#4aaacf" opacity="0.45"/>
-      <path d="M0,415 Q400,400 800,412 Q1000,402 1200,410 L1200,560 L0,560 Z" fill="url(#sea2)"/>
-      <path d="M0,430 Q200,422 400,428 Q600,420 800,426 Q1000,418 1200,424" fill="none" stroke="white" stroke-width="1.8" opacity="0.22"/>
-      <path d="M0,446 Q250,439 500,444 Q750,437 1000,442 Q1100,438 1200,441" fill="none" stroke="white" stroke-width="1.2" opacity="0.16"/>
-      <path d="M0,448 Q600,432 1200,445 L1200,560 L0,560 Z" fill="#c8c4a8"/>
-      <path d="M120,458 Q600,444 1080,455 L1080,560 L120,560 Z" fill="#d4d0b8"/>
-      <line x1="220" y1="465" x2="220" y2="560" stroke="#b8b098" stroke-width="1" opacity="0.45"/>
-      <line x1="285" y1="465" x2="285" y2="560" stroke="#b8b098" stroke-width="1" opacity="0.45"/>
-      <line x1="350" y1="466" x2="350" y2="560" stroke="#b8b098" stroke-width="1" opacity="0.45"/>
-      <line x1="415" y1="466" x2="415" y2="560" stroke="#b8b098" stroke-width="1" opacity="0.45"/>
-      <line x1="820" y1="466" x2="820" y2="560" stroke="#b8b098" stroke-width="1" opacity="0.45"/>
-      <line x1="885" y1="466" x2="885" y2="560" stroke="#b8b098" stroke-width="1" opacity="0.45"/>
-      <line x1="950" y1="466" x2="950" y2="560" stroke="#b8b098" stroke-width="1" opacity="0.45"/>
-      <line x1="1015" y1="466" x2="1015" y2="560" stroke="#b8b098" stroke-width="1" opacity="0.45"/>
-      <path d="M0,492 Q600,478 1200,490 L1200,512 Q600,498 0,512 Z" fill="#b0a890" opacity="0.8"/>
-      <line x1="0" y1="501" x2="1200" y2="496" stroke="#e0d8c0" stroke-width="2.5" stroke-dasharray="35,25" opacity="0.5"/>
-      <rect x="180" y="422" width="850" height="16" fill="#b0aa98" rx="2"/>
-      <rect x="192" y="310" width="165" height="130" fill="url(#bt)" rx="2"/>
-      <rect x="192" y="302" width="165" height="12" fill="#c8d0b8" rx="1"/>
-      <rect x="230" y="288" width="50" height="16" fill="#b8c0a8" rx="2"/>
-      <rect x="290" y="282" width="38" height="22" fill="#b0b8a0" rx="2"/>
-      <rect x="206" y="325" width="36" height="26" fill="#a8ccdc" rx="2"/><line x1="224" y1="325" x2="224" y2="351" stroke="#80aac0" stroke-width="0.8"/>
-      <rect x="252" y="325" width="36" height="26" fill="#b0d4e4" rx="2"/><line x1="270" y1="325" x2="270" y2="351" stroke="#80aac0" stroke-width="0.8"/>
-      <rect x="298" y="325" width="36" height="26" fill="#a8ccdc" rx="2"/><line x1="316" y1="325" x2="316" y2="351" stroke="#80aac0" stroke-width="0.8"/>
-      <rect x="206" y="363" width="36" height="26" fill="#b0d4e4" rx="2"/><line x1="224" y1="363" x2="224" y2="389" stroke="#80aac0" stroke-width="0.8"/>
-      <rect x="252" y="363" width="36" height="26" fill="#a0c8d8" rx="2"/><line x1="270" y1="363" x2="270" y2="389" stroke="#80aac0" stroke-width="0.8"/>
-      <rect x="298" y="363" width="36" height="26" fill="#b0d4e4" rx="2"/><line x1="316" y1="363" x2="316" y2="389" stroke="#80aac0" stroke-width="0.8"/>
-      <rect x="206" y="400" width="36" height="20" fill="#a8ccdc" rx="2"/>
-      <rect x="252" y="400" width="36" height="20" fill="#b0d4e4" rx="2"/>
-      <rect x="298" y="400" width="36" height="20" fill="#a8ccdc" rx="2"/>
-      <rect x="355" y="185" width="500" height="250" fill="url(#bm)" rx="3"/>
-      <polygon points="855,185 905,165 905,435 855,435" fill="url(#bs)"/>
-      <rect x="355" y="176" width="500" height="14" fill="#ccd8b8" rx="2"/>
-      <rect x="855" y="160" width="50" height="12" fill="#bccaaa" rx="1"/>
-      <rect x="430" y="155" width="65" height="24" fill="#b0b8a0" rx="2"/>
-      <rect x="510" y="145" width="48" height="33" fill="#a8b098" rx="2"/>
-      <rect x="575" y="158" width="38" height="20" fill="#b0b8a0" rx="2"/>
-      <rect x="628" y="142" width="55" height="36" fill="#9ca896" rx="2"/>
-      <rect x="698" y="155" width="42" height="22" fill="#b0b8a0" rx="2"/>
-      <rect x="755" y="148" width="36" height="28" fill="#a8b098" rx="2"/>
-      <line x1="545" y1="145" x2="545" y2="118" stroke="#8a9280" stroke-width="2"/>
-      <line x1="522" y1="128" x2="568" y2="128" stroke="#8a9280" stroke-width="1.5"/>
-      <line x1="660" y1="142" x2="660" y2="112" stroke="#8a9280" stroke-width="2"/>
-      <polygon points="660,112 695,122 660,132" fill="#e84040" opacity="0.85"/>
-      <rect x="372" y="205" width="40" height="30" fill="#a8ccdc" rx="2"/><line x1="392" y1="205" x2="392" y2="235" stroke="#80aac0" stroke-width="0.8"/>
-      <rect x="424" y="205" width="40" height="30" fill="#b0d4e4" rx="2"/><line x1="444" y1="205" x2="444" y2="235" stroke="#80aac0" stroke-width="0.8"/>
-      <rect x="476" y="205" width="40" height="30" fill="#a0c8d8" rx="2"/><line x1="496" y1="205" x2="496" y2="235" stroke="#80aac0" stroke-width="0.8"/>
-      <rect x="528" y="205" width="40" height="30" fill="#b8dce8" rx="2"/><line x1="548" y1="205" x2="548" y2="235" stroke="#80aac0" stroke-width="0.8"/>
-      <rect x="580" y="205" width="40" height="30" fill="#a8ccdc" rx="2"/><line x1="600" y1="205" x2="600" y2="235" stroke="#80aac0" stroke-width="0.8"/>
-      <rect x="632" y="205" width="40" height="30" fill="#b0d4e4" rx="2"/><line x1="652" y1="205" x2="652" y2="235" stroke="#80aac0" stroke-width="0.8"/>
-      <rect x="684" y="205" width="40" height="30" fill="#a8ccdc" rx="2"/><line x1="704" y1="205" x2="704" y2="235" stroke="#80aac0" stroke-width="0.8"/>
-      <rect x="736" y="205" width="40" height="30" fill="#b8dce8" rx="2"/><line x1="756" y1="205" x2="756" y2="235" stroke="#80aac0" stroke-width="0.8"/>
-      <rect x="788" y="205" width="40" height="30" fill="#a0c8d8" rx="2"/><line x1="808" y1="205" x2="808" y2="235" stroke="#80aac0" stroke-width="0.8"/>
-      <rect x="372" y="250" width="40" height="30" fill="#b0d4e4" rx="2"/><line x1="392" y1="250" x2="392" y2="280" stroke="#80aac0" stroke-width="0.8"/>
-      <rect x="424" y="250" width="40" height="30" fill="#a8ccdc" rx="2"/><line x1="444" y1="250" x2="444" y2="280" stroke="#80aac0" stroke-width="0.8"/>
-      <rect x="476" y="250" width="40" height="30" fill="#b8dce8" rx="2"/><line x1="496" y1="250" x2="496" y2="280" stroke="#80aac0" stroke-width="0.8"/>
-      <rect x="528" y="250" width="40" height="30" fill="#a0c8d8" rx="2"/><line x1="548" y1="250" x2="548" y2="280" stroke="#80aac0" stroke-width="0.8"/>
-      <rect x="580" y="250" width="40" height="30" fill="#b0d4e4" rx="2"/><line x1="600" y1="250" x2="600" y2="280" stroke="#80aac0" stroke-width="0.8"/>
-      <rect x="632" y="250" width="40" height="30" fill="#a8ccdc" rx="2"/><line x1="652" y1="250" x2="652" y2="280" stroke="#80aac0" stroke-width="0.8"/>
-      <rect x="684" y="250" width="40" height="30" fill="#b0d4e4" rx="2"/><line x1="704" y1="250" x2="704" y2="280" stroke="#80aac0" stroke-width="0.8"/>
-      <rect x="736" y="250" width="40" height="30" fill="#a8ccdc" rx="2"/><line x1="756" y1="250" x2="756" y2="280" stroke="#80aac0" stroke-width="0.8"/>
-      <rect x="788" y="250" width="40" height="30" fill="#b8dce8" rx="2"/><line x1="808" y1="250" x2="808" y2="280" stroke="#80aac0" stroke-width="0.8"/>
-      <rect x="372" y="295" width="40" height="30" fill="#a8ccdc" rx="2"/><line x1="392" y1="295" x2="392" y2="325" stroke="#80aac0" stroke-width="0.8"/>
-      <rect x="424" y="295" width="40" height="30" fill="#b0d4e4" rx="2"/><line x1="444" y1="295" x2="444" y2="325" stroke="#80aac0" stroke-width="0.8"/>
-      <rect x="476" y="295" width="40" height="30" fill="#a0c8d8" rx="2"/><line x1="496" y1="295" x2="496" y2="325" stroke="#80aac0" stroke-width="0.8"/>
-      <rect x="528" y="295" width="40" height="30" fill="#b8dce8" rx="2"/><line x1="548" y1="295" x2="548" y2="325" stroke="#80aac0" stroke-width="0.8"/>
-      <rect x="580" y="295" width="40" height="30" fill="#a8ccdc" rx="2"/><line x1="600" y1="295" x2="600" y2="325" stroke="#80aac0" stroke-width="0.8"/>
-      <rect x="632" y="295" width="40" height="30" fill="#b0d4e4" rx="2"/><line x1="652" y1="295" x2="652" y2="325" stroke="#80aac0" stroke-width="0.8"/>
-      <rect x="684" y="295" width="40" height="30" fill="#a8ccdc" rx="2"/><line x1="704" y1="295" x2="704" y2="325" stroke="#80aac0" stroke-width="0.8"/>
-      <rect x="736" y="295" width="40" height="30" fill="#a0c8d8" rx="2"/><line x1="756" y1="295" x2="756" y2="325" stroke="#80aac0" stroke-width="0.8"/>
-      <rect x="788" y="295" width="40" height="30" fill="#b0d4e4" rx="2"/><line x1="808" y1="295" x2="808" y2="325" stroke="#80aac0" stroke-width="0.8"/>
-      <rect x="372" y="340" width="40" height="30" fill="#b0d4e4" rx="2"/><line x1="392" y1="340" x2="392" y2="370" stroke="#80aac0" stroke-width="0.8"/>
-      <rect x="424" y="340" width="40" height="30" fill="#a8ccdc" rx="2"/><line x1="444" y1="340" x2="444" y2="370" stroke="#80aac0" stroke-width="0.8"/>
-      <rect x="476" y="340" width="40" height="30" fill="#b8dce8" rx="2"/><line x1="496" y1="340" x2="496" y2="370" stroke="#80aac0" stroke-width="0.8"/>
-      <rect x="528" y="340" width="40" height="30" fill="#a0c8d8" rx="2"/><line x1="548" y1="340" x2="548" y2="370" stroke="#80aac0" stroke-width="0.8"/>
-      <rect x="580" y="340" width="40" height="30" fill="#b0d4e4" rx="2"/><line x1="600" y1="340" x2="600" y2="370" stroke="#80aac0" stroke-width="0.8"/>
-      <rect x="632" y="340" width="40" height="30" fill="#a8ccdc" rx="2"/><line x1="652" y1="340" x2="652" y2="370" stroke="#80aac0" stroke-width="0.8"/>
-      <rect x="684" y="340" width="40" height="30" fill="#b8dce8" rx="2"/><line x1="704" y1="340" x2="704" y2="370" stroke="#80aac0" stroke-width="0.8"/>
-      <rect x="736" y="340" width="40" height="30" fill="#a8ccdc" rx="2"/><line x1="756" y1="340" x2="756" y2="370" stroke="#80aac0" stroke-width="0.8"/>
-      <rect x="788" y="340" width="40" height="30" fill="#b0d4e4" rx="2"/><line x1="808" y1="340" x2="808" y2="370" stroke="#80aac0" stroke-width="0.8"/>
-      <rect x="372" y="385" width="40" height="26" fill="#a8ccdc" rx="2"/>
-      <rect x="424" y="385" width="40" height="26" fill="#b0d4e4" rx="2"/>
-      <rect x="476" y="385" width="40" height="26" fill="#a0c8d8" rx="2"/>
-      <rect x="528" y="385" width="40" height="26" fill="#b8dce8" rx="2"/>
-      <rect x="580" y="385" width="40" height="26" fill="#a8ccdc" rx="2"/>
-      <rect x="632" y="385" width="40" height="26" fill="#b0d4e4" rx="2"/>
-      <rect x="684" y="385" width="40" height="26" fill="#a8ccdc" rx="2"/>
-      <rect x="736" y="385" width="40" height="26" fill="#a0c8d8" rx="2"/>
-      <rect x="788" y="385" width="40" height="26" fill="#b0d4e4" rx="2"/>
-      <rect x="480" y="390" width="195" height="48" fill="#e8e4d4" rx="2"/>
-      <polygon points="465,390 690,390 710,408 445,408" fill="#c8c0ac"/>
-      <rect x="465" y="382" width="228" height="12" fill="#d8d0bc" rx="1"/>
-      <rect x="478" y="390" width="10" height="48" fill="#c0b8a4" rx="1"/>
-      <rect x="665" y="390" width="10" height="48" fill="#c0b8a4" rx="1"/>
-      <rect x="524" y="390" width="10" height="48" fill="#c8c0ac" rx="1"/>
-      <rect x="619" y="390" width="10" height="48" fill="#c8c0ac" rx="1"/>
-      <rect x="537" y="403" width="48" height="35" fill="#6090a8" rx="1"/>
-      <rect x="590" y="403" width="48" height="35" fill="#6090a8" rx="1"/>
-      <line x1="561" y1="403" x2="561" y2="438" stroke="#4a7888" stroke-width="0.8"/>
-      <line x1="614" y1="403" x2="614" y2="438" stroke="#4a7888" stroke-width="0.8"/>
-      <line x1="537" y1="420" x2="638" y2="420" stroke="#4a7888" stroke-width="0.8"/>
-      <rect x="470" y="436" width="215" height="6" fill="#c0b8a4" rx="1"/>
-      <rect x="498" y="370" width="160" height="16" fill="#1a5f7a" rx="3"/>
-      <text x="578" y="382" text-anchor="middle" fill="white" font-size="11" font-family="sans-serif" font-weight="bold" letter-spacing="2">牛深市民病院</text>
-      <rect x="855" y="295" width="190" height="143" fill="url(#bt)" rx="2"/>
-      <rect x="855" y="287" width="190" height="12" fill="#c8d0b8" rx="1"/>
-      <rect x="870" y="272" width="48" height="18" fill="#b8c0a8" rx="2"/>
-      <rect x="868" y="308" width="38" height="27" fill="#a8ccdc" rx="2"/><line x1="887" y1="308" x2="887" y2="335" stroke="#80aac0" stroke-width="0.8"/>
-      <rect x="917" y="308" width="38" height="27" fill="#b0d4e4" rx="2"/><line x1="936" y1="308" x2="936" y2="335" stroke="#80aac0" stroke-width="0.8"/>
-      <rect x="966" y="308" width="38" height="27" fill="#a0c8d8" rx="2"/><line x1="985" y1="308" x2="985" y2="335" stroke="#80aac0" stroke-width="0.8"/>
-      <rect x="1015" y="308" width="38" height="27" fill="#b8dce8" rx="2"/><line x1="1034" y1="308" x2="1034" y2="335" stroke="#80aac0" stroke-width="0.8"/>
-      <rect x="868" y="350" width="38" height="27" fill="#b0d4e4" rx="2"/>
-      <rect x="917" y="350" width="38" height="27" fill="#a8ccdc" rx="2"/>
-      <rect x="966" y="350" width="38" height="27" fill="#b8dce8" rx="2"/>
-      <rect x="1015" y="350" width="38" height="27" fill="#a0c8d8" rx="2"/>
-      <rect x="868" y="392" width="38" height="22" fill="#a8ccdc" rx="2"/>
-      <rect x="917" y="392" width="38" height="22" fill="#b0d4e4" rx="2"/>
-      <rect x="966" y="392" width="38" height="22" fill="#a8ccdc" rx="2"/>
-      <rect x="1015" y="392" width="38" height="22" fill="#b0d4e4" rx="2"/>
-      <rect x="870" y="418" width="80" height="22" fill="#1a5f7a" rx="1"/>
-      <text x="910" y="433" text-anchor="middle" fill="white" font-size="9" font-family="sans-serif" font-weight="bold">救急入口</text>
-      <rect x="880" y="414" width="60" height="8" fill="#e84040" rx="1"/>
-      <rect x="357" y="340" width="18" height="98" fill="#d8dcc8" rx="1"/>
-      <ellipse cx="80" cy="435" rx="46" ry="55" fill="#2d6840"/>
-      <ellipse cx="66" cy="424" rx="38" ry="46" fill="#3a7a4e"/>
-      <ellipse cx="92" cy="420" rx="34" ry="42" fill="#448a58"/>
-      <rect x="76" y="484" width="9" height="32" fill="#5a3818" rx="2"/>
-      <ellipse cx="152" cy="445" rx="40" ry="48" fill="#2d6840"/>
-      <ellipse cx="140" cy="436" rx="33" ry="40" fill="#3a7a4e"/>
-      <rect x="148" y="490" width="8" height="28" fill="#5a3818" rx="2"/>
-      <ellipse cx="44" cy="450" rx="34" ry="40" fill="#346044"/>
-      <rect x="41" y="488" width="7" height="22" fill="#5a3818" rx="2"/>
-      <ellipse cx="1120" cy="438" rx="48" ry="56" fill="#2d6840"/>
-      <ellipse cx="1136" cy="428" rx="40" ry="48" fill="#3a7a4e"/>
-      <ellipse cx="1108" cy="426" rx="36" ry="44" fill="#448a58"/>
-      <rect x="1116" y="490" width="9" height="30" fill="#5a3818" rx="2"/>
-      <ellipse cx="1058" cy="448" rx="40" ry="48" fill="#2d6840"/>
-      <ellipse cx="1044" cy="438" rx="33" ry="40" fill="#3a7a4e"/>
-      <rect x="1054" y="492" width="8" height="26" fill="#5a3818" rx="2"/>
-      <ellipse cx="1168" cy="452" rx="34" ry="40" fill="#346044"/>
-      <rect x="1165" y="490" width="7" height="22" fill="#5a3818" rx="2"/>
-      <ellipse cx="460" cy="448" rx="24" ry="30" fill="#3a7a4e"/>
-      <ellipse cx="450" cy="440" rx="18" ry="24" fill="#448a58"/>
-      <rect x="457" y="476" width="6" height="18" fill="#5a3818" rx="1"/>
-      <ellipse cx="760" cy="446" rx="26" ry="32" fill="#2d6840"/>
-      <ellipse cx="770" cy="438" rx="20" ry="26" fill="#3a7a4e"/>
-      <rect x="757" y="476" width="6" height="18" fill="#5a3818" rx="1"/>
-      <rect x="230" y="476" width="90" height="40" fill="#f8f8f8" rx="4"/>
-      <rect x="230" y="476" width="90" height="22" fill="#eef6ff" rx="4"/>
-      <rect x="234" y="482" width="26" height="14" fill="#a0cce8" rx="1"/>
-      <rect x="265" y="482" width="26" height="14" fill="#a0cce8" rx="1"/>
-      <circle cx="254" cy="518" r="9" fill="#333"/><circle cx="254" cy="518" r="4.5" fill="#888"/>
-      <circle cx="302" cy="518" r="9" fill="#333"/><circle cx="302" cy="518" r="4.5" fill="#888"/>
-      <line x1="230" y1="490" x2="320" y2="490" stroke="#e03030" stroke-width="3"/>
-      <ellipse cx="262" cy="476" rx="6" ry="4" fill="#e84040" opacity="0.9"/>
-      <ellipse cx="298" cy="476" rx="6" ry="4" fill="#e84040" opacity="0.9"/>
-      <rect x="840" y="480" width="75" height="34" fill="#f0f0f0" rx="5"/>
-      <rect x="848" y="470" width="58" height="22" fill="#e0e8f0" rx="4"/>
-      <circle cx="856" cy="516" r="8" fill="#333"/><circle cx="856" cy="516" r="4" fill="#888"/>
-      <circle cx="899" cy="516" r="8" fill="#333"/><circle cx="899" cy="516" r="4" fill="#888"/>
-      <path d="M88,185 Q100,177 112,185" fill="none" stroke="#334455" stroke-width="1.6" stroke-linecap="round"/>
-      <path d="M136,165 Q150,157 164,165" fill="none" stroke="#334455" stroke-width="1.6" stroke-linecap="round"/>
-      <path d="M175,195 Q186,189 197,195" fill="none" stroke="#334455" stroke-width="1.3" stroke-linecap="round"/>
-      <path d="M860,140 Q873,132 886,140" fill="none" stroke="#334455" stroke-width="1.5" stroke-linecap="round"/>
-      <path d="M908,158 Q919,151 930,158" fill="none" stroke="#334455" stroke-width="1.3" stroke-linecap="round"/>
-      <line x1="350" y1="466" x2="375" y2="463" stroke="white" stroke-width="2" opacity="0.35"/>
-      <line x1="660" y1="468" x2="692" y2="465" stroke="white" stroke-width="2" opacity="0.32"/>
-      <line x1="940" y1="470" x2="968" y2="467" stroke="white" stroke-width="1.8" opacity="0.3"/>
-    </g>
-  </svg>
+  <img class="hero-img" src="https://ushp.jp/images/bg_mainimage.jpg" alt="天草市立牛深市民病院 外観">
 
   <!-- 左側グラデーションオーバーレイ -->
   <div class="hero-overlay"></div>
@@ -423,8 +212,15 @@ footer{background:#06182e;padding:36px 60px;display:flex;align-items:flex-start;
   <!-- テキストコンテンツ -->
   <div class="hero-content">
     <div class="hero-badge">天草南部の中核病院</div>
-    <h1 class="hero-title">天草南部の中核病院として、<br>地域の皆様の健康を守ります。</h1>
-    <p class="hero-sub">公平・公正な医療を提供し、市民の皆様が<br>この地域で安心して暮らせるよう<br>より質の高い医療サービスを提供します。</p>
+    <h1 class="hero-title">
+      天草南部の中核病院として<br>
+      地域の皆様の健康を守ります。
+    </h1>
+    <p class="hero-sub">
+      公平・公正な医療を提供し、<br>
+      市民の皆様がこの地域で安心して暮らせるよう<br>
+      より質の高い医療サービスを提供します。
+    </p>
     <div class="hero-btns">
       <a href="diagnosis.html" class="btn-hero-p">外来医師担当表を見る</a>
       <a href="diagnosis.html#firsttime" class="btn-hero-o">初めての方へ</a>
@@ -461,14 +257,14 @@ footer{background:#06182e;padding:36px 60px;display:flex;align-items:flex-start;
   <span class="ticker-label">お知らせ</span>
   <div class="ticker-track">
     <div class="ticker-inner">
-      <a href="info.html">4月の整形外科・耳鼻科・眼科の担当医を掲載しました（2026.03.24）</a>
+      <a href="info.html">給食調理員（会計年度任用職員フルタイム）を募集しています（2026.04.24）</a>
+      <a href="https://ushp.jp/wp-content/uploads/2026/04/11c3f39fc684c4c5686a84fb59bd2a79.pdf" target="_blank" rel="noopener">5月の整形外科・耳鼻科・眼科の担当医を掲載しました（2026.04.22）</a>
+      <a href="https://ushp.jp/wp-content/uploads/2026/03/42a3d1ee93f68a41e3f40e6325f0c65b.pdf" target="_blank" rel="noopener">4月の整形外科・耳鼻科・眼科の担当医を掲載しました（2026.03.24）</a>
       <a href="info.html">チャット健康相談・オンライン診療アプリ『キッズドクター』についてのご案内</a>
-      <a href="info.html">医療DX推進体制整備加算に係る掲示について</a>
-      <a href="info.html">令和6年度 患者満足度調査 結果のご報告</a>
-      <a href="info.html">4月の整形外科・耳鼻科・眼科の担当医を掲載しました（2026.03.24）</a>
+      <a href="info.html">給食調理員（会計年度任用職員フルタイム）を募集しています（2026.04.24）</a>
+      <a href="https://ushp.jp/wp-content/uploads/2026/04/11c3f39fc684c4c5686a84fb59bd2a79.pdf" target="_blank" rel="noopener">5月の整形外科・耳鼻科・眼科の担当医を掲載しました（2026.04.22）</a>
+      <a href="https://ushp.jp/wp-content/uploads/2026/03/42a3d1ee93f68a41e3f40e6325f0c65b.pdf" target="_blank" rel="noopener">4月の整形外科・耳鼻科・眼科の担当医を掲載しました（2026.03.24）</a>
       <a href="info.html">チャット健康相談・オンライン診療アプリ『キッズドクター』についてのご案内</a>
-      <a href="info.html">医療DX推進体制整備加算に係る掲示について</a>
-      <a href="info.html">令和6年度 患者満足度調査 結果のご報告</a>
     </div>
   </div>
 </div>
@@ -556,7 +352,9 @@ footer{background:#06182e;padding:36px 60px;display:flex;align-items:flex-start;
     <div class="sec-line"></div>
   </div>
   <div class="news-list">
-    <a href="info.html" class="news-item"><span class="nd">2026.03.24</span><span class="nc cat-u">更新情報</span><span class="nt">4月の整形外科・耳鼻科・眼科の担当医を掲載しました</span></a>
+    <a href="https://ushp.jp/%e7%b5%a6%e9%a3%9f%e8%aa%bf%e7%90%86%e5%93%a1%ef%bc%88%e4%bc%9a%e8%a8%88%e5%b9%b4%e5%ba%a6%e4%bb%bb%e7%94%a8%e8%81%b7%e5%93%a1%e3%83%95%e3%83%ab%e3%82%bf%e3%82%a4%e3%83%a0%ef%bc%89%e3%82%92%e5%8b%9f/" target="_blank" rel="noopener" class="news-item"><span class="nd">2026.04.24</span><span class="nc cat-i">採用情報</span><span class="nt">給食調理員（会計年度任用職員フルタイム）を募集します。</span></a>
+    <a href="https://ushp.jp/wp-content/uploads/2026/04/11c3f39fc684c4c5686a84fb59bd2a79.pdf" target="_blank" rel="noopener" class="news-item"><span class="nd">2026.04.22</span><span class="nc cat-u">更新情報</span><span class="nt">5月の整形外科・耳鼻科・眼科の担当医を掲載しました</span></a>
+    <a href="https://ushp.jp/wp-content/uploads/2026/03/42a3d1ee93f68a41e3f40e6325f0c65b.pdf" target="_blank" rel="noopener" class="news-item"><span class="nd">2026.03.24</span><span class="nc cat-u">更新情報</span><span class="nt">4月の整形外科・耳鼻科・眼科の担当医を掲載しました</span></a>
     <a href="info.html" class="news-item"><span class="nd">2025.10.06</span><span class="nc cat-i">お知らせ</span><span class="nt">チャット健康相談・オンライン診療アプリ『キッズドクター』についてのご案内</span></a>
     <a href="info.html" class="news-item"><span class="nd">2025.05.21</span><span class="nc cat-i">お知らせ</span><span class="nt">医療DX推進体制整備加算に係る掲示について</span></a>
     <a href="info.html" class="news-item"><span class="nd">2025.05.02</span><span class="nc cat-i">お知らせ</span><span class="nt">令和6年度 患者満足度調査 結果のご報告</span></a>
